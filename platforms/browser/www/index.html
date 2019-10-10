@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <!--        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">-->
+    <!--        <meta name="format-detection" content="telephone=no">-->
+    <!--        <meta name="msapplication-tap-highlight" content="no">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/override.css">
+    <title>Ice Connect</title>
+    <style>
+        .page {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+<!--side collapse navbar-->
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+</div>
+
+<!-- Fixed navbar -->
+<div id="navigatiebalk">
+    <nav class="navbar fixed-top navbar-light bg-light" onclick="openNav()">
+        <button class="openbtn" onclick="openNav()">&#9776; Toggle Sidebar</button>
+
+<!--        <a href="#" class="btn btn-primary p-3 openbtn">-->
+<!--            <i class="fas fa-bars"></i>-->
+<!--        </a>-->
+        <a class="navbar-brand text-center" href="#!">Ice Connect</a>
+    </nav>
+</div>
+
+
+
+<div id="main">
+    <button class="openbtn" onclick="openNav()">&#9776; Toggle Sidebar</button>
+    <h2>Collapsed Sidebar</h2>
+    <p>Content...</p>
+</div>
+
+<div class="app">
+    <h1>Apache Cordova</h1>
+    <div id="deviceready" class="blink">
+        <p class="event listening">Connecting to Device</p>
+        <p class="event received">Device is Ready</p>
+    </div>
+</div>-->
+
+<script>
+    /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+    }
+
+    /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+    function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+    }
+</script>
+
+<!--        <script type="text/javascript" src="js/index.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!--        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>-->
+<script src="cordova.js"></script>
+<script src="js/plugin1.js"></script>
+<script src="js/plugin2.js"></script>
+<!-- JavaScript defer: https://www.w3schools.com/tags/att_script_defer.asp -->
+<script defer src="js/app.js"></script>
+</body>
+</html>
