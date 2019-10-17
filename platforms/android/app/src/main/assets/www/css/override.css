@@ -1,0 +1,19 @@
+.displayvariable {
+    display: none;
+    margin-top: 60px;
+}
+
+#homepage {
+    display: block;
+}
+
+#sidebar-wrapper {
+    margin-top: 57px;
+}
+
+#mymap {
+    width: 90vw;
+    height: 50vh;
+    margin: auto;
+}
+

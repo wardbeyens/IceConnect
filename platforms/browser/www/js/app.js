@@ -1,29 +1,18 @@
 // alles wat met lay out te maken heeft
-$(function(){
+$(function () {
     document.addEventListener("deviceready", onDeviceReady, false);
-    $('.sidenav').sidenav();
 
-
-    // sidenav
-    $('.sidenav a').click(function () {
-        $('.spa').hide();
-        $('#' + $(this).data('show')).show();
-        $('.sidenav').sidenav('close');
+    $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
     });
-
-    $('#startCompass').click(function () {
-        Compass.start();
-    })
-
-    $('#stopCompass').click(function () {
-        Compass.stop();
-    })
-
+    $("#sidebar-wrapper a").click(function (e) {
+        $("#wrapper").toggleClass("toggled");
+        $('.displayvariable').hide();
+        $($(this).data('show')).show();
+    });
 });
 
 function onDeviceReady() {
     console.log('Device is ready');
-    Device.init();
-    Network.init();
-    Compass.init();
-};
+}
