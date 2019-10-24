@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     <meta name="author" content="Ward Beyens">
-    <meta name="description" content="Bring people together!;A simple App that connects people based on their passed location.">
+    <meta name="description"
+          content="Bring people together!;A simple App that connects people based on their passed location.">
     <title>Ice Connect</title>
     <!-- Bootstrap & fontawesome -->
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -20,8 +22,10 @@
 <div class="d-flex" id="wrapper">
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
-<!--        <div class="sidebar-heading">IceConnect</div>-->
+        <!--        <div class="sidebar-heading">IceConnect</div>-->
         <div class="list-group list-group-flush">
+            <a href="#!" data-show="#homepage" class="list-group-item list-group-item-action bg-light">Home</a>
+            <a href="#!" data-show="#login" class="list-group-item list-group-item-action bg-light">Login</a>
             <a href="#!" data-show="#map" class="list-group-item list-group-item-action bg-light">Map</a>
             <a href="#!" data-show="#group" class="list-group-item list-group-item-action bg-light">Group</a>
             <a href="#!" data-show="#info" class="list-group-item list-group-item-action bg-light">Infopage</a>
@@ -40,54 +44,69 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#login">login</a>
+                        <a class="nav-link" href="#!">login</a>
                     </li>
 
-                    <!--                hier mss iets met als er groepen bestaan welke groepen
+                    &lt;!&ndash;                                    hier mss iets met als er groepen bestaan welke groepen&ndash;&gt;
 
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Dropdown
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                                <a class="dropdown-item" href="#">Action</a>
-                                                <a class="dropdown-item" href="#">Another action</a>
-                                                <div class="dropdown-divider"></div>
-                                                <a class="dropdown-item" href="#">Something else here</a>
-                                            </div>
-                                        </li>-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
 
                 </ul>
-            </div>
+            </div>-->
+
         </nav>
+
+        <div id="map" class="displayvariable">
+            <div class="container-fluid">
+                <h1 class="mt-4">Kaartpagina</h1>
+                <p>The starting state of the menu will appear collapsed on smaller screens, and will appea</p>
+            </div>
+            <div id="mymap"></div>
+        </div>
 
         <div id="homepage" class="displayvariable">
             <div class="container-fluid">
                 <h1 class="mt-4">Homepagina</h1>
-                <p>The starting state of the menu will appear collapsed on smaller screens, and will appear
-                    non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-                <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is
-                    optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID
-                    which will toggle the menu when clicked.</p>
+                <p>Hallo beste lezer, deze app gaat ervoor zorgen dat jij en jouw vrienden gemakkelijk samen gaan kunnen
+                    komen de volgende keer!</p>
             </div>
         </div>
 
         <div id="login" class="displayvariable">
             <div class="container-fluid">
                 <h1 class="mt-4">Inlogpagina</h1>
-                <p>The starting state of the menu will appear collapsed on smaller screens, and will appear
-                    non-collapsed on
-                    larger screens. When toggled using the button below, the menu will change.</p>
-                <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is
-                    optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID
-                    which
-                    will toggle the menu when clicked.</p>
+                <div class="form-group">
+                    <label for="InloggenInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="InloggenInputEmail1" aria-describedby="emailHelp"
+                           placeholder="Enter email">
+                    <!--                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                </div>
+                <div class="form-group">
+                    <label for="InloggenInputPassword">Password</label>
+                    <input type="password" class="form-control" id="InloggenInputPassword" placeholder="Password">
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="WachtwoordOpslaan">
+                    <label class="form-check-label" for="WachtwoordOpslaan">Wachtwoord opslaan?</label>
+                </div>
+                <button type="button" id="inloggen" class="btn btn-primary">Inloggen</button>
             </div>
         </div>
 
@@ -103,15 +122,6 @@
                     will toggle the menu when clicked.</p>
             </div>
         </div>
-
-        <div id="map" class="displayvariable">
-            <div class="container-fluid">
-                <h1 class="mt-4">Kaartpagina</h1>
-                <p>The starting state of the menu will appear collapsed on smaller screens, and will appea</p>
-            </div>
-            <div id="mymap"></div>
-        </div>
-
 
         <div id="info" class="displayvariable">
             <div class="container-fluid">
@@ -131,22 +141,17 @@
 
 </div>
 <!-- /#wrapper -->
+
 <script src="js/jquery.js"></script>
-<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.js"></script>-->
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>&ndash;&gt;-->
-
 <script src="cordova.js"></script>
 <script src="js/bootstrap.js"></script>
-
 <script src="leaflet/leaflet.js"></script>
 <script src="js/plugin1.js"></script>
 <script src="js/plugin2.js"></script>
-
-
 <!-- <script type="text/javascript" src="js/index.js"></script>-->
 <script defer src="js/app.js"></script>
-
 </body>
 
 </html>

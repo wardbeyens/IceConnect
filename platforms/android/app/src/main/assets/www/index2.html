@@ -1,101 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="utf-8">
-<!--  <meta name="viewport"-->
-<!--        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">-->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport"
+        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
   <meta name="author" content="Ward Beyens">
-
+  <meta name="description"
+        content="Bring people together!;A simple App that connects people based on their passed location.">
   <title>Ice Connect</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="sidenav/vendor/bootstrap/css/bootstrap-reboot.css" rel="stylesheet">
-  <link href="sidenav/vendor/bootstrap/css/bootstrap-grid.css" rel="stylesheet">
-  <link href="sidenav/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <!-- Bootstrap & fontawesome -->
+  <link rel="stylesheet" href="css/bootstrap.css">
   <link href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" rel="stylesheet">
-
+  <!--    leaflet-->
+  <link rel="stylesheet" href="leaflet/leaflet.css"/>
   <!-- Custom styles for this template -->
-  <link href="css/simple-sidebar.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/simple-sidebar.css">
   <link rel="stylesheet" type="text/css" href="css/override.css">
+
 </head>
-
 <body>
-
-  <div class="d-flex" id="wrapper">
-
-    <!-- Sidebar -->
-    <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">Start Bootstrap </div>
-      <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
-      </div>
+<div class="d-flex" id="wrapper">
+  <!-- Sidebar -->
+  <div class="bg-light border-right" id="sidebar-wrapper">
+    <!--        <div class="sidebar-heading">IceConnect</div>-->
+    <div class="list-group list-group-flush">
+      <a href="#!" data-show="#homepage" class="list-group-item list-group-item-action bg-light">Home</a>
+      <a href="#!" data-show="#login" class="list-group-item list-group-item-action bg-light">Login</a>
+      <a href="#!" data-show="#map" class="list-group-item list-group-item-action bg-light">Map</a>
+      <a href="#!" data-show="#group" class="list-group-item list-group-item-action bg-light">Group</a>
+      <a href="#!" data-show="#info" class="list-group-item list-group-item-action bg-light">Infopage</a>
     </div>
-    <!-- /#sidebar-wrapper -->
+  </div>
+  <!-- /#sidebar-wrapper -->
 
-    <!-- Page Content -->
-    <div id="page-content-wrapper">
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light border-bottom">
+      <button class="btn btn-primary" id="menu-toggle">Menu</button>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </nav>
+              <li class="nav-item">
+                  <a class="nav-link" href="#!">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#!">login</a>
+              </li>
 
+              &lt;!&ndash;                                    hier mss iets met als er groepen bestaan welke groepen&ndash;&gt;
+
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Dropdown
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+              </li>
+
+          </ul>
+      </div>-->
+
+    </nav>
+
+    <div id="homepage" class="displayvariable">
       <div class="container-fluid">
-        <h1 class="mt-4">Simple Sidebar</h1>
-        <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID which will toggle the menu when clicked.</p>
+        <h1 class="mt-4">Homepagina</h1>
+        <p>Hallo beste lezer, deze app gaat ervoor zorgen dat jij en jouw vrienden gemakkelijk samen gaan kunnen komen de volgende keer!</p>
       </div>
     </div>
-    <!-- /#page-content-wrapper -->
+
+    <div id="login" class="displayvariable">
+      <div class="container-fluid">
+        <h1 class="mt-4">Inlogpagina</h1>
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <!--                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="formcheck">
+            <label class="form-check-label" for="formcheck">Wachtwoord opslaan?</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Inloggen</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="group" class="displayvariable">
+      <div class="container-fluid">
+        <h1 class="mt-4">groep pagina</h1>
+        <p>The starting state of the menu will appear collapsed on smaller screens, and will appear
+          non-collapsed on
+          larger screens. When toggled using the button below, the menu will change.</p>
+        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is
+          optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID
+          which
+          will toggle the menu when clicked.</p>
+      </div>
+    </div>
+
+    <div id="map" class="displayvariable">
+      <div class="container-fluid">
+        <h1 class="mt-4">Kaartpagina</h1>
+        <p>The starting state of the menu will appear collapsed on smaller screens, and will appea</p>
+      </div>
+      <div id="mymap"></div>
+    </div>
+
+
+    <div id="info" class="displayvariable">
+      <div class="container-fluid">
+        <h1 class="mt-4">infopagina</h1>
+        <p>The starting state of the menu will appear collapsed on smaller screens, and will appear
+          non-collapsed on
+          larger screens. When toggled using the button below, the menu will change.</p>
+        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>. The top navbar is
+          optional, and just for demonstration. Just create an element with the <code>#menu-toggle</code> ID
+          which
+          will toggle the menu when clicked.</p>
+      </div>
+    </div>
 
   </div>
-  <!-- /#wrapper -->
+  <!-- /#page-content-wrapper -->
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="sidenav/vendor/jquery/jquery.min.js"></script>
-  <script src="sidenav/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</div>
+<!-- /#wrapper -->
 
-  <!-- Menu Toggle Script -->
-  <script>
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-    });
-  </script>
-
+<script src="js/jquery.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>&ndash;&gt;-->
+<script src="cordova.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="leaflet/leaflet.js"></script>
+<script src="js/plugin1.js"></script>
+<script src="js/plugin2.js"></script>
+<!-- <script type="text/javascript" src="js/index.js"></script>-->
+<script defer src="js/app.js"></script>
 </body>
 
 </html>

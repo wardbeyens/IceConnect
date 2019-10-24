@@ -1,3 +1,7 @@
+#map {
+    display: block;
+}
+
 .displayvariable {
     display: none;
     margin-top: 60px;
@@ -15,5 +19,9 @@
     width: 90vw;
     height: 50vh;
     margin: auto;
+    z-index: 1000;
 }
 
+input{
+    max-width: 90%;
+}
