@@ -2,8 +2,6 @@
 $(function () {
     document.addEventListener("deviceready", onDeviceReady, false);
 
-    $('#map').hide();
-
     $("#menu-toggle").click(function (e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
@@ -14,15 +12,6 @@ $(function () {
         $($(this).data('show')).show();
     });
 
-    $('#inloggen').click(function () {
-        let pars = {
-            email: $('#InloggenInputEmail1'),
-            password: $('#InloggenInputEmail1')
-        };
-        $.post('http://.../login.php', pars, function (data) {
-
-        })
-    });
 
 });
 

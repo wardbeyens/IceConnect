@@ -7,5 +7,6 @@
   "description": "A simple App that connects people based on their passed location.",
   "author": "Ward Beyens",
   "icons": [],
-  "start_url": "index.html"
+  "start_url": "index.html",
+  "theme_color": "#ffffff"
 }
