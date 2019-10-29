@@ -48,6 +48,8 @@ $('#registerSend').click(function () {
                 var loginWachtwoord = respons.wachtwoord;
                 $('.loginWachtwoord').text(loginWachtwoord);
                 console.log(loginPersoonID, loginVoornaam, loginAchternaam, loginEmail, loginWachtwoord);
+                navigator.vibrate(500);
+
             });
 
             $('.displayvariable').hide();
@@ -92,7 +94,12 @@ $('#loginSend').click(function () {
             var loginWachtwoord = respons.wachtwoord;
             $('.loginWachtwoord').text(loginWachtwoord);
             console.log(loginPersoonID, loginVoornaam, loginAchternaam, loginEmail, loginWachtwoord);
+            navigator.vibrate(500);
         });
+
+        $('.displayvariable').hide();
+        $('#map').show();
+
 
     } else {
         alert("Please fill in all fields")

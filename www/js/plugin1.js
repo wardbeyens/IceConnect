@@ -9,13 +9,17 @@ var map = L.map('mymap', {
 };*/
 
 L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
 }).addTo(map);
+
+var marker1 = L.marker([51.161358, 4.963583]).addTo(map).bindPopup('Thomas More<br> Geel').openPopup();
 
 map.on('viewreset', function () {
     console.log('resetting..');
 });
-map.invalidateSize();
+map.invalidateSize( function () {
+    console.log('invalidatesize check');
+});
 
 /*var mymap = L.map('map').setView([51.160891, 4.961261], 10);
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
