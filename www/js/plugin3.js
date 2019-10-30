@@ -1,3 +1,29 @@
+// Get the modal
+var modal1 = document.getElementById("addLocationModal");
+
+// Get the button that opens the modal
+var btn1 = document.getElementById("openLocationModal");
+
+// Get the <span> element that closes the modal
+var span1 = document.getElementsByClassName("closeLocationModal")[0];
+
+// When the user clicks the button, open the modal
+btn1.onclick = function () {
+    modal1.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span1.onclick = function () {
+    modal1.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal1) {
+        modal1.style.display = "none";
+    }
+}
+
 $('#addLocation').click(function () {
     /*    let pars = {
             latitude: $('#addLocationLatitude').val(),
@@ -92,3 +118,96 @@ $('#getLocatiesOpKaart').click(function () {
     });
 
 });
+
+$('#getGroepen').click(function () {
+
+    let pars = {
+        persoonID: persoonID,
+    };
+
+    console.log("U vraagt nu al alle groepen op");
+
+    $.post('http://wabyte.com/getgroepen.php', function (data) {
+        console.log(data);
+        $('.emptylistGroup').empty();
+        $.each(data, function (i) {
+            console.log(i + ":" + this.groepnaam + '<br>' + this.locatieID + " " + this.locatiebijnaam);
+
+            $("#menuGroup").append('<li>' + this.groepID + '</li>');
+            $("#menuGroup").append('<li>' + this.groepnaam + '</li>');
+            $("#menuGroup").append('<li>' + this.locatieID + '</li>');
+            $("#menuGroup").append('<li>' + this.locatiebijnaam + '</li>');
+            $("#menuGroup").append('<li>' + this.locatienaam + '</li>');
+
+        });
+    });
+});
+
+// Get the modal
+var modal2 = document.getElementById("addUserToGroupModal");
+
+// Get the button that opens the modal
+var btn2 = document.getElementById("openAddUserToGroup");
+
+// Get the <span> element that closes the modal
+var span2 = document.getElementsByClassName("closeAddUserToGroup")[0];
+
+// When the user clicks the button, open the modal
+btn2.onclick = function () {
+    modal2.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span2.onclick = function () {
+    modal2.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal2) {
+        modal2.style.display = "none";
+    }
+}
+
+$('#openAddUserToGroup').click(function () {
+
+    console.log("U vraagt nu al alle groepen op");
+    $('#addUserToGroupGroepID').empty();
+
+    $.post('http://wabyte.com/getgroepen.php', function (data) {
+        console.log(data);
+        $.each(data, function (i) {
+            optionText = this.groepnaam;
+            optionValue = this.groepID;
+            console.log(i + ":" + `<option value="${optionValue}"> ${optionText} </option>`);
+            $('#addUserToGroupGroepID').append(`<option value="${optionValue}"> ${optionText} </option>`);
+        });
+    });
+
+    let pars = {
+        persoonID: persoonID,
+    };
+
+    console.log("U vraagt nu al uw opgeslagen locaties op met persoonID: " + persoonID);
+    $('#addUserToGroupGroepYourLocation').empty();
+
+    $.post('http://wabyte.com/getlocaties.php', pars, function (data2) {
+        console.log(data2);
+        $.each(data2, function (j) {
+
+            optionTextLoc = this.locatiebijnaam;
+            optionValueLoc = this.locatieID;
+            console.log(j + ":" + `<option value="${optionValueLoc}"> ${optionTextLoc} </option>`);
+            $('#addUserToGroupGroepYourLocation').append(`<option value="${optionValueLoc}"> ${optionTextLoc} </option>`);
+
+        });
+    });
+
+
+
+});
+
+$('#AddUserToGroup').click(function () {
+
+});
+
