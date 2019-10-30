@@ -48,7 +48,6 @@ input{
     box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
 }
 
-/* The Modal (background)
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -63,7 +62,7 @@ input{
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-/* Modal Content
+
 .modal-content {
     background-color: #fefefe;
     margin: auto;
@@ -95,4 +94,3 @@ input{
     width: 100%;
 }
 
-*/
