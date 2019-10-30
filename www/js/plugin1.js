@@ -4,22 +4,62 @@ var map = L.map('mymap', {
     zoom: 9,
     preferCanvas: true
 });
-/*map.options = {
-    preferCanvas: true
-};*/
 
 L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
 }).addTo(map);
 
-var marker1 = L.marker([51.161358, 4.963583]).addTo(map).bindPopup('Thomas More<br> Geel').openPopup();
+marker1 = L.marker([51.161358, 4.963583]).addTo(map).bindPopup('Thomas More<br> Geel').openPopup();
 
 map.on('viewreset', function () {
     console.log('resetting..');
 });
-map.invalidateSize( function () {
+map.invalidateSize(function () {
     console.log('invalidatesize check');
 });
+
+
+function getLocation() {
+    var onSuccess = function (position) {
+        console.log('Latitude: ' + position.coords.latitude + '\n' +
+            'Longitude: ' + position.coords.longitude + '\n' +
+            'Altitude: ' + position.coords.altitude + '\n' +
+            'Accuracy: ' + position.coords.accuracy + '\n' +
+            'Altitude Accuracy: ' + position.coords.altitudeAccuracy + '\n' +
+            'Heading: ' + position.coords.heading + '\n' +
+            'Speed: ' + position.coords.speed + '\n' +
+            'Timestamp: ' + position.timestamp + '\n');
+
+        lat = position.coords.latitude;
+        $('.locationLatitude').text(lat);
+        lng = position.coords.longitude;
+        $('.locationLongitude').text(lng);
+        console.log(`latitude: ${lat} longitude: ${lng}`);
+    };
+
+    function onError(error) {
+        console.log('code: ' + error.code + '\n' +
+            'message: ' + error.message + '\n');
+        alert(`code: ${error.code}
+		message: ${error.message}
+		Please turn on your GPS`);
+    }
+
+    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+};
+
+getLocation();
+
+function meOnMap() {
+    marker2 = L.marker([lat, lng]).addTo(map).bindPopup('Your Location').openPopup();
+    console.log("Hier is de marker geplaatst: ", lat, lng);
+};
+
+
+
+
+
+
 
 /*var mymap = L.map('map').setView([51.160891, 4.961261], 10);
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {

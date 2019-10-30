@@ -62,7 +62,7 @@ $('#registerSend').click(function () {
 
 });
 
-$('#loginSend').click(function () {
+$('#loginSend').click(function (message) {
     function validateForm() {
         var isValid = true;
         $('form.validated-form-login :input').each(function() {
@@ -83,7 +83,7 @@ $('#loginSend').click(function () {
             console.log(respons);
             //console.log(respons["persoonID"]);
             //console.log(respons.persoonID);
-            var loginPersoonID = respons.persoonID;
+            loginPersoonID = respons.persoonID;
             $('.loginPersoonID').text(loginPersoonID);
             var loginVoornaam = respons.voornaam;
             $('.loginVoornaam').text(loginVoornaam);
@@ -105,4 +105,5 @@ $('#loginSend').click(function () {
         alert("Please fill in all fields")
     }
 
+    alert("your ID is: ", loginPersoonID);
 });

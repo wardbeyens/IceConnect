@@ -12,6 +12,9 @@
     },
     "cordova-plugin-vibration": {
       "PACKAGE_NAME": "com.wabyte.IceConnect"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.wabyte.IceConnect"
     }
   },
   "dependent_plugins": {}
