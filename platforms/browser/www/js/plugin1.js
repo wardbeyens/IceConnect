@@ -1,4 +1,68 @@
-// var map = L.map('mymap').setView([51.161358, 4.963583], 9, 'preferCanvas', true);
+var blueIcon = new L.Icon({
+    iconUrl: 'img/marker-icon-2x-blue.png',
+    shadowUrl: 'img/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+var redIcon = new L.Icon({
+    iconUrl: 'img/marker-icon-2x-red.png',
+    shadowUrl: 'img/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+var greenIcon = new L.Icon({
+    iconUrl: 'img/marker-icon-2x-green.png',
+    shadowUrl: 'img/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+var orangeIcon = new L.Icon({
+    iconUrl: 'img/marker-icon-2x-orange.png',
+    shadowUrl: 'img/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+var yellowIcon = new L.Icon({
+    iconUrl: 'img/marker-icon-2x-yellow.png',
+    shadowUrl: 'img/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+var violetIcon = new L.Icon({
+    iconUrl: 'img/marker-icon-2x-violet.png',
+    shadowUrl: 'img/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+var greyIcon = new L.Icon({
+    iconUrl: 'img/marker-icon-2x-grey.png',
+    shadowUrl: 'img/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+var blackIcon = new L.Icon({
+    iconUrl: 'img/marker-icon-2x-black.png',
+    shadowUrl: 'img/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+
 var map = L.map('mymap', {
     center: [51.161358, 4.963583],
     zoom: 9,
@@ -9,7 +73,7 @@ L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
 }).addTo(map);
 
-marker1 = L.marker([51.161358, 4.963583]).addTo(map).bindPopup('Thomas More<br> Geel').openPopup();
+marker1 = L.marker([51.161358, 4.963583], {icon: yellowIcon}).addTo(map).bindPopup('Thomas More<br> Geel').openPopup();
 
 map.on('viewreset', function () {
     console.log('resetting..');
@@ -51,68 +115,60 @@ function getLocation() {
 getLocation();
 
 function meOnMap() {
-    marker2 = L.marker([lat, lng]).addTo(map).bindPopup('Your Location').openPopup();
+    marker2 = L.marker([lat, lng], {icon: violetIcon}).addTo(map).bindPopup('Your Location').openPopup();
     console.log("Hier is de marker geplaatst: ", lat, lng);
 };
 
 
-
-
-
-
-
-/*var mymap = L.map('map').setView([51.160891, 4.961261], 10);
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox.streets',
-    accessToken: 'pk.eyJ1Ijoid2FyZGJleWVucyIsImEiOiJjazF1Zzd1enAwMWUzM2htcXV5Mm53a2ZtIn0.r5cUcXt0ljzhJy1JXVKEnQ'
-}).addTo(mymap);*/
-
-/*
-var mymap = L.map('mymap',{
-    center: [51.160891, 4.961261],
-    zoom: 10
+map.on('click', function (e) {
+    var coord = e.latlng;
+    var test = coord.lat;
+    var lng = coord.lng;
+    console.log("You clicked the map at latitude: " + lat + " and longitude: " + lng);
+    // var newMarker = new L.marker(e.latlng).addTo(map);
+    map.closePopup();
 });
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(mymap);
 
-var tileLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
-    {
-        attribution: false
+
+map.on('contextmenu', function (e) {
+    var coord = e.latlng;
+    var lat = coord.lat;
+    var lng = coord.lng;
+    var newMarker = new L.marker(e.latlng).addTo(map).bindPopup("latitude: " + lat + ' <br>longitude: ' + lng).openPopup();
+    console.log("You created a marker at latitude: " + lat + " and longitude: " + lng);
+});
+
+//for only one marker
+//var markerVariabelstreet;
+// var markerVariabelcity;
+// var markerVariabelcountry;
+// var markerVariabelpostal;
+
+var markerVariabel;
+var markerVariabelLat;
+var markerVariabelLng;
+var markerVariabelDisplay_name;
+
+map.on('click', function (e) {
+    if (markerVariabel) {
+        map.removeLayer(markerVariabel);
+    };
+    var coord = e.latlng;
+    markerVariabelLat = coord.lat;
+    markerVariabelLng = coord.lng;
+
+    $.getJSON('http://nominatim.openstreetmap.org/reverse?format=json&lat=' + markerVariabelLat + '&lon=' + markerVariabelLng, function (data) {
+        console.log(data);
+        let city = data.address.village || data.address.city_district || data.address.city || data.address.town || data.address.state;
+        // markerVariabelstreet = data.address.street;
+        // markerVariabelcity = data.address.city;
+        // markerVariabelcountry = data.address.country;
+        // markerVariabelpostal = data.address.postcode;
+        markerVariabelDisplay_name = data.display_name;
+        console.log(markerVariabelDisplay_name);
     });
-
-var map = L.map('map',
-    {
-        zoomControl: true,
-        layers: [tileLayer],
-        maxZoom: 18,
-        minZoom: 6
-    })
-    .setView([43.64701, -79.39425], 15);
-
-   setTimeout(function () { map.invalidateSize() }, 800);*/
-
-/*
-let locaties = function(){
-    let onSuccess = function(position) {
-        latitmap= position.coords.latitude;
-        longitmap = position.coords.longitude;
-    }
-    function onError(error) {
-        alert('code: '    + error.code    + '\n' +
-            'message: ' + error.message + '\n');
-    }
-    navigator.geolocation.getCurrentPosition(onSuccess, onError);
-
-var mymap = L.map('mapid').setView([51.505, -0.09], 13);
-
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox.streets',
-    accessToken: 'pk.eyJ1IjoiamFuYWRlbGV0dGVyIiwiYSI6ImNrMXMwMHBldDA2d3QzaW96Mjh1cmt6ZHAifQ.6ykXrxgr3WcyXuLeGWWdig'
-}).addTo(mymap);
-}
- */
+    //red, orange, yellow, green, blue, violet, grey, black
+    markerVariabel = new L.Marker(e.latlng, {icon: greenIcon}).addTo(map)
+        .bindPopup("latitude: " + markerVariabelLat + ' <br>longitude: ' + markerVariabelLng + '<br>' + markerVariabelDisplay_name ).openPopup();
+    console.log("You created a variable marker at latitude: " + markerVariabelLat + " and longitude: " + markerVariabelLng);
+});

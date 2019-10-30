@@ -13,6 +13,12 @@ $(function () {
         navigator.vibrate(500);
     });
 
+    $("#getMeOnMyMap").click(function () {
+        getLocation();
+        meOnMap();
+        navigator.vibrate(5000);
+    });
+
 
 });
 
@@ -21,5 +27,4 @@ function onDeviceReady() {
     console.log(navigator.vibrate);
     // navigator.vibrate(100);
     getLocation();
-    meOnMap();
 }
