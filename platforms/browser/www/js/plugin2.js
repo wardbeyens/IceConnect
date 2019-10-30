@@ -1,3 +1,4 @@
+var persoonID;
 $('#registerInputPassword, #registerInputPasswordConfirm').on('keyup', function () {
     if ($('#registerInputPassword').val() == $('#registerInputPasswordConfirm').val()) {
         $('#passwordCheck').html('Matching').css('color', 'green');
@@ -84,6 +85,7 @@ $('#loginSend').click(function (message) {
             //console.log(respons["persoonID"]);
             //console.log(respons.persoonID);
             loginPersoonID = respons.persoonID;
+            persoonID = loginPersoonID;
             $('.loginPersoonID').text(loginPersoonID);
             var loginVoornaam = respons.voornaam;
             $('.loginVoornaam').text(loginVoornaam);
@@ -104,6 +106,4 @@ $('#loginSend').click(function (message) {
     } else {
         alert("Please fill in all fields")
     }
-
-    alert("your ID is: ", loginPersoonID);
 });

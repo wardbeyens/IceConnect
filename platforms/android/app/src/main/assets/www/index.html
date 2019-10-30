@@ -42,6 +42,7 @@
             <a href="#!" data-show="#map" class="list-group-item list-group-item-action bg-light">Map<i
                     class="fas fa-search-location"></i></a>
             <a href="#!" data-show="#group" class="list-group-item list-group-item-action bg-light">Group</a>
+            <a href="#!" data-show="#locaties" class="list-group-item list-group-item-action bg-light">locaties</a>
             <a href="#!" data-show="#info" class="list-group-item list-group-item-action bg-light">Infopage</a>
         </div>
     </div>
@@ -64,9 +65,11 @@
             </div>
             <div id="mymap"></div>
             <div class="row mt-2">
-                <div class="col-12">
+                <div class="col-6">
                     <button id="myBtn" class="btn btn-block btn-primary">Voeg een locatie toe.</button>
-
+                </div>
+                <div class="col-6">
+                    <button class="btn btn-primary btn-block" id="getLocatiesOpKaart">getLocatiesOpKaart</button>
                 </div>
             </div>
 
@@ -90,8 +93,10 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="input-group">
+                                        <label for="addLocationLatitude">Latitude: </label>
+
                                         <input id="addLocationLatitude" name="addLocationLatitude"
-                                               placeholder="latitude"
+                                               placeholder="latitude"  required
                                                required="true" value="">
                                     </div>
                                 </div>
@@ -99,16 +104,28 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="input-group">
+                                        <label for="addLocationLongitude">Longitude: </label>
+
                                         <input id="addLocationLongitude" name="addLocationLongitude"
-                                               placeholder="longitude"
+                                               placeholder="longitude" required
                                                required="true" value=""></div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12">
                                     <div class="input-group">
+                                        <label for="addLocationLocatienaam">Naam: </label>
                                         <input id="addLocationLocatienaam" name="addLocationLocatienaam"
-                                               placeholder="De naam van de locatie"
+                                               placeholder="De naam van de locatie" readonly
+                                               value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="input-group">
+                                        <input id="addLocationLocatiebijnaam" name="addLocationLocatiebijnaam"
+                                               placeholder="De bijnaam van de locatie"
                                                value="">
                                     </div>
                                 </div>
@@ -283,6 +300,20 @@
             </div>
         </div>
 
+        <div id="locaties" class="displayvariable">
+            <div class="container-fluid">
+                <h1 class="mt-4">locaties pagina</h1>
+                <div id="content">
+                    <div id="menudiv" class="emptylist">
+                    </div>
+                    <ul id="menu" class="emptylist"></ul>
+                </div>
+                <button class="btn btn-primary" id="getLocaties">getLocaties</button>
+
+            </div>
+        </div>
+
+
         <div id="info" class="displayvariable">
             <div class="container-fluid">
                 <h1 class="mt-4">infopagina</h1>
@@ -317,7 +348,7 @@
 <script src="js/bootstrap.js"></script>
 <script src="leaflet/leaflet.js"></script>
 <script src="js/plugin1.js"></script>
-<script src="js/plugin2.j(s"></script>
+<script src="js/plugin2.js"></script>
 <script src="js/plugin3.js"></script>
 <!-- <script type="text/javascript" src="js/index.js"></script>-->
 <script defer src="js/app.js"></script>

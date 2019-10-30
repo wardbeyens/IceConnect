@@ -116,7 +116,7 @@ getLocation();
 
 function meOnMap() {
     marker2 = L.marker([lat, lng], {icon: violetIcon}).addTo(map).bindPopup('Your Location').openPopup();
-    console.log("Hier is de marker geplaatst: ", lat, lng);
+    console.log("Een marker op mijn locatie: ", lat, lng);
 };
 
 
@@ -167,6 +167,12 @@ map.on('click', function (e) {
         markerVariabelDisplay_name = data.display_name;
         console.log(markerVariabelDisplay_name);
     });
+
+    $('#addLocationLatitude').val(markerVariabelLat);
+    $('#addLocationLongitude').val(markerVariabelLng);
+    $('#addLocationLocatienaam').val(markerVariabelDisplay_name);
+
+
     //red, orange, yellow, green, blue, violet, grey, black
     markerVariabel = new L.Marker(e.latlng, {icon: greenIcon}).addTo(map)
         .bindPopup("latitude: " + markerVariabelLat + ' <br>longitude: ' + markerVariabelLng + '<br>' + markerVariabelDisplay_name ).openPopup();
