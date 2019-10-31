@@ -61,15 +61,17 @@
         <div id="map" class="displayvariable">
             <div class="container-fluid">
                 <h1 class="mt-4">Kaartpagina</h1>
-                <p>The starting state of the menu will appear collapsed on smaller screens, and will appea</p>
             </div>
             <div id="mymap"></div>
             <div class="row mt-2">
-                <div class="col-6">
+                <div class="col-4">
                     <button id="openLocationModal" class="btn btn-block btn-primary">Voeg een locatie toe.</button>
                 </div>
-                <div class="col-6">
-                    <button class="btn btn-primary btn-block" id="getLocatiesOpKaart">getLocatiesOpKaart</button>
+                <div class="col-4">
+                    <button class="btn btn-primary btn-block" id="getLocatiesOpKaart">mijn locaties</button>
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-primary btn-block" id="getGroepLocatiesOpKaart">groep locaties</button>
                 </div>
             </div>
 
@@ -290,96 +292,101 @@
         <div id="group" class="displayvariable">
             <div class="container-fluid">
                 <h1 class="mt-4">groep pagina</h1>
-
-
-                <div id="contentGroup">
-                    <ul id="menuGroup" class="emptylistGroup">
-
-                    </ul>
-                </div>
-                <button class="btn btn-primary" id="getGroepen">getGroepen</button>
-                <button class="btn btn-primary" id="openAddUserToGroup">toevoegen aan groep</button>
-
-            </div>
-
-            <div id="addUserToGroupModal" class="modal">
-                <div class="modal-content">
-                    <div class="row">
-                        <div class="col-10">
-                            <p class="m-auto"><u> user aan groep toevoegen</u></p>
-                        </div>
-                        <div class="col-2">
-                            <div class="text-right">
-                                <span class="closeAddUserToGroup">&times;</span>
-                            </div>
-                        </div>
+                <div class="row">
+                    <div class="col-4">
+                        <button class="btn btn-primary" id="getGroepen">getGroepen</button>
                     </div>
-                    <form class="form-addUserToGroup">
-                        <fieldset>
+                    <div class="col-4">
+                        <button class="btn btn-danger" id="closeGroepen">closeGroepen</button>
+                    </div>
+                    <div class="col-4">
+                        <button class="btn btn-primary" id="openAddUserToGroup">toevoegen aan groep</button>
+                    </div>
+                    <div id="contentGroup">
+                        <ul id="menuGroup" class="emptylistGroup">
 
-                            <!--                          <div class="row">
-                                                            <div class="col-12">
-                                                                <div class="input-group">
-                                                                    <label for="addUserToGroupGroepsnaam">Groepsnaam: </label>
-                                                                    <input id="addUserToGroupGroepsnaam" name="addUserToGroupGroepsnaam"
-                                                                           placeholder="Groepsnaam"
-                                                                           required="true" value="">
-                                                                </div>
-                                                            </div>
-                                                        </div>-->
-                            <div class="row">
-                                <div class="input-group">
-                                    <div class="col-12">
-                                        <label for="addUserToGroupGroepID">Kies een groep: </label>
-                                    </div>
-                                    <div class="col-12">
-                                        <select name="addUserToGroupGroepID" id="addUserToGroupGroepID" size="1">
-                                            <option value="" selected>Kies een groep</option>
-                                        </select>
-                                    </div>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="addUserToGroupModal" class="modal">
+                    <div class="modal-content">
+                        <div class="row">
+                            <div class="col-10">
+                                <p class="m-auto"><u> user aan groep toevoegen</u></p>
+                            </div>
+                            <div class="col-2">
+                                <div class="text-right">
+                                    <span class="closeAddUserToGroup">&times;</span>
                                 </div>
                             </div>
+                        </div>
+                        <form class="form-addUserToGroup">
+                            <fieldset>
 
-                            <div class="row">
-                                <div class="input-group">
-                                    <div class="col-12">
-                                        <label for="addUserToGroupGroepYourLocation">Kies een groep: </label>
-                                    </div>
-                                    <div class="col-12">
-                                        <select name="addUserToGroupGroepYourLocation"
-                                                id="addUserToGroupGroepYourLocation" size="1">
-                                            <option value="" selected>Kies een locatie</option>
-                                        </select>
+                                <!--                          <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="input-group">
+                                                                        <label for="addUserToGroupGroepsnaam">Groepsnaam: </label>
+                                                                        <input id="addUserToGroupGroepsnaam" name="addUserToGroupGroepsnaam"
+                                                                               placeholder="Groepsnaam"
+                                                                               required="true" value="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>-->
+                                <div class="row">
+                                    <div class="input-group">
+                                        <div class="col-12">
+                                            <label for="addUserToGroupGroepID">Kies een groep: </label>
+                                        </div>
+                                        <div class="col-12">
+                                            <select name="addUserToGroupGroepID" id="addUserToGroupGroepID" size="1">
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <!--
-                            <div class="row">
-                                                            <div class="col-12">
-                                                                <div class="input-group">
-                                                                    <label for="addUserToGroupLocatie">De naam van de locatie die u wilt
-                                                                        toevoegen: </label>
-                                                                    <input id="addUserToGroupLocatie" name="addUserToGroupLocatie"
-                                                                           placeholder="De naam van de locatie die u wilt toevoegen"
-                                                                           value="">
+                                <div class="row">
+                                    <div class="input-group">
+                                        <div class="col-12">
+                                            <label for="addUserToGroupGroepYourLocation">Kies een groep: </label>
+                                        </div>
+                                        <div class="col-12">
+                                            <select name="addUserToGroupGroepYourLocation"
+                                                    id="addUserToGroupGroepYourLocation" size="1">
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--
+                                <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="input-group">
+                                                                        <label for="addUserToGroupLocatie">De naam van de locatie die u wilt
+                                                                            toevoegen: </label>
+                                                                        <input id="addUserToGroupLocatie" name="addUserToGroupLocatie"
+                                                                               placeholder="De naam van de locatie die u wilt toevoegen"
+                                                                               value="">
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </div>-->
+                                                            </div>-->
 
 
-                        </fieldset>
-                    </form>
+                            </fieldset>
+                        </form>
 
-                    <div class="row m-3">
-                        <div class="col-12">
-                            <button type="button" class="btn btn-primary w-100" id="AddUserToGroup">user teovoegen
-                            </button>
+                        <div class="row m-3">
+                            <div class="col-12">
+                                <button type="button" class="btn btn-primary w-100" id="AddUserToGroup">user teovoegen
+                                </button>
+                            </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
             </div>
+            //klopt niet
         </div>
 
         <div id="locaties" class="displayvariable">
