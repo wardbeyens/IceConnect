@@ -62,6 +62,7 @@ var blackIcon = new L.Icon({
     popupAnchor: [1, -34],
     shadowSize: [41, 41]
 });
+var colorIcons = [blueIcon, redIcon, greenIcon, orangeIcon, yellowIcon, violetIcon, greyIcon, blackIcon];
 
 var map = L.map('mymap', {
     center: [51.161358, 4.963583],
@@ -73,7 +74,7 @@ L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
 }).addTo(map);
 
-marker1 = L.marker([51.161358, 4.963583], {icon: yellowIcon}).addTo(map).bindPopup('Thomas More<br> Geel').openPopup();
+//marker1 = L.marker([51.161358, 4.963583], {icon: yellowIcon}).addTo(map).bindPopup('Thomas More<br> Geel').openPopup();
 
 map.on('viewreset', function () {
     console.log('resetting..');
@@ -82,6 +83,8 @@ map.invalidateSize(function () {
     console.log('invalidatesize check');
 });
 
+var lat;
+var lng;
 
 function getLocation() {
     var onSuccess = function (position) {
@@ -115,7 +118,7 @@ function getLocation() {
 getLocation();
 
 function meOnMap() {
-    marker2 = L.marker([lat, lng], {icon: violetIcon}).addTo(map).bindPopup('Your Location').openPopup();
+    marker2 = L.circleMarker([lat, lng], {radius: 3}).addTo(map).bindPopup('Your Location').openPopup();
     console.log("Een marker op mijn locatie: ", lat, lng);
 };
 
@@ -156,10 +159,12 @@ map.on('click', function (e) {
     var coord = e.latlng;
     markerVariabelLat = coord.lat;
     markerVariabelLng = coord.lng;
+    console.log("nominatim coordinaten: " , markerVariabelLat, markerVariabelLng);
+    console.log("http://nominatim.openstreetmap.org/reverse?format=json&lat=" + markerVariabelLat + '&lon=' + markerVariabelLng);
 
     $.getJSON('http://nominatim.openstreetmap.org/reverse?format=json&lat=' + markerVariabelLat + '&lon=' + markerVariabelLng, function (data) {
         console.log(data);
-        let city = data.address.village || data.address.city_district || data.address.city || data.address.town || data.address.state;
+        // let city = data.address.village || data.address.city_district || data.address.city || data.address.town || data.address.state;
         // markerVariabelstreet = data.address.street;
         // markerVariabelcity = data.address.city;
         // markerVariabelcountry = data.address.country;

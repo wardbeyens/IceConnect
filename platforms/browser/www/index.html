@@ -54,7 +54,7 @@
         <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light border-bottom">
             <button class="btn btn-primary" id="menu-toggle">Menu</button>
 
-
+<!--            <button id="getAllGroepLocatiesOpKaart">alles</button>-->
             <button class="btn btn-light" id="getMeOnMyMap"><span class="loginVoornaam">login</span></button>
         </nav>
 
@@ -71,7 +71,9 @@
                     <button class="btn btn-primary btn-block" id="getLocatiesOpKaart">mijn locaties</button>
                 </div>
                 <div class="col-4">
-                    <button class="btn btn-primary btn-block" id="getGroepLocatiesOpKaart">groep locaties</button>
+                    <!--                    <button class="btn btn-primary btn-block" id="getAllGroepLocatiesOpKaart">groep locaties</button>-->
+                    <button class="btn btn-primary btn-block" id="openGetGroepLocatiesOpKaartModal">groep locaties
+                    </button>
                 </div>
             </div>
 
@@ -99,7 +101,7 @@
 
                                         <input id="addLocationLatitude" name="addLocationLatitude"
                                                placeholder="latitude"
-                                               required="true" value="">
+                                               required value="">
                                     </div>
                                 </div>
                             </div>
@@ -110,7 +112,7 @@
 
                                         <input id="addLocationLongitude" name="addLocationLongitude"
                                                placeholder="longitude"
-                                               required="true" value=""></div>
+                                               required value=""></div>
                                 </div>
                             </div>
                             <div class="row">
@@ -138,6 +140,59 @@
                     <div class="row m-3">
                         <div class="col-12">
                             <button type="button" class="btn btn-primary w-100" id="addLocation">locatie toevoegen
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- The Modal -->
+
+            <div id="getGroepLocatiesOpKaartModal" class="modal">
+                <div class="modal-content">
+                    <div class="row">
+                        <div class="col-8">
+                            <p class="m-auto"> Locaties van uw groep opvragen</p>
+                        </div>
+                        <div class="col-4">
+                            <div class="text-right">
+                                <span class="closeGetGroepLocatiesOpKaartModal">X</span>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="form-getGroepLocatiesOpKaart">
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="input-group">
+                                        <label for="getGroepLocatiesOpKaartGroepID">Van groep: </label>
+
+                                        <input id="getGroepLocatiesOpKaartGroepID" name="getGroepLocatiesOpKaartGroepID"
+                                               placeholder="groepID"
+                                               required value="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="input-group">
+                                        <label for="getGroepLocatiesOpKaartKleurMarker">Met kleur: </label>
+
+                                        <input id="getGroepLocatiesOpKaartKleurMarker"
+                                               name="getGroepLocatiesOpKaartKleurMarker"
+                                               placeholder="black"
+                                               required value="violet"></div>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </form>
+
+                    <div class="row m-3">
+                        <div class="col-12">
+                            <button type="button" class="btn btn-primary w-100" id="getGroepLocatiesOpKaart">groep
+                                locaties opvragen
                             </button>
                         </div>
                     </div>

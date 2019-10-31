@@ -110,7 +110,7 @@ $('#getLocatiesOpKaart').click(function () {
         $.each(data, function (i) {
 
 
-            markerOpKaart = new L.marker([this.latitude, this.longitude], {icon: redIcon}).addTo(map)
+            markerOpKaart = new L.marker([this.latitude, this.longitude], {icon: greenIcon}).addTo(map)
                 .bindPopup("ID: " + this.locatieID + "<br>" + this.locatiebijnaam + "<br> lat: " + this.latitude + '<br>lng: ' + this.longitude).openPopup();
             console.log(persoonID + " creeert een nieuwe marker met ID: " + this.locatieID);
 
@@ -224,26 +224,76 @@ $('#AddUserToGroup').click(function () {
     });
 });
 
-$('#getGroepLocatiesOpKaart').click(function () {
+$('#getAllGroepLocatiesOpKaart').click(function () {
 
     let pars = {
         persoonID: persoonID,
     };
     console.log("U vraagt de locaties van elk groeplid met persoonID: " + persoonID);
 
-    $.post('http://wabyte.com/getgroeplocaties.php', pars, function (data) {
+    $.post('http://wabyte.com/getallgroeplocaties.php', pars, function (data) {
         console.log(data);
         $.each(data, function (i) {
             console.log(i);
-            // markersGroepOpKaart = new L.marker([this.latitude, this.longitude], {icon: blackIcon}).addTo(map);
+            // markersAllGroepOpKaart = new L.marker([this.latitude, this.longitude], {icon: blackIcon}).addTo(map);
 
 
-            markersGroepOpKaart = new L.marker([this.latitude, this.longitude], {icon: blackIcon}).addTo(map)
+            markersAllGroepOpKaart = new L.marker([this.latitude, this.longitude], {icon: blackIcon}).addTo(map)
                 .bindPopup(this.voornaam + " (" + this.persoonID + ")<br>" + this.groepnaam + " (" + this.groepID + ")<br>" + this.locatiebijnaam + " (" + this.locatieID + ")").openPopup();
             //console.log(persoonID + " creeert een nieuwe marker van de groep met ID: " + this.voornaam + " (" + this.persoonID + ")<br>" + this.groepnaam + " (" + this.groepID + ")<br>" + this.locatiebijnaam + " (" + this.locatieID + ")";
-
 
         });
     });
 
+});
+
+// Get the modal
+var modal3 = document.getElementById("getGroepLocatiesOpKaartModal");
+// Get the button that opens the modal
+var btn3 = document.getElementById("openGetGroepLocatiesOpKaartModal");
+// Get the <span> element that closes the modal
+var span3 = document.getElementsByClassName("closeGetGroepLocatiesOpKaartModal")[0];
+// When the user clicks the button, open the modal
+btn3.onclick = function () {
+    modal3.style.display = "block";
+};
+// When the user clicks on <span> (x), close the modal
+span3.onclick = function () {
+    modal3.style.display = "none";
+};
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal2) {
+        modal3.style.display = "none";
+    }
+};
+
+var getGroepLocatiesOpKaartKleurMarker;
+
+$('#getGroepLocatiesOpKaart').click(function () {
+    var getGroepLocatiesOpKaartKleurMarkerKleur = $('#getGroepLocatiesOpKaartKleurMarker').val();
+    console.log(getGroepLocatiesOpKaartKleurMarkerKleur);
+    getGroepLocatiesOpKaartKleurMarker = new L.Icon({
+        iconUrl: 'img/marker-icon-2x-' + getGroepLocatiesOpKaartKleurMarkerKleur + '.png',
+        shadowUrl: 'img/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    });
+    console.log(getGroepLocatiesOpKaartKleurMarker);
+    let pars = {
+        persoonID: persoonID,
+        groepID: $('#getGroepLocatiesOpKaartGroepID').val(),
+    };
+    console.log("U wilt de locaties van de groep: " + $('#getGroepLocatiesOpKaartGroepID').val() + " opvragen met de kleur: " + $('#getGroepLocatiesOpKaartKleurMarker').val());
+    $.post('http://wabyte.com/getgroeplocaties.php', pars, function (data) {
+        console.log(data);
+        $.each(data, function (i) {
+            console.log(i);
+            //markersGroepOpKaart = new L.marker([this.latitude, this.longitude], getGroepLocatiesOpKaartKleurMarker).addTo(map);
+            markersGroepOpKaart = new L.marker([this.latitude, this.longitude], {icon: getGroepLocatiesOpKaartKleurMarker}).addTo(map).bindPopup(this.voornaam + " (" + this.persoonID + ")<br>" + this.groepnaam + " (" + this.groepID + ")<br>" + this.locatiebijnaam + " (" + this.locatieID + ")").openPopup();
+            console.log(persoonID + " creeert een nieuwe marker van de groep met ID: " + this.voornaam + " (" + this.persoonID + ")<br>" + this.groepnaam + " (" + this.groepID + ")<br>" + this.locatiebijnaam + " (" + this.locatieID + ")");
+        });
+    });
 });
