@@ -110,7 +110,7 @@ $('#getLocatiesOpKaart').click(function () {
         $.each(data, function (i) {
 
 
-            markerOpKaart = new L.marker([this.latitude, this.longitude], {icon: greenIcon}).addTo(map)
+            markerOpKaart = new L.marker([this.latitude, this.longitude], {icon: blueIcon}).addTo(map)
                 .bindPopup("ID: " + this.locatieID + "<br>" + this.locatiebijnaam + "<br> lat: " + this.latitude + '<br>lng: ' + this.longitude).openPopup();
             console.log(persoonID + " creeert een nieuwe marker met ID: " + this.locatieID);
 
@@ -268,10 +268,46 @@ window.onclick = function (event) {
     }
 };
 
+var beschikbareKleuren = [ "blue", "red", "green", "orange", "yellow", "violet", "grey", "black"];
+var optionTextKleur;
+
+$('#openGetGroepLocatiesOpKaartModal').click(function () {
+
+    $('#getGroepLocatiesOpKaartKleurMarker2').empty();
+    $('#getGroepLocatiesOpKaartKleurMarker2').append(`<option value="" selected>Kies een kleur</option>`);
+
+    for (i = 0; i < beschikbareKleuren.length; i++) {
+        optionTextKleur = beschikbareKleuren[i];
+        console.log(i + " is de kleur: " + optionTextKleur + '\n' + `<option value="${optionTextKleur}"> ${optionTextKleur} </option>`);
+        $('#getGroepLocatiesOpKaartKleurMarker2').append(`<option value="${optionTextKleur}"> ${optionTextKleur} </option>`);
+    };
+
+
+    let parsnieuw = {
+        persoonID: persoonID,
+    };
+
+    $('#getGroepLocatiesOpKaartGroepID2').empty();
+    $('#getGroepLocatiesOpKaartGroepID2').append(`<option value="" selected>Kies 1 van jouw groepen</option>`);
+
+    console.log("U vraagt nu al alle groepen op waar jezelf inzit met ID: " + persoonID);
+    $.post('http://wabyte.com/getuwgroepen.php', parsnieuw, function (data) {
+        console.log("dit zijn uw groepen: ")
+        console.log(data);
+
+        $.each(data, function (i) {
+            optionText = this.groepnaam;
+            optionValue = this.groepID;
+            console.log(i + ":" + `<option value="${optionValue}"> ${optionText} </option>`);
+            $('#getGroepLocatiesOpKaartGroepID2').append(`<option value="${optionValue}"> ${optionText} </option>`);
+        });
+    });
+});
+
 var getGroepLocatiesOpKaartKleurMarker;
 
 $('#getGroepLocatiesOpKaart').click(function () {
-    var getGroepLocatiesOpKaartKleurMarkerKleur = $('#getGroepLocatiesOpKaartKleurMarker').val();
+    var getGroepLocatiesOpKaartKleurMarkerKleur = $('#getGroepLocatiesOpKaartKleurMarker2').val();
     console.log(getGroepLocatiesOpKaartKleurMarkerKleur);
     getGroepLocatiesOpKaartKleurMarker = new L.Icon({
         iconUrl: 'img/marker-icon-2x-' + getGroepLocatiesOpKaartKleurMarkerKleur + '.png',
@@ -284,9 +320,9 @@ $('#getGroepLocatiesOpKaart').click(function () {
     console.log(getGroepLocatiesOpKaartKleurMarker);
     let pars = {
         persoonID: persoonID,
-        groepID: $('#getGroepLocatiesOpKaartGroepID').val(),
+        groepID: $('#getGroepLocatiesOpKaartGroepID2').val(),
     };
-    console.log("U wilt de locaties van de groep: " + $('#getGroepLocatiesOpKaartGroepID').val() + " opvragen met de kleur: " + $('#getGroepLocatiesOpKaartKleurMarker').val());
+    console.log("U wilt de locaties van de groep: " + $('#getGroepLocatiesOpKaartGroepID2').val() + " opvragen met de kleur: " + $('#getGroepLocatiesOpKaartKleurMarker').val());
     $.post('http://wabyte.com/getgroeplocaties.php', pars, function (data) {
         console.log(data);
         $.each(data, function (i) {
@@ -297,3 +333,6 @@ $('#getGroepLocatiesOpKaart').click(function () {
         });
     });
 });
+
+
+

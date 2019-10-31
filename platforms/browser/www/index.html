@@ -27,7 +27,7 @@
     <link rel="stylesheet" type="text/css" href="css/override.css">
     <link rel="stylesheet" type="text/css" href="css/login.css">
     <link rel="stylesheet" type="text/css" href="css/cube.css">
-
+    <link rel="stylesheet" type="text/css" href="css/modal.css">
 </head>
 <body>
 
@@ -53,8 +53,7 @@
 
         <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light border-bottom">
             <button class="btn btn-primary" id="menu-toggle">Menu</button>
-
-<!--            <button id="getAllGroepLocatiesOpKaart">alles</button>-->
+            <!--            <button id="getAllGroepLocatiesOpKaart">alles</button>-->
             <button class="btn btn-light" id="getMeOnMyMap"><span class="loginVoornaam">login</span></button>
         </nav>
 
@@ -80,7 +79,7 @@
 
             <!-- The Modal -->
 
-            <div id="addLocationModal" class="modal">
+            <div id="addLocationModal" class="modalExtern">
                 <div class="modal-content">
                     <div class="row">
                         <div class="col-8">
@@ -149,7 +148,7 @@
 
             <!-- The Modal -->
 
-            <div id="getGroepLocatiesOpKaartModal" class="modal">
+            <div id="getGroepLocatiesOpKaartModal" class="modalExtern">
                 <div class="modal-content">
                     <div class="row">
                         <div class="col-8">
@@ -163,11 +162,10 @@
                     </div>
                     <form class="form-getGroepLocatiesOpKaart">
                         <fieldset>
-                            <div class="row">
+<!--                            <div class="row">
                                 <div class="col-12">
                                     <div class="input-group">
                                         <label for="getGroepLocatiesOpKaartGroepID">Van groep: </label>
-
                                         <input id="getGroepLocatiesOpKaartGroepID" name="getGroepLocatiesOpKaartGroepID"
                                                placeholder="groepID"
                                                required value="">
@@ -183,6 +181,32 @@
                                                name="getGroepLocatiesOpKaartKleurMarker"
                                                placeholder="black"
                                                required value="violet"></div>
+                                </div>
+                            </div>-->
+
+                            <div class="row">
+                                <div class="input-group">
+                                    <div class="col-12">
+                                        <label for="getGroepLocatiesOpKaartGroepID2">Kies een groep: </label>
+                                    </div>
+                                    <div class="col-12">
+                                        <select name="getGroepLocatiesOpKaartGroepID2"
+                                                id="getGroepLocatiesOpKaartGroepID2" size="1">
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="input-group">
+                                    <div class="col-12">
+                                        <label for="getGroepLocatiesOpKaartKleurMarker2">Kies een kleur2: </label>
+                                    </div>
+                                    <div class="col-12">
+                                        <select name="getGroepLocatiesOpKaartKleurMarker2"
+                                                id="getGroepLocatiesOpKaartKleurMarker2" size="1">
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
 
@@ -364,7 +388,7 @@
                     </div>
                 </div>
 
-                <div id="addUserToGroupModal" class="modal">
+                <div id="addUserToGroupModal" class="modalExtern">
                     <div class="modal-content">
                         <div class="row">
                             <div class="col-10">

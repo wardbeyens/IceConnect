@@ -47,3 +47,7 @@ body {
     margin-left: -10rem;
   }
 }
+
+#sidebar-wrapper {
+  margin-top: 57px;
+}
