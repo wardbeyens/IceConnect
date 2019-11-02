@@ -147,6 +147,48 @@ $('#closeGroepen').click(function () {
     $('.emptylistGroup').empty();
 });
 
+$('#getGroepenTable').click(function () {
+
+    let pars = {
+        persoonID: persoonID,
+    };
+
+    console.log("U vraagt nu al alle groepen op");
+
+    $.post('http://wabyte.com/getgroepen.php', function (data) {
+        console.log(data);
+        $('.emptylistGroup').empty();
+        $.each(data, function (i) {
+            console.log(i + ":" + this.groepnaam + '<br>' + this.locatieID + " " + this.locatiebijnaam);
+            $("#GetGroepenTabellen").append('<table style="width: 100%" id=' + i + '>');
+            $("#GetGroepenTabellen").append('<tr>');
+            $("#GetGroepenTabellen").append('<th>' + this.groepnaam + '</th>');
+            $("#GetGroepenTabellen").append('</tr>');
+            $("#GetGroepenTabellen").append('<tr>');
+            $("#GetGroepenTabellen").append('<td>' + 'GroepID: ' + this.groepID + '</td>');
+            $("#GetGroepenTabellen").append('</tr>');
+            $("#GetGroepenTabellen").append('<tr>');
+            $("#GetGroepenTabellen").append('<td>' + 'samenkomen in: ' + this.locatiebijnaam + '</td>');
+            $("#GetGroepenTabellen").append('</tr>');
+            $("#GetGroepenTabellen").append('<tr>');
+            $("#GetGroepenTabellen").append('<td>' + 'adres: ' + this.locatienaam + '</td>');
+            $("#GetGroepenTabellen").append('</tr>');
+/*
+            $("#menuGroup").append('<li>' + this.groepnaam + '</li>');
+            $("#menuGroup").append('<li>' + this.locatieID + '</li>');
+            $("#menuGroup").append('<li>' + this.locatiebijnaam + '</li>');
+            $("#menuGroup").append('<li>' + this.locatienaam + '</li>');*/
+
+            $("#GetGroepenTabellen").append('</table>');
+
+
+        });
+    });
+});
+
+$('#closeGroepenTable').click(function () {
+    $('.emptylistGroup').empty();
+});
 
 // Get the modal
 var modal2 = document.getElementById("addUserToGroupModal");

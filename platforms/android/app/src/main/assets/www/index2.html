@@ -53,7 +53,6 @@
 
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light border-bottom">
       <button class="btn btn-primary" id="menu-toggle">Menu</button>
-
       <!--            <button id="getAllGroepLocatiesOpKaart">alles</button>-->
       <button class="btn btn-light" id="getMeOnMyMap"><span class="loginVoornaam">login</span></button>
     </nav>
@@ -163,26 +162,51 @@
           </div>
           <form class="form-getGroepLocatiesOpKaart">
             <fieldset>
-              <div class="row">
-                <div class="col-12">
-                  <div class="input-group">
-                    <label for="getGroepLocatiesOpKaartGroepID">Van groep: </label>
+              <!--                            <div class="row">
+                                              <div class="col-12">
+                                                  <div class="input-group">
+                                                      <label for="getGroepLocatiesOpKaartGroepID">Van groep: </label>
+                                                      <input id="getGroepLocatiesOpKaartGroepID" name="getGroepLocatiesOpKaartGroepID"
+                                                             placeholder="groepID"
+                                                             required value="">
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="row">
+                                              <div class="col-12">
+                                                  <div class="input-group">
+                                                      <label for="getGroepLocatiesOpKaartKleurMarker">Met kleur: </label>
 
-                    <input id="getGroepLocatiesOpKaartGroepID" name="getGroepLocatiesOpKaartGroepID"
-                           placeholder="groepID"
-                           required value="">
+                                                      <input id="getGroepLocatiesOpKaartKleurMarker"
+                                                             name="getGroepLocatiesOpKaartKleurMarker"
+                                                             placeholder="black"
+                                                             required value="violet"></div>
+                                              </div>
+                                          </div>-->
+
+              <div class="row">
+                <div class="input-group">
+                  <div class="col-12">
+                    <label for="getGroepLocatiesOpKaartGroepID2">Kies een groep: </label>
+                  </div>
+                  <div class="col-12">
+                    <select name="getGroepLocatiesOpKaartGroepID2"
+                            id="getGroepLocatiesOpKaartGroepID2" size="1">
+                    </select>
                   </div>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-12">
-                  <div class="input-group">
-                    <label for="getGroepLocatiesOpKaartKleurMarker">Met kleur: </label>
 
-                    <input id="getGroepLocatiesOpKaartKleurMarker"
-                           name="getGroepLocatiesOpKaartKleurMarker"
-                           placeholder="black"
-                           required value="violet"></div>
+              <div class="row">
+                <div class="input-group">
+                  <div class="col-12">
+                    <label for="getGroepLocatiesOpKaartKleurMarker2">Kies een kleur2: </label>
+                  </div>
+                  <div class="col-12">
+                    <select name="getGroepLocatiesOpKaartKleurMarker2"
+                            id="getGroepLocatiesOpKaartKleurMarker2" size="1">
+                    </select>
+                  </div>
                 </div>
               </div>
 
@@ -348,20 +372,31 @@
       <div class="container-fluid">
         <h1 class="mt-4">groep pagina</h1>
         <div class="row">
-          <div class="col-4">
+          <div class="col-6">
             <button class="btn btn-primary" id="getGroepen">getGroepen</button>
           </div>
-          <div class="col-4">
+          <div class="col-6">
             <button class="btn btn-danger" id="closeGroepen">closeGroepen</button>
           </div>
-          <div class="col-4">
+          <div class="col-12">
             <button class="btn btn-primary" id="openAddUserToGroup">toevoegen aan groep</button>
           </div>
+          <div class="col-6">
+            <button class="btn btn-primary" id="getGroepenTable">getGroepenTable</button>
+          </div>
+          <div class="col-6">
+            <button class="btn btn-danger" id="closeGroepenTable">closeGroepenTable</button>
+          </div>
+
           <div id="contentGroup">
             <ul id="menuGroup" class="emptylistGroup">
-
             </ul>
           </div>
+
+          <div id="GetGroepenTabellen" class="emptylistGroup">
+
+          </div>
+
         </div>
 
         <div id="addUserToGroupModal" class="modalExtern">
@@ -441,7 +476,7 @@
           </div>
         </div>
       </div>
-      //klopt niet
+      <!--            //klopt niet divs hier nog nakijken-->
     </div>
 
     <div id="locaties" class="displayvariable">
