@@ -16,36 +16,163 @@
 
 .speed-dial__item div {
     position: absolute;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
     font-size: 18px;
     padding: 0 5px;
     border-radius: 10px;
     top: 0;
     right: 45px;
 }
+
 .speed-dial__item {
     overflow: visible;
 }
+
 ons-speed-dial:before {
     content: '';
     display: block;
     position: fixed;
-    visibility:hidden;
+    visibility: hidden;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
 }
+
 ons-speed-dial.open:before {
     opacity: 1;
-    visibility:visible;
+    visibility: visible;
 }
+
+#menu-button {
+    position: absolute;
+    top: 15px;
+    left: 50px;
+}
+
+i {
+    color: #990829;
+}
+
+
+/*#loginDivCenter {
+    width: 300px;
+    height: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -30vh;
+    margin-left: -150px;
+    text-align: left;
+    border: 1px solid #000;
+}*/
+
+
+#loginDivCenter {
+    /*margin: 25vh auto 0 auto;*/
+    margin: 5px auto 0 auto;
+    /*max-width: 750px;*/
+    padding: 10vw;
+}
+
+#titellogin {
+    text-align: center;
+    /*margin-bottom: 30px;*/
+    margin-bottom: 5vh;
+}
+
+#titellogin h1 {
+    font-size: 10vw;
+}
+
+.loginDivInput {
+    margin-top: 3vh;
+    /*margin-top: 15px;*/
+}
+
+.loginDivInput label {
+    color: #990829;
+    font-size: 5vw;
+    text-align: left;
+    font-weight: bold;
+}
+
+.loginDivInputChild {
+    margin-top: 1vh;
+    margin-bottom: 3vh;
+    margin-left: 0;
+}
+
+.loginDivInputChild i {
+    display: inline-block;
+    text-align: left;
+
+    vertical-align: middle;
+    font-size: 7vw;
+    height: 7vw;
+    width: 7%;
+}
+
+.loginDivInput input {
+    display: inline-block;
+    text-align: left;
+
+    width: 100%;
+    color: #990829;
+    font-size: 5vw;
+    /*border: 1px solid #000;*/
+    height: 6vw;
+}
+
+.loginDivCheckbox {
+    /*margin-top: 25px;*/
+    margin: 1vw 0 2vw 15px;
+    margin-left: 0px;
+    font-size: 4vw;
+
+}
+
+.loginDivSignIN ons-button {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+    height: 12vw;
+    font-size: 8vw;
+    padding-top: 2vw;
+    text-align: center;
+    text-transform: capitalize;
+    background: #990829 !important;
+    /*box-shadow: 5px 5px 3px grey, -5px 5px 3px grey, -5px -5px 3px grey, 5px -5px 3px grey;*/
+
+}
+
+.loginDivLinks {
+    margin: auto;
+    display: flex !important;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.loginDivLinks ons-button {
+    margin: 0;
+    color: rgb(153,8,41, 0.7)!important;
+    /*border: 1px solid #000;*/
+    text-transform: capitalize;
+}
+
 
 /*
 ons-button{
     !*z-index: 401;*!
     z-index: 500;
 }*/
+
+
+@media screen and (min-width: 1025px) {
+    #titellogin h1 {
+        font-size: 100px;
+    }
+}

@@ -33,6 +33,4 @@
     <icon density="xxhdpi" src="resources/android/icon/drawable-xxhdpi-icon.png" />
     <icon density="xxxhdpi" src="resources/android/icon/drawable-xxxhdpi-icon.png" />
     <preference name="loglevel" value="DEBUG" />
-    <preference name="Fullscreen" value="true" />
-    <preference name="DisallowOverscroll" value="true" />
 </widget>
