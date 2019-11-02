@@ -21,9 +21,11 @@
     <!--    <link rel="stylesheet" href="css/bootstrap.css">-->
 
     <!-- Framework & Onsen UI -->
+    <link rel="stylesheet" type="text/css" href="css/onsen-css-theme/theme.css">
 
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
-    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <!--    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">-->
+    <link rel="stylesheet" type="text/css" href="css/onsen-css-theme/onsen-css-components.css">
     <script src="js/onsenui.js"></script>
     <!-- Framework & fontawesome -->
     <link href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" rel="stylesheet">
@@ -104,8 +106,6 @@
             </script>
 
         </ons-page>
-
-
 </template>
 
 <template id="home.html">
@@ -121,7 +121,30 @@
 
         <div id="mymap"></div>
 
+        <ons-speed-dial position="bottom right" direction="up" id="omhoog1">
+            <ons-fab>
+                <ons-icon icon="md-share"></ons-icon>
+            </ons-fab>
+            <ons-speed-dial-item>
+                <ons-icon icon="md-twitter"></ons-icon>
+                <div>twitter</div>
+            </ons-speed-dial-item>
+            <ons-speed-dial-item>
+                <ons-icon icon="md-facebook"></ons-icon>
+                <div>facebook</div>
+            </ons-speed-dial-item>
+            <ons-speed-dial-item>
+                <ons-icon icon="md-google-plus"></ons-icon>
+                <div>google</div>
+            </ons-speed-dial-item>
+        </ons-speed-dial>
+
         <script src="js/plugin01.js"></script>
+        <script>
+            document.querySelector('#omhoog1').addEventListener('click', function(e){
+                this.classList.toggle('open');
+            });
+        </script>
     </ons-page>
 </template>
 
