@@ -2,8 +2,10 @@ $(function () {
     document.addEventListener("deviceready", onDeviceReady, false);
     var persoonID;
 
-
-
+    window.logout=function() {
+// hier moet het persoon ID nog null worden
+    fn.load('login.html')
+    };
 
 });
 

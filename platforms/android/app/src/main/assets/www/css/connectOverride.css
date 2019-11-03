@@ -14,6 +14,10 @@
     height: 100%;
 }
 
+/*#group .page__background {
+    background-image: url(../img/BelgiumoldmapLicht.jpg) ;
+}*/
+
 
 .form-row {
     margin: 4px;
@@ -51,7 +55,6 @@ register input[type=password] {
     padding-top: 10px;
     padding-bottom: 10px;
 }
-
 
 
 .speed-dial__item div {
@@ -98,7 +101,7 @@ i {
 }
 
 
-#loginAchtergrond{
+#loginAchtergrond {
     background: white !important;
     background-color: white !important;
 }
@@ -204,7 +207,7 @@ i {
 
 .loginDivLinks ons-button {
     margin: 0;
-    color: rgba(153,8,41, 0.7) !important;
+    color: rgba(153, 8, 41, 0.7) !important;
     /*border: 1px solid #000;*/
     text-transform: capitalize;
 }
@@ -224,46 +227,76 @@ ons-button{
 }
 
 
-.dialog{
+.dialog {
     min-height: 320px;
     min-width: 310px;
     margin: auto;
     text-align: center;
 }
 
-ons-select{
+ons-select {
     padding-left: 15%;
     padding-right: 15%;
     width: 100%;
 }
 
-option{
+option {
     margin: auto;
     text-align: center;
 }
 
-.sidebar-titel{
+.sidebar-titel {
     margin: 20px auto 10px auto;
     text-align: center;
     font-weight: bold;
 }
 
-ons-list-title{
+ons-list-title {
     text-align: center;
 }
 
-ons-list-item i{
+ons-list-item i {
     color: #990829;
     padding-right: 15px;
 }
 
-ons-list-item{
+ons-list-item {
     text-transform: capitalize;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
 }
 
-.list-item__center{
+.list-item__center {
     margin: 0;
     padding: 0;
 }
+
+.cardleft {
+    text-align: left;
+    width: 80%;
+}
+
+.cardright {
+    text-align: right;
+    width: 20%;
+    padding-right: 15%;
+}
+.cardleft, .cardright {
+    display: inline-block;
+}
+
+ons-card ons-fab{
+    float: right;
+}
+
+.addUserToGroupInCard{
+    color: #990829;
+}
+
+#addGroup{
+    float: right;
+}
+
+/*ons-card{*/
+/*    padding: 10vw;*/
+/*}*/

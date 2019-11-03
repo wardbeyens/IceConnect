@@ -38,7 +38,11 @@ $('#registerSend').click(function () {
         console.log(pars);
                 $.post('http://wabyte.com/register.php', pars, function (respons) {
                     console.log(respons);
-                    alert("U bent geregistreerd!");
+                    alert("U bent geregistreerd!\n" +
+                        'First name: ' + $('#registerInputFirstName').val() +
+                        'Last name: ' + $('#registerInputLastName').val() +
+                        'Email: ' + $('#registerInputEmail').val() +
+                        'Password: '+ $('#registerInputPasswordConfirm').val());
 
                     let pars2 = {
                         email: $('#registerInputEmail').val(),

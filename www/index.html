@@ -76,6 +76,10 @@
                 <!--                <ons-list-item onclick="fn.load('register.html')" tappable>-->
                 <!--                    register-->
                 <!--                </ons-list-item>-->
+                <ons-list-item onclick="logout()" tappable position="bottom">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <p>Log out</p>
+                </ons-list-item>
             </ons-list>
         </ons-page>
 
@@ -162,10 +166,10 @@
                     </div>
 
                     <div class="loginDivLinks">
-                        <ons-button id="loginDivLinks1" modifier="quiet" class="forgot-password">Register here
+                        <ons-button id="gotoRegister" modifier="quiet" class="forgot-password">Register here
                         </ons-button>
 
-                        <ons-button id="loginDivLinks2" modifier="quiet" class="forgot-password">Forgot password?
+                        <ons-button id="passwordReset" modifier="quiet" class="forgot-password">Forgot password?
                         </ons-button>
                     </div>
                 </div>
@@ -175,21 +179,9 @@
         </div>
     </ons-page>
 </template>
-
 <template id="register.html">
 
     <ons-page>
-
-        <!--        <ons-toolbar>
-                    <div class="left">
-                        <ons-toolbar-button onclick="fn.open()">
-                            <ons-icon icon="md-menu"></ons-icon>
-                        </ons-toolbar-button>
-                    </div>
-                    <div class="center">
-                        Register
-                    </div>
-                </ons-toolbar>-->
 
         <div class="page__background"></div>
         <div id="register">
@@ -235,8 +227,6 @@
 
     </ons-page>
 </template>
-
-
 <template id="home.html">
     <ons-page id="home">
 
@@ -289,7 +279,6 @@
         <script src="js/PageMap.js"></script>
     </ons-page>
 </template>
-
 <template id="GetGroepLocatiesOpKaartDialog.html">
     <ons-dialog id="GetGroepLocatiesOpKaartDialog" cancelable modifier="material">
         <ons-page>
@@ -354,7 +343,6 @@
 
     </ons-dialog>
 </template>
-
 <template id="addLocationUserDialog.html">
     <ons-dialog id="addLocationUserDialog" cancelable modifier="material">
         <ons-page>
@@ -426,30 +414,35 @@
 
     </ons-dialog>
 </template>
-
 <template id="groups.html">
-    <ons-page>
-        <ons-fab position="top left">
-            <ons-toolbar-button onclick="fn.open()">
-
-                <ons-icon icon="md-menu"></ons-icon>
-            </ons-toolbar-button>
+    <ons-page id="group">
+        <ons-fab modifier="mini" id="addGroup">
+            <img src="img/users-medical.svg" alt="users add group" width="25" height="25">
+        </ons-fab>
+        <ons-toolbar>
+            <div class="left">
+                <ons-toolbar-button onclick="fn.open()">
+                    <ons-icon icon="md-menu"></ons-icon>
+                </ons-toolbar-button>
+            </div>
+            <div class="center">
+                Groups
+            </div>
+        </ons-toolbar>
+<!--        <ons-fab position="bottom right">
+            <i id="getGroepenTable" class="far fa-object-group p"></i>
         </ons-fab>
 
-
+        <ons-fab position="bottom left">
+            <i class="fas fa-users"></i>
+        </ons-fab>-->
         <div class="background"></div>
-
         <div class="content">
-            Scrollable content here
-            <p>vanalle groepen</p>
-
-
+            <div id="GetGroepenCard" class="emptylistGroup"></div>
         </div>
-
-
+        <script src="js/PageGroups.js"></script>
     </ons-page>
 </template>
-
 <template id="settings.html">
     <ons-page>
         <ons-toolbar>
@@ -464,7 +457,6 @@
         </ons-toolbar>
     </ons-page>
 </template>
-
 <template id="about.html">
     <ons-page>
         <script src="js/PageInfo.js"></script>

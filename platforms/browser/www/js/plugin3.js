@@ -125,6 +125,7 @@ $('#getGroepen').click(function () {
         persoonID: persoonID,
     };
 
+    alert("get groepen");
     console.log("U vraagt nu al alle groepen op");
 
     $.post('http://wabyte.com/getgroepen.php', function (data) {

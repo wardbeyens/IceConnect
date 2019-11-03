@@ -42,3 +42,14 @@ $('#loginSend').click(function (message) {
         alert("Please fill in all fields")
     }
 });
+
+$('#gotoRegister').click(function () {
+    document.getElementById('content').load('register.html');
+})
+
+$('#passwordReset').click(function () {
+    ons.notification.alert(messageHTML = "<p>Please contact me: <a href=\"mailto:wardbeyens99@gmail.com\">wardbeyens99@gmail.com</a> </p>");
+    console.log(persoonID)
+})
+
+

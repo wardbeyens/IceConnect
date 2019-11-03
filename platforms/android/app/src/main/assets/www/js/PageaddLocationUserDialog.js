@@ -1,13 +1,5 @@
 $('#addLocation').click(function () {
-    /*    let pars = {
-            latitude: $('#addLocationLatitude').val(),
-            longitude: $('#addLocationLongitude').val(),
-            locatienaam: $('#addLocationLocatienaam').val(),
-            street: $('#addLocationStreet').val(),
-            city: $('#addLocationCity').val(),
-            country: $('#addLocationCountry').val(),
-            postalcode: $('#addLocationPostalcode').val(),
-        };*/
+
     let pars = {
         latitude: $('#addLocationLatitude').val(),
         longitude: $('#addLocationLongitude').val(),
@@ -28,8 +20,4 @@ $('#addLocation').click(function () {
         console.log(respons);
         alert(respons);
     });
-
-    /*    $('.displayvariable').hide();
-        $('#map').show();*/
-
 });
