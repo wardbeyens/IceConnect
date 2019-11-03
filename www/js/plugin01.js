@@ -122,6 +122,8 @@ function meOnMap() {
     //moet nog gebeuren marker weghalen en dan nieuwe marker plaatsen
     markerMyLocation = L.circleMarker([lat, lng], {radius: 3}).addTo(map).bindPopup('Your Location').openPopup();
     console.log("Een marker op mijn locatie: ", lat, lng);
+    var latlng = L.latLng(lat, lng);
+    map.setView(latlng,11);
 };
 map.on('click', function (e) {
     var coord = e.latlng;

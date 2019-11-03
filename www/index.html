@@ -56,26 +56,26 @@
             <ons-list>
                 <ons-list-item onclick="fn.load('home.html')" tappable>
                     <i class="fas fa-map-marked-alt"></i>
-                    <p >map</p>
+                    <p>map</p>
                 </ons-list-item>
                 <ons-list-item onclick="fn.load('groups.html')" tappable>
                     <i class="fas fa-users"></i>
-                    <p >groups</p>
+                    <p>groups</p>
                 </ons-list-item>
                 <ons-list-item onclick="fn.load('settings.html')" tappable>
                     <i class="fas fa-cog"></i>
-                    <p >Settings</p>
+                    <p>Settings</p>
                 </ons-list-item>
                 <ons-list-item onclick="fn.load('about.html')" tappable>
                     <i class="fas fa-info-circle"></i>
                     <p>about/info</p>
                 </ons-list-item>
-<!--                <ons-list-item onclick="fn.load('login.html')" tappable>-->
-<!--                    login-->
-<!--                </ons-list-item>-->
-<!--                <ons-list-item onclick="fn.load('register.html')" tappable>-->
-<!--                    register-->
-<!--                </ons-list-item>-->
+                <!--                <ons-list-item onclick="fn.load('login.html')" tappable>-->
+                <!--                    login-->
+                <!--                </ons-list-item>-->
+                <!--                <ons-list-item onclick="fn.load('register.html')" tappable>-->
+                <!--                    register-->
+                <!--                </ons-list-item>-->
             </ons-list>
         </ons-page>
 
@@ -271,7 +271,7 @@
             </ons-speed-dial-item>
             <ons-speed-dial-item>
                 <!--                <i class="fas fa-map-marker-alt" id="openLocationModal"></i>-->
-                <i class="fas fa-user-plus" id="openLocationModal"></i>
+                <i class="fas fa-user-plus" id="openaddLocationUserDialog"></i>
 
                 <div>openLocationModal</div>
 
@@ -355,8 +355,8 @@
     </ons-dialog>
 </template>
 
-<template id="addLocationUser.html">
-    <ons-dialog id="addLocationUser" cancelable modifier="material">
+<template id="addLocationUserDialog.html">
+    <ons-dialog id="addLocationUserDialog" cancelable modifier="material">
         <ons-page>
             <div class="background"></div>
 
@@ -365,55 +365,62 @@
                     <h1 class=""> Locatie toevoegen: </h1>
                 </div>
                 <div class="modal-form">
-                    <form class="form-getGroepLocatiesOpKaart">
+
+                    <form class="form-addLocation">
                         <div class="row">
                             <div class="col-12">
                                 <h3>
-                                    <label for="getGroepLocatiesOpKaartGroepID2">Choose a group: </label>
+                                    <label for="addLocationLatitude">Latitude: </label>
                                 </h3>
                             </div>
                             <div class="col-12">
-                                <ons-select autofocus="true" required select-id="getGroepLocatiesOpKaartGroepID2"
-                                            size="1" modifier="material underbar">
-                                    <select name=""
-                                            id="">
-                                    </select>
-                                </ons-select>
-
+                                <input id="addLocationLatitude" name="addLocationLatitude"
+                                       placeholder="latitude"
+                                       required value="">
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="col-12">
                                 <h3>
-                                    <label for="getGroepLocatiesOpKaartKleurMarker2">Choose a color: </label>
+                                    <label for="addLocationLongitude">Longitude: </label>
                                 </h3>
                             </div>
                             <div class="col-12">
-                                <ons-select autofocus="true" required select-id="getGroepLocatiesOpKaartKleurMarker2"
-                                            size="1" modifier="material underbar">
-
-                                    <select name=""
-                                            id="">
-                                    </select>
-                                </ons-select>
-
+                                <input id="addLocationLongitude" name="addLocationLongitude"
+                                       placeholder="longitude"
+                                       required value="">
                             </div>
                         </div>
-
-                        </fieldset>
+                        <div class="row">
+                            <div class="col-12">
+                                <h3>
+                                    <label for="addLocationLocatienaam">Naam: </label>
+                                </h3>
+                            </div>
+                            <div class="col-12">
+                                <input id="addLocationLocatienaam" name="addLocationLocatienaam"
+                                       placeholder="De naam van de locatie" readonly
+                                       value="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <input id="addLocationLocatiebijnaam" name="addLocationLocatiebijnaam"
+                                       placeholder="De bijnaam van de locatie"
+                                       value="">
+                            </div>
+                        </div>
                     </form>
                 </div>
 
                 <div class="row mt-5">
-                    <ons-button modifier="large material" ripple id="getGroepLocatiesOpKaart">groep
-                        locaties opvragen
+                    <ons-button modifier="large material" ripple id="addLocation">add to my locations
                     </ons-button>
 
                 </div>
 
             </div>
-            <script src="js/PageGetGroepLocatiesOpKaartDialog.js"></script>
+            <script src="js/PageaddLocationUserDialog.js"></script>
         </ons-page>
 
 

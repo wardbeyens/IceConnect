@@ -46,13 +46,21 @@ var hideDialog = function (id) {
     document.getElementById(id).hide();
 };
 $('#openGetGroepLocatiesOpKaartDialog').click(function () {
-
     showGetGroepLocatiesOpKaartDialog();
-
 });
 
-$/*('.closeDialog').click(function () {
-    console.log("close Dialog");
-    hideDialog(DialogID);
-})
-*/
+var showaddLocationUserDialog = function () {
+    var dialog = document.getElementById('addLocationUserDialog');
+
+    if (dialog) {
+        dialog.show();
+    } else {
+        ons.createElement('addLocationUserDialog.html', {append: true}).then(function (dialog) {
+            dialog.show([animation = "slide"]);
+        });
+    }
+};
+
+$('#openaddLocationUserDialog').click(function () {
+    showaddLocationUserDialog();
+});
