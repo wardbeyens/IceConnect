@@ -1,5 +1,10 @@
 $(function () {
     document.addEventListener("deviceready", onDeviceReady, false);
+    var persoonID;
+
+
+
+
 });
 
 function onDeviceReady() {

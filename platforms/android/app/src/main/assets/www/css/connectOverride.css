@@ -14,6 +14,46 @@
     height: 100%;
 }
 
+
+.form-row {
+    margin: 4px;
+}
+
+.width-full {
+    width: 100%;
+}
+
+.width-half {
+    width: 48%;
+}
+
+.lucent {
+    opacity: 0.4;
+}
+
+.note {
+    margin: 12px 8px;
+    font-size: 13px;
+}
+
+.vspc {
+    margin-top: 20px;
+}
+
+.formarea {
+    width: 90%;
+    margin: 50px auto 0px auto;
+}
+
+register input[type=text],
+register input[type=password] {
+    height: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+
 .speed-dial__item div {
     position: absolute;
     background: rgba(0, 0, 0, 0.3);
@@ -54,7 +94,13 @@ ons-speed-dial.open:before {
 }
 
 i {
-    color: #990829;
+    color: #fff;
+}
+
+
+#loginAchtergrond{
+    background: white !important;
+    background-color: white !important;
 }
 
 
@@ -158,7 +204,7 @@ i {
 
 .loginDivLinks ons-button {
     margin: 0;
-    color: rgb(153,8,41, 0.7)!important;
+    color: rgba(153,8,41, 0.7) !important;
     /*border: 1px solid #000;*/
     text-transform: capitalize;
 }
@@ -175,4 +221,20 @@ ons-button{
     #titellogin h1 {
         font-size: 100px;
     }
+}
+
+
+.modal-content{
+    width: 80vw;
+    max-width: 300px;
+    height: 300px;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    margin-top: 0;
+    margin-left: -150px;
+    text-align: center;
+    border: 1px solid #000;
+    background-color: white;
+    color: #000;
 }

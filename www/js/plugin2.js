@@ -1,4 +1,5 @@
 var persoonID;
+
 $('#registerInputPassword, #registerInputPasswordConfirm').on('keyup', function () {
     if ($('#registerInputPassword').val() == $('#registerInputPasswordConfirm').val()) {
         $('#passwordCheck').html('Matching').css('color', 'green');
@@ -63,6 +64,8 @@ $('#registerSend').click(function () {
 
 });
 
+
+//loginsend done
 $('#loginSend').click(function (message) {
     function validateForm() {
         var isValid = true;
@@ -99,11 +102,9 @@ $('#loginSend').click(function (message) {
             navigator.vibrate(500);
         });
 
-        $('.displayvariable').hide();
-        $('#map').show();
-
-
     } else {
         alert("Please fill in all fields")
     }
+
+
 });

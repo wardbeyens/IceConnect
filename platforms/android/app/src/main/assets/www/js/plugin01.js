@@ -84,7 +84,6 @@ map.invalidateSize(function () {
     console.log('invalidatesize check');
 });
 
-
 var lat;
 var lng;
 
@@ -120,11 +119,10 @@ function getLocation() {
 getLocation();
 
 function meOnMap() {
-    marker2 = L.circleMarker([lat, lng], {radius: 3}).addTo(map).bindPopup('Your Location').openPopup();
+    //moet nog gebeuren marker weghalen en dan nieuwe marker plaatsen
+    markerMyLocation = L.circleMarker([lat, lng], {radius: 3}).addTo(map).bindPopup('Your Location').openPopup();
     console.log("Een marker op mijn locatie: ", lat, lng);
 };
-
-
 map.on('click', function (e) {
     var coord = e.latlng;
     var test = coord.lat;
@@ -134,7 +132,6 @@ map.on('click', function (e) {
     map.closePopup();
 });
 
-
 map.on('contextmenu', function (e) {
     var coord = e.latlng;
     var lat = coord.lat;
@@ -143,13 +140,11 @@ map.on('contextmenu', function (e) {
     console.log("You created a marker at latitude: " + lat + " and longitude: " + lng);
 });
 
-
 // for only one marker
 var markerVariabelstreet;
 var markerVariabelcity;
 var markerVariabelcountry;
 var markerVariabelpostal;
-
 
 var markerVariabel;
 var markerVariabelLat;
@@ -159,11 +154,12 @@ var markerVariabelDisplay_name;
 map.on('click', function (e) {
     if (markerVariabel) {
         map.removeLayer(markerVariabel);
-    };
+    }
+    ;
     var coord = e.latlng;
     markerVariabelLat = coord.lat;
     markerVariabelLng = coord.lng;
-    console.log("nominatim coordinaten: " , markerVariabelLat, markerVariabelLng);
+    console.log("nominatim coordinaten: ", markerVariabelLat, markerVariabelLng);
     console.log("http://nominatim.openstreetmap.org/reverse?format=json&lat=" + markerVariabelLat + '&lon=' + markerVariabelLng);
 
     $.getJSON('http://nominatim.openstreetmap.org/reverse?format=json&lat=' + markerVariabelLat + '&lon=' + markerVariabelLng, function (data) {
@@ -184,7 +180,6 @@ map.on('click', function (e) {
 
     //red, orange, yellow, green, blue, violet, grey, black
     markerVariabel = new L.Marker(e.latlng, {icon: greenIcon}).addTo(map)
-        .bindPopup("latitude: " + markerVariabelLat + ' <br>longitude: ' + markerVariabelLng + '<br>' + markerVariabelDisplay_name ).openPopup();
+        .bindPopup("latitude: " + markerVariabelLat + ' <br>longitude: ' + markerVariabelLng + '<br>' + markerVariabelDisplay_name).openPopup();
     console.log("You created a variable marker at latitude: " + markerVariabelLat + " and longitude: " + markerVariabelLng);
 });
-

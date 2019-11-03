@@ -79,6 +79,7 @@ L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 map.on('viewreset', function () {
     console.log('resetting..');
 });
+
 map.invalidateSize(function () {
     console.log('invalidatesize check');
 });
@@ -122,7 +123,6 @@ function meOnMap() {
     console.log("Een marker op mijn locatie: ", lat, lng);
 };
 
-
 map.on('click', function (e) {
     var coord = e.latlng;
     var test = coord.lat;
@@ -131,7 +131,6 @@ map.on('click', function (e) {
     // var newMarker = new L.marker(e.latlng).addTo(map);
     map.closePopup();
 });
-
 
 map.on('contextmenu', function (e) {
     var coord = e.latlng;
@@ -155,11 +154,12 @@ var markerVariabelDisplay_name;
 map.on('click', function (e) {
     if (markerVariabel) {
         map.removeLayer(markerVariabel);
-    };
+    }
+    ;
     var coord = e.latlng;
     markerVariabelLat = coord.lat;
     markerVariabelLng = coord.lng;
-    console.log("nominatim coordinaten: " , markerVariabelLat, markerVariabelLng);
+    console.log("nominatim coordinaten: ", markerVariabelLat, markerVariabelLng);
     console.log("http://nominatim.openstreetmap.org/reverse?format=json&lat=" + markerVariabelLat + '&lon=' + markerVariabelLng);
 
     $.getJSON('http://nominatim.openstreetmap.org/reverse?format=json&lat=' + markerVariabelLat + '&lon=' + markerVariabelLng, function (data) {
@@ -180,6 +180,6 @@ map.on('click', function (e) {
 
     //red, orange, yellow, green, blue, violet, grey, black
     markerVariabel = new L.Marker(e.latlng, {icon: greenIcon}).addTo(map)
-        .bindPopup("latitude: " + markerVariabelLat + ' <br>longitude: ' + markerVariabelLng + '<br>' + markerVariabelDisplay_name ).openPopup();
+        .bindPopup("latitude: " + markerVariabelLat + ' <br>longitude: ' + markerVariabelLng + '<br>' + markerVariabelDisplay_name).openPopup();
     console.log("You created a variable marker at latitude: " + markerVariabelLat + " and longitude: " + markerVariabelLng);
 });
