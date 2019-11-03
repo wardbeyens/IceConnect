@@ -29,28 +29,30 @@ $('#getLocatiesOpKaart').click(function () {
 
 });
 
-var showTemplateDialog = function () {
-    var dialog = document.getElementById('getGroepLocatiesOpKaartModal');
+
+var showGetGroepLocatiesOpKaartDialog = function () {
+    var dialog = document.getElementById('GetGroepLocatiesOpKaartDialog');
 
     if (dialog) {
         dialog.show();
     } else {
-        ons.createElement('dialog.html', {append: true})
-            .then(function (dialog) {
-                dialog.show();
-            });
+        ons.createElement('GetGroepLocatiesOpKaartDialog.html', {append: true}).then(function (dialog) {
+            dialog.show([animation = "slide"]);
+        });
     }
 };
 
 var hideDialog = function (id) {
     document.getElementById(id).hide();
 };
-$('#openGetGroepLocatiesOpKaartModal').click(function () {
+$('#openGetGroepLocatiesOpKaartDialog').click(function () {
 
-    showTemplateDialog()
+    showGetGroepLocatiesOpKaartDialog();
+
 });
-$('#closeGetGroepLocatiesOpKaartModal').click(function () {
 
-    hideDialog()
+$/*('.closeDialog').click(function () {
+    console.log("close Dialog");
+    hideDialog(DialogID);
 })
-
+*/

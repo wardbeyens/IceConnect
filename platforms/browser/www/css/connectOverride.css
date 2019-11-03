@@ -224,17 +224,20 @@ ons-button{
 }
 
 
-.modal-content{
-    width: 80vw;
-    max-width: 300px;
-    height: 300px;
-    position: fixed;
-    top: 10%;
-    left: 50%;
-    margin-top: 0;
-    margin-left: -150px;
+.dialog{
+    min-height: 320px;
+    min-width: 310px;
+    margin: auto;
     text-align: center;
-    border: 1px solid #000;
-    background-color: white;
-    color: #000;
+}
+
+ons-select{
+    padding-left: 15%;
+    padding-right: 15%;
+    width: 100%;
+}
+
+option{
+    margin: auto;
+    text-align: center;
 }

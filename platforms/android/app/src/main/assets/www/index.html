@@ -239,23 +239,10 @@
 
             </ons-speed-dial-item>
             <ons-speed-dial-item>
-                <i class="fas fa-users" id="openGetGroepLocatiesOpKaartModal"></i>
+                <i class="fas fa-users" id="openGetGroepLocatiesOpKaartDialog"></i>
                 <div>google</div>
             </ons-speed-dial-item>
         </ons-speed-dial>
-
-        <ons-modal direction="up" animation="lift" >
-<!--            <div style="text-align: center">
-                <p>
-                    <ons-icon icon="md-spinner" size="28px" spin></ons-icon> Loading...
-                </p>
-                <p> Locaties van uw groep opvragen</p>
-
-            </div>-->
-
-
-
-        </ons-modal>
 
         <script src="js/plugin01.js"></script>
 
@@ -263,69 +250,68 @@
     </ons-page>
 </template>
 
-<template id="dialog.html">
-    <ons-dialog id="getGroepLocatiesOpKaartModal">
-        <div style="text-align: center; padding: 10px;">
-            <p>
-                This is a simple dialog!
-            </p>
+<template id="GetGroepLocatiesOpKaartDialog.html">
+    <ons-dialog id="GetGroepLocatiesOpKaartDialog" cancelable modifier="material" >
+        <ons-page>
+            <div class="background"></div>
 
-            <p>
-                <ons-button onclick="hideDialog('my-dialog')">Close</ons-button>
-            </p>
-        </div>
-        <div class="modal-content">
-            <div class="row">
-                <div class="col-8">
-                    <p class=""> Locaties van uw groep opvragen</p>
+            <div class="content modal-content">
+                <div class="modal-content-h">
+                    <h1 class=""> Get group locations: </h1>
                 </div>
-                <div class="col-4" >
-                    <span class="closeGetGroepLocatiesOpKaartModal">X</span>
+                <div class="modal-form">
+                    <form class="form-getGroepLocatiesOpKaart">
+                        <div class="row">
+                            <div class="col-12">
+                                <h3>
+                                    <label for="getGroepLocatiesOpKaartGroepID2">Choose a group: </label>
+                                </h3>
+                            </div>
+                            <div class="col-12">
+                                <ons-select autofocus="true" required select-id="getGroepLocatiesOpKaartGroepID2" size="1" modifier="material underbar">
+                                    <select name="getGroepLocatiesOpKaartGroepID2"
+                                            id="getGroepLocatiesOpKaartGroepID2">
+                                    </select>
+                                </ons-select>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <h3>
+                                    <label for="getGroepLocatiesOpKaartKleurMarker2">Choose a color: </label>
+                                </h3>
+                            </div>
+                            <div class="col-12">
+                                <ons-select autofocus="true" required select-id="getGroepLocatiesOpKaartKleurMarker2" size="1" modifier="material underbar">
+
+                                <select name="getGroepLocatiesOpKaartKleurMarker2"
+                                        id="getGroepLocatiesOpKaartKleurMarker2" >
+                                </select>
+                                </ons-select>
+
+                            </div>
+                        </div>
+
+                        </fieldset>
+                    </form>
                 </div>
 
-            </div>
-            <form class="form-getGroepLocatiesOpKaart">
-                <fieldset>
-                    <div class="row">
-                        <div class="col-12">
-                            <label for="getGroepLocatiesOpKaartGroepID2">Kies een groep: </label>
-                        </div>
-                        <div class="col-12">
-                            <select name="getGroepLocatiesOpKaartGroepID2"
-                                    id="getGroepLocatiesOpKaartGroepID2" size="1">
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12">
-                            <label for="getGroepLocatiesOpKaartKleurMarker2">Kies een kleur2: </label>
-                        </div>
-                        <div class="col-12">
-                            <select name="getGroepLocatiesOpKaartKleurMarker2"
-                                    id="getGroepLocatiesOpKaartKleurMarker2" size="1">
-                            </select>
-                        </div>
-                    </div>
-
-                </fieldset>
-            </form>
-
-            <div class="row">
-                <div class="col-12">
-                    <button type="button" class="btn btn-primary w-100" id="getGroepLocatiesOpKaart">groep
+                <div class="row mt-5">
+                    <ons-button modifier="large material" ripple id="getGroepLocatiesOpKaart">groep
                         locaties opvragen
-                    </button>
-                </div>
-            </div>
+                    </ons-button>
 
-        </div>
+                </div>
+
+            </div>
+            <script src="js/PageGetGroepLocatiesOpKaartDialog.js"></script>
+        </ons-page>
+
 
     </ons-dialog>
 </template>
-
-
-
 
 
 <template id="groups.html">
