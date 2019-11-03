@@ -21,10 +21,11 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrapGrid.css">
 
     <!-- Framework & Onsen UI -->
+    <!--    <link rel="stylesheet" type="text/css" href="css/onsenui.css">-->
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
-    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
-    <!--    <link rel="stylesheet" type="text/css" href="css/onsen-css-theme/theme.css">
-        <link rel="stylesheet" type="text/css" href="css/onsen-css-theme/onsen-css-components.css">-->
+    <link id="theme" rel="stylesheet" href="css/onsen-css-theme-light/onsen-css-components.min.css">
+    <!--    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">-->
+
     <script src="js/onsenui.js"></script>
     <!-- Framework & fontawesome -->
     <link href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" rel="stylesheet">
@@ -79,6 +80,14 @@
                 <ons-list-item onclick="logout()" tappable position="bottom">
                     <i class="fas fa-sign-out-alt"></i>
                     <p>Log out</p>
+                </ons-list-item>
+                <ons-list-item>
+                    <div class="center">
+                        Darkmode
+                    </div>
+                    <div class="right">
+                        <ons-switch id="ChangeTheme"></ons-switch>
+                    </div>
                 </ons-list-item>
             </ons-list>
         </ons-page>
@@ -429,13 +438,13 @@
                 Groups
             </div>
         </ons-toolbar>
-<!--        <ons-fab position="bottom right">
-            <i id="getGroepenTable" class="far fa-object-group p"></i>
-        </ons-fab>
+        <!--        <ons-fab position="bottom right">
+                    <i id="getGroepenTable" class="far fa-object-group p"></i>
+                </ons-fab>
 
-        <ons-fab position="bottom left">
-            <i class="fas fa-users"></i>
-        </ons-fab>-->
+                <ons-fab position="bottom left">
+                    <i class="fas fa-users"></i>
+                </ons-fab>-->
         <div class="background"></div>
         <div class="content">
             <div id="GetGroepenCard" class="emptylistGroup"></div>

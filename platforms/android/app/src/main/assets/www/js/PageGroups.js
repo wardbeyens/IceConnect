@@ -27,7 +27,8 @@ function getGroepenInCard(){
             <ons-card>
                 <ons-fab modifier="mini" class="fabgroup" >
                         <!--\` + this.groepID + \`-->
-                      <i class="fas fa-user-plus addUserToGroup"></i>                 
+<!--                      <i class="fas fa-plus addUserToGroup"></i>-->
+                      <i class="fas fa-plus"></i>                 
                 </ons-fab> 
                 <div class="title">
    
@@ -42,7 +43,7 @@ function getGroepenInCard(){
                 <div class="content mt-4" id="GetGroepenCard` + i + `">
                     <ons-list>
                         <ons-list-header>
-                            Address: ` + this.locatiebijnaam + `
+                            ` + this.locatiebijnaam + `
                         </ons-list-header>
                         <ons-list-item>
                              ` + this.straat + `&emsp;&emsp;` + this.huisnummer + `

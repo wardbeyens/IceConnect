@@ -101,10 +101,10 @@ i {
 }
 
 
-#loginAchtergrond {
+/*#loginAchtergrond {
     background: white !important;
     background-color: white !important;
-}
+}*/
 
 
 /*#loginDivCenter {
@@ -143,7 +143,7 @@ i {
 }
 
 .loginDivInput label {
-    color: #990829;
+    /*color: #990829;*/
     font-size: 5vw;
     text-align: left;
     font-weight: bold;
@@ -170,7 +170,7 @@ i {
     text-align: left;
 
     width: 100%;
-    color: #990829;
+    /*color: #990829;*/
     font-size: 5vw;
     /*border: 1px solid #000;*/
     height: 6vw;
@@ -193,7 +193,7 @@ i {
     padding-top: 2vw;
     text-align: center;
     text-transform: capitalize;
-    background: #990829 !important;
+    /*background: #990829 !important;*/
     /*box-shadow: 5px 5px 3px grey, -5px 5px 3px grey, -5px -5px 3px grey, 5px -5px 3px grey;*/
 
 }
@@ -207,7 +207,7 @@ i {
 
 .loginDivLinks ons-button {
     margin: 0;
-    color: rgba(153, 8, 41, 0.7) !important;
+    /*color: rgba(153, 8, 41, 0.7) !important;*/
     /*border: 1px solid #000;*/
     text-transform: capitalize;
 }
@@ -256,7 +256,7 @@ ons-list-title {
 }
 
 ons-list-item i {
-    color: #990829;
+    /*color: #990829;*/
     padding-right: 15px;
 }
 
@@ -290,7 +290,7 @@ ons-card ons-fab{
 }
 
 .addUserToGroup{
-    color: #990829;
+    /*color: #990829;*/
 }
 
 #addGroup{
