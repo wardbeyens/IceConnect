@@ -289,14 +289,18 @@ ons-card ons-fab{
     float: right;
 }
 
-.addUserToGroupInCard{
+.addUserToGroup{
     color: #990829;
 }
 
 #addGroup{
     float: right;
+    margin-top: 8px;
+    margin-right: 8px;
 }
 
-/*ons-card{*/
-/*    padding: 10vw;*/
-/*}*/
+.card{
+    margin: 5vw;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px darkgray;
+}

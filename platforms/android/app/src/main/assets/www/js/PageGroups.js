@@ -26,11 +26,12 @@ function getGroepenInCard(){
             $("#GetGroepenCard").append(`
             <ons-card>
                 <ons-fab modifier="mini" class="fabgroup" >
-                        ` + this.groepID + `
+                        <!--\` + this.groepID + \`-->
+                      <i class="fas fa-user-plus addUserToGroup"></i>                 
                 </ons-fab> 
                 <div class="title">
    
-                  <h2>` + this.groepnaam + `</h2>
+                  <h2 style="font-weight: bold">` + this.groepnaam + `</h2>
                 <!--
                     <ons-fab modifier="mini" >
                      \` + this.locatieID + \`
@@ -52,9 +53,9 @@ function getGroepenInCard(){
                         <ons-list-item>
                              ` + this.land + `
                         </ons-list-item>
-                        <ons-fab modifier="mini" class="addUserToGroupInCard">
+                        <!--<ons-fab modifier="mini" class="addUserToGroupInCard">
                             <i class="fas fa-user-plus"></i>                 
-                        </ons-fab>
+                        </ons-fab>-->
                     </ons-list>             
                 </div>
             </ons-card>
