@@ -143,15 +143,17 @@ map.on('contextmenu', function (e) {
 });
 
 // for only one marker
-var markerVariabelstreet;
-var markerVariabelcity;
-var markerVariabelcountry;
-var markerVariabelpostal;
-
 var markerVariabel;
 var markerVariabelLat;
 var markerVariabelLng;
 var markerVariabelDisplay_name;
+var markerVariabelstreet;
+var markerVariabelcity;
+var markerVariabelcountry;
+var markerVariabelcounty;
+var markerVariabelstate;
+var markerVariabelpostal;
+var markerVariabelhouse_number;
 
 map.on('click', function (e) {
     if (markerVariabel) {
@@ -167,12 +169,28 @@ map.on('click', function (e) {
     $.getJSON('http://nominatim.openstreetmap.org/reverse?format=json&lat=' + markerVariabelLat + '&lon=' + markerVariabelLng, function (data) {
         console.log(data);
         // let city = data.address.village || data.address.city_district || data.address.city || data.address.town || data.address.state;
-        // markerVariabelstreet = data.address.street;
         // markerVariabelcity = data.address.city;
-        // markerVariabelcountry = data.address.country;
-        // markerVariabelpostal = data.address.postcode;
         markerVariabelDisplay_name = data.display_name;
-        console.log(markerVariabelDisplay_name);
+        markerVariabelhouse_number = data.address.house_number;
+        markerVariabelstreet = data.address.street || data.address.road;
+        markerVariabelcity = data.address.village || data.address.city_district || data.address.city || data.address.town;
+        markerVariabelcounty = data.address.county;
+        markerVariabelstate = data.address.state;
+        markerVariabelcountry = data.address.country;
+        markerVariabelpostal = data.address.postcode;
+        console.log(
+            "\nlatitude: " + markerVariabelLat
+            + "\nlongitude: " + markerVariabelLng
+            + "\nlocatienaam: " + markerVariabelDisplay_name
+            + "\nlocatiebijnaam: " + "nog te geven via input"
+            + "\nhuisnummer: " + markerVariabelhouse_number
+            + "\nstraat: " + markerVariabelstreet
+            + "\ndorp: " + markerVariabelcity
+            + "\ncounty: " + markerVariabelcounty
+            + "\nstate: " + markerVariabelstate
+            + "\nland: " + markerVariabelcountry
+            + "\npersoonID: " + persoonID
+        );
     });
 
     $('#addLocationLatitude').val(markerVariabelLat);
