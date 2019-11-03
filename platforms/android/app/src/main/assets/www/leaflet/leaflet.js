@@ -2021,7 +2021,7 @@
     });
     var Be = ke.extend({
         options: {
-            iconUrl: "marker-icon.png",
+            iconUrl: "marker-icon.png.old",
             iconRetinaUrl: "marker-icon-2x.png",
             shadowUrl: "marker-shadow.png",
             iconSize: [25, 41],

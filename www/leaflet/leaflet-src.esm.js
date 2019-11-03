@@ -7014,7 +7014,7 @@ var featureGroup = function (layers) {
  *
  * ```js
  * var myIcon = L.icon({
- *     iconUrl: 'my-icon.png',
+ *     iconUrl: 'my-icon.png.old',
  *     iconRetinaUrl: 'my-icon@2x.png',
  *     iconSize: [38, 95],
  *     iconAnchor: [22, 94],
@@ -7174,7 +7174,7 @@ function icon(options) {
 var IconDefault = Icon.extend({
 
 	options: {
-		iconUrl:       'marker-icon.png',
+		iconUrl:       'marker-icon.png.old',
 		iconRetinaUrl: 'marker-icon-2x.png',
 		shadowUrl:     'marker-shadow.png',
 		iconSize:    [25, 41],

@@ -45,25 +45,37 @@
 
         <!--        de sidenav-->
         <ons-page>
+            <div class="sidebar-titel">
+                <img src="img/IceConnect990829noBack.png" alt="Icon" height="100" width="100">
+
+                <ons-list-title>
+                    <h1>ICE Connect</h1>
+                    <p>Together but better!</p>
+                </ons-list-title>
+            </div>
             <ons-list>
                 <ons-list-item onclick="fn.load('home.html')" tappable>
-                    map
+                    <i class="fas fa-map-marked-alt"></i>
+                    <p >map</p>
                 </ons-list-item>
                 <ons-list-item onclick="fn.load('groups.html')" tappable>
-                    groups
+                    <i class="fas fa-users"></i>
+                    <p >groups</p>
                 </ons-list-item>
                 <ons-list-item onclick="fn.load('settings.html')" tappable>
-                    Settings
+                    <i class="fas fa-cog"></i>
+                    <p >Settings</p>
                 </ons-list-item>
                 <ons-list-item onclick="fn.load('about.html')" tappable>
-                    Info
+                    <i class="fas fa-info-circle"></i>
+                    <p>about/info</p>
                 </ons-list-item>
-                <ons-list-item onclick="fn.load('login.html')" tappable>
-                    login
-                </ons-list-item>
-                <ons-list-item onclick="fn.load('register.html')" tappable>
-                    register
-                </ons-list-item>
+<!--                <ons-list-item onclick="fn.load('login.html')" tappable>-->
+<!--                    login-->
+<!--                </ons-list-item>-->
+<!--                <ons-list-item onclick="fn.load('register.html')" tappable>-->
+<!--                    register-->
+<!--                </ons-list-item>-->
             </ons-list>
         </ons-page>
 
@@ -82,12 +94,30 @@
             <div id="login">
                 <div class="CubeContainer">
                     <div id="cube">
-                        <div class="frontCube" id="id1"><i class="fas fa-route"></i></div>
-                        <div class="backCube"><i class="fas fa-search"></i></div>
-                        <div class="rightCube"><i class="fas fa-map-marker-alt"></i></div>
-                        <div class="leftCube"><i class="far fa-map"></i></div>
-                        <div class="topCube"><i class="fas fa-location-arrow"></i></div>
-                        <div class="bottomCube"><i class="fas fa-crosshairs"></i></div>
+
+                        <div class="frontCube" id="id1">
+                            <img src="img/IceConnect990829noBack.png" alt="IceConnect Logo" width="180"
+                                 height="180">
+                            <!--                            <i class="fas fa-route"></i>-->
+                        </div>
+                        <div class="backCube">
+                            <i class="fas fa-route"></i>
+                            <!--                            <i class="fas fa-search"></i>-->
+                        </div>
+                        <div class="rightCube">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="leftCube">
+                            <i class="far fa-map"></i>
+                        </div>
+                        <div class="topCube">
+                            <i class="fas fa-location-arrow"></i>
+                        </div>
+                        <div class="bottomCube">
+                            <!--                            <i class="fas fa-crosshairs"></i>-->
+                            <i class="fas fa-crosshairs"></i>
+
+                        </div>
                     </div>
                 </div>
 
@@ -100,7 +130,8 @@
 
                         <div class="loginDivInputChild">
                             <!--                        <i class="fas fa-user"></i>-->
-                            <input class="text-input text-input--material" id="loginInputEmail" name="loginInputEmail"
+                            <input class="text-input text-input--material" id="loginInputEmail"
+                                   name="loginInputEmail"
                                    placeholder="yourname@gmail.com"
                                    type="text" value="test@demo.com" required>
                         </div>
@@ -239,9 +270,18 @@
 
             </ons-speed-dial-item>
             <ons-speed-dial-item>
-                <i class="fas fa-users" id="openGetGroepLocatiesOpKaartDialog"></i>
-                <div>google</div>
+                <!--                <i class="fas fa-map-marker-alt" id="openLocationModal"></i>-->
+                <i class="fas fa-user-plus" id="openLocationModal"></i>
+
+                <div>openLocationModal</div>
+
             </ons-speed-dial-item>
+            <ons-speed-dial-item>
+                <i class="fas fa-users" id="openGetGroepLocatiesOpKaartDialog"></i>
+                <div>openGetGroepLocatiesOpKaartDialog</div>
+            </ons-speed-dial-item>
+
+
         </ons-speed-dial>
 
         <script src="js/plugin01.js"></script>
@@ -251,7 +291,7 @@
 </template>
 
 <template id="GetGroepLocatiesOpKaartDialog.html">
-    <ons-dialog id="GetGroepLocatiesOpKaartDialog" cancelable modifier="material" >
+    <ons-dialog id="GetGroepLocatiesOpKaartDialog" cancelable modifier="material">
         <ons-page>
             <div class="background"></div>
 
@@ -268,7 +308,8 @@
                                 </h3>
                             </div>
                             <div class="col-12">
-                                <ons-select autofocus="true" required select-id="getGroepLocatiesOpKaartGroepID2" size="1" modifier="material underbar">
+                                <ons-select autofocus="true" required select-id="getGroepLocatiesOpKaartGroepID2"
+                                            size="1" modifier="material underbar">
                                     <select name="getGroepLocatiesOpKaartGroepID2"
                                             id="getGroepLocatiesOpKaartGroepID2">
                                     </select>
@@ -284,11 +325,12 @@
                                 </h3>
                             </div>
                             <div class="col-12">
-                                <ons-select autofocus="true" required select-id="getGroepLocatiesOpKaartKleurMarker2" size="1" modifier="material underbar">
+                                <ons-select autofocus="true" required select-id="getGroepLocatiesOpKaartKleurMarker2"
+                                            size="1" modifier="material underbar">
 
-                                <select name="getGroepLocatiesOpKaartKleurMarker2"
-                                        id="getGroepLocatiesOpKaartKleurMarker2" >
-                                </select>
+                                    <select name="getGroepLocatiesOpKaartKleurMarker2"
+                                            id="getGroepLocatiesOpKaartKleurMarker2">
+                                    </select>
                                 </ons-select>
 
                             </div>
@@ -313,6 +355,70 @@
     </ons-dialog>
 </template>
 
+<template id="addLocationUser.html">
+    <ons-dialog id="addLocationUser" cancelable modifier="material">
+        <ons-page>
+            <div class="background"></div>
+
+            <div class="content modal-content">
+                <div class="modal-content-h">
+                    <h1 class=""> Locatie toevoegen: </h1>
+                </div>
+                <div class="modal-form">
+                    <form class="form-getGroepLocatiesOpKaart">
+                        <div class="row">
+                            <div class="col-12">
+                                <h3>
+                                    <label for="getGroepLocatiesOpKaartGroepID2">Choose a group: </label>
+                                </h3>
+                            </div>
+                            <div class="col-12">
+                                <ons-select autofocus="true" required select-id="getGroepLocatiesOpKaartGroepID2"
+                                            size="1" modifier="material underbar">
+                                    <select name=""
+                                            id="">
+                                    </select>
+                                </ons-select>
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <h3>
+                                    <label for="getGroepLocatiesOpKaartKleurMarker2">Choose a color: </label>
+                                </h3>
+                            </div>
+                            <div class="col-12">
+                                <ons-select autofocus="true" required select-id="getGroepLocatiesOpKaartKleurMarker2"
+                                            size="1" modifier="material underbar">
+
+                                    <select name=""
+                                            id="">
+                                    </select>
+                                </ons-select>
+
+                            </div>
+                        </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div class="row mt-5">
+                    <ons-button modifier="large material" ripple id="getGroepLocatiesOpKaart">groep
+                        locaties opvragen
+                    </ons-button>
+
+                </div>
+
+            </div>
+            <script src="js/PageGetGroepLocatiesOpKaartDialog.js"></script>
+        </ons-page>
+
+
+    </ons-dialog>
+</template>
 
 <template id="groups.html">
     <ons-page>
@@ -330,44 +436,6 @@
             Scrollable content here
             <p>vanalle groepen</p>
 
-            <p style="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dolorem dolorum enim exercitationem
-                labore,
-                laboriosam natus necessitatibus nihil quas, rem rerum ut. Asperiores deserunt dolorum eveniet
-                exercitationem fuga fugit laborum magni maxime modi quae quo ratione rerum, saepe sapiente sit unde ut
-                voluptatem. Aliquam aperiam commodi consequatur, cumque excepturi facere illo nostrum numquam
-                perspiciatis porro sequi, tempora, tempore tenetur. Dignissimos doloribus dolorum explicabo, inventore
-                molestiae nesciunt nobis odit, ratione similique sint veritatis voluptatem! Asperiores autem corporis,
-                debitis dicta dolorem doloremque ea exercitationem facere ipsa ipsam ipsum iste labore libero minima
-                odio officia officiis placeat praesentium provident quasi quis quisquam quo repellat repellendus
-                reprehenderit! Ad atque blanditiis commodi corporis deleniti dolorem doloremque ea esse eum, ex illo
-                impedit ipsa ipsam iusto maxime necessitatibus neque nisi odio omnis quibusdam rem sapiente sint soluta
-                tempore unde ut vero voluptates! Ad asperiores commodi distinctio laborum, numquam officia perspiciatis
-                quia quidem quo similique, tenetur totam voluptatem! Aliquid debitis ea eaque enim excepturi facere ipsa
-                iusto labore, nisi, nulla obcaecati porro quas quis tempora tempore temporibus voluptas! Adipisci
-                blanditiis commodi consectetur dolor, doloremque et fugiat harum id ipsum iure magni, minus non odit
-                optio praesentium quisquam ratione repellat! Alias amet aut culpa deserunt eaque eos est excepturi
-                exercitationem harum, modi neque obcaecati, quibusdam repellendus? A animi aperiam aspernatur atque aut
-                blanditiis consectetur deleniti dignissimos dolores ducimus eligendi error et fugiat fugit id impedit
-                inventore laudantium maiores minima, mollitia natus nisi officia officiis pariatur perferendis provident
-                quis quisquam quo ratione recusandae reprehenderit rerum saepe similique soluta vero vitae voluptatibus.
-                Aperiam consectetur eius esse itaque mollitia nostrum omnis sit soluta, veniam. Deserunt eligendi et id
-                illo ipsa maiores non quaerat totam veniam voluptate! Culpa dolorem illo illum magni modi non officia
-                omnis perspiciatis reprehenderit unde? Amet asperiores at ea eaque, excepturi facilis in iste iusto
-                laborum nostrum obcaecati odit omnis pariatur quis rerum sapiente soluta unde velit vitae voluptatum.
-                Adipisci aperiam autem culpa ducimus ea eos et fugit minus nobis, non perferendis porro praesentium quia
-                quos rerum, saepe tempora unde! Ab adipisci animi, consectetur deleniti, dolorem error ipsum maxime
-                optio placeat quisquam soluta tempore. Ad dolores eos esse facilis fugiat maiores modi nam optio quis
-                voluptates! Consequatur doloribus eaque fuga fugiat itaque minus nihil nisi odit provident temporibus.
-                Architecto, asperiores consequatur cumque debitis deserunt dolor doloremque ea eaque eius est, et harum
-                incidunt ipsum laborum nemo nostrum nulla obcaecati officiis omnis repudiandae sint tempore vel. Ab
-                animi aspernatur atque autem blanditiis deleniti, distinctio ducimus ea eaque est id inventore iste
-                iusto minus molestiae mollitia officiis perspiciatis placeat quaerat voluptatibus? Accusamus at autem
-                cupiditate doloribus dolorum ea enim eos error esse facilis ipsum iure maiores nihil nisi nobis officia
-                officiis, porro praesentium quasi quidem quis quod repellat repudiandae similique sunt temporibus unde
-                ut velit voluptatem voluptatibus! Accusamus adipisci dicta dolorum ex quibusdam voluptas. Amet
-                consequatur dicta dolore, dolorem, ducimus ea eius est excepturi exercitationem expedita illum iure
-                laudantium minus mollitia neque nulla obcaecati pariatur possimus provident similique suscipit ullam
-                voluptatem. Adipisci eum incidunt iure nisi nulla praesentium suscipit voluptas!</p>
 
         </div>
 
