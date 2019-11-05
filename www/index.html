@@ -16,17 +16,16 @@
     <meta name="author" content="Ward Beyens">
     <meta name="description"
           content="Bring people together! A simple App that connects people based on their passed location.">
-    <title>Ice Connect</title>
+    <title>ICE Connect</title>
 
     <link rel="stylesheet" type="text/css" href="css/bootstrapGrid.css">
 
     <!-- Framework & Onsen UI -->
     <!--    <link rel="stylesheet" type="text/css" href="css/onsenui.css">-->
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
-    <link id="theme" rel="stylesheet" href="css/onsen-css-theme-light/onsen-css-components.min.css">
+    <link id="theme" class="themeColor" rel="stylesheet" href="css/onsen-css-theme-light/onsen-css-components.min.css">
     <!--    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">-->
 
-    <script src="js/onsenui.js"></script>
     <!-- Framework & fontawesome -->
     <link href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" rel="stylesheet">
 
@@ -47,7 +46,10 @@
         <!--        de sidenav-->
         <ons-page>
             <div class="sidebar-titel">
-                <img src="img/IceConnect990829noBack.png" alt="Icon" height="100" width="100">
+                <img id="themeImg" class="themeColor" src="img/IceConnect990829.svg" alt="Icon" height="100"
+                     width="100">
+                <!--                <img id="themeImg" class="themeColor" src="img/IceConnect990829noBack.png" alt="Icon"
+                                     height="100" width="100">-->
 
                 <ons-list-title>
                     <h1>ICE Connect</h1>
@@ -163,11 +165,30 @@
                     </div>
 
                     <div class="loginDivCheckbox">
-                        <label class="checkbox">
-                            <input type="checkbox" class="checkbox__input">
-                            <div class="checkbox__checkmark"></div>
+                        <!--                        <label class="checkbox">
+                                                    <input type="checkbox" class="checkbox__input" id="passwordremember">
+                                                    <div class="checkbox__checkmark"></div>
+                                                    Remember Me
+                                                </label>-->
+                        <span class="floatleft">
+                        <label>
+                            <ons-checkbox modifier="material" value="passwordremember" input-id="passwordremember-2"
+                                          id="passwordremember"></ons-checkbox>
+                        </label>
+                        <label for="passwordremember-2">
                             Remember Me
                         </label>
+                        </span>
+                        <span class="floatright">
+
+                        <label for="autologin-2">
+                            auto login
+                        </label>
+                                                    <label>
+                            <ons-checkbox modifier="material" value="autologin" input-id="autologin-2"
+                                          id="autologin"></ons-checkbox>
+                        </label>
+                        </span>
                     </div>
 
                     <div class="loginDivSignIN">
@@ -426,7 +447,9 @@
 <template id="groups.html">
     <ons-page id="group">
         <ons-fab modifier="mini" id="addGroup">
-            <img src="img/users-medical.svg" alt="users add group" width="25" height="25">
+            <i>
+                <img src="img/users-medical.svg" alt="users add group" width="25" height="25">
+            </i>
         </ons-fab>
         <ons-toolbar>
             <div class="left">
@@ -509,14 +532,22 @@
 </template>
 
 <script src="js/jquery.js"></script>
+<script src="js/onsenui.js"></script>
 <script src="cordova.js"></script>
 <!--<script src="js/bootstrap.js"></script>-->
 <script src="js/plugin02.js"></script>
 <script src="js/plugin03.js"></script>
+<script src="leaflet/leaflet.js"></script>
 <script defer src="js/connectAPP.js"></script>
 
+<!--<script src="js/jquery.js"></script>
+<script src="cordova.js"></script>
+&lt;!&ndash;<script src="js/bootstrap.js"></script>&ndash;&gt;
+<script src="js/plugin02.js"></script>
+<script src="js/plugin03.js"></script>
+<script defer src="js/connectAPP.js"></script>
 
-<script src="leaflet/leaflet.js"></script>
+<script src="leaflet/leaflet.js"></script>-->
 </body>
 
 </html>

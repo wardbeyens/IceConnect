@@ -96,8 +96,8 @@ ons-speed-dial.open:before {
     left: 50px;
 }
 
-i {
-    color: #fff;
+fab i, .fa-bars {
+    color: #fff !important;
 }
 
 
@@ -303,4 +303,11 @@ ons-card ons-fab{
     margin: 5vw;
     border-radius: 20px;
     box-shadow: 10px 10px 10px darkgray;
+}
+
+.floatleft {
+    float: left;
+}
+.floatright {
+    float: right;
 }

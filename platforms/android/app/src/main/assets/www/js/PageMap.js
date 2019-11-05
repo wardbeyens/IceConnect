@@ -64,3 +64,13 @@ var showaddLocationUserDialog = function () {
 $('#openaddLocationUserDialog').click(function () {
     showaddLocationUserDialog();
 });
+
+document.addEventListener("volumedownbutton", onVolumeDownKeyDown, false);
+function onVolumeDownKeyDown() {
+    map.zoomOut();
+};
+document.addEventListener("volumeupbutton", onVolumeUpKeyDown, false);
+function onVolumeUpKeyDown() {
+    map.zoomIn();
+};
+

@@ -24,7 +24,12 @@ $(function () {
 
 function onDeviceReady() {
     console.log('Device is ready');
-    console.log(navigator.vibrate);
     // navigator.vibrate(100);
+    alert("ready");
+
     getLocation();
+
+    console.log(localStorage.getItem("default"));
+
+
 }
