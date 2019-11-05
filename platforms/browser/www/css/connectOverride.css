@@ -228,6 +228,7 @@ ons-button{
 
 
 .dialog {
+    height: 80vh;
     min-height: 320px;
     min-width: 310px;
     margin: auto;

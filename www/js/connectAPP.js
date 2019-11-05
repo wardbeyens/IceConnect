@@ -24,7 +24,19 @@ $(function () {
 
     window.logout = function () {
 // hier moet het persoon ID nog null worden
-        fn.load('login.html')
+        fn.load('login.html');
+/*        if (localStorage.getItem("checkbox") === "true"){
+            //set chexbox on
+            $("#passwordremember-2").prop('checked', true);
+            console.log("checkbox MUST BE checked by now!");
+            console.log("get localstorage: checkbox, " + localStorage.getItem("checkbox"));
+        }
+
+        if (localStorage.getItem("checkbox") === "false") {
+            console.log("localstorage checkbox was false");
+            localStorage.setItem("checkbox", "false");
+            console.log("set localStorage: checkbox, false")
+        }*/
     };
 
 });
@@ -35,9 +47,12 @@ function onDeviceReady() {
     // navigator.vibrate(100);
     console.log("onDeviceReady -> checkboxState: '" + document.querySelector('ons-checkbox').checked + "'");
     console.log("getLocalStorageItemCheckbox: " + localStorage.getItem("checkbox"));
+
     if (localStorage.getItem("checkbox") === "true"){
         //set chexbox on
         $("#passwordremember-2").prop('checked', true);
+        $("#loginInputEmail").val(atob(localStorage.getItem(btoa("email"))));
+        $("#loginInputPassword").val(atob(localStorage.getItem(btoa("password"))));
         console.log("checkbox MUST BE checked by now!");
         console.log("get localstorage: checkbox, " + localStorage.getItem("checkbox"));
     }

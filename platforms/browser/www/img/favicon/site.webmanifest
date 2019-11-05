@@ -1,6 +1,6 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "ICE Connect",
+    "short_name": "ICE-Connect",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
