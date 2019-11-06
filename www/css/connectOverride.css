@@ -312,3 +312,8 @@ ons-card ons-fab{
 .floatright {
     float: right;
 }
+
+.fitsize{
+    text-align: center;
+    font-size: 2.5vw;
+}

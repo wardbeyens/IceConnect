@@ -149,7 +149,7 @@
                                    name="loginInputEmail"
                                    placeholder="yourname@gmail.com"
                                    type="text" value="" required>
-<!--         value="test@demo.com" -->
+                            <!--         value="test@demo.com" -->
                         </div>
                     </div>
                     <div class="loginDivInput">
@@ -314,6 +314,7 @@
         <script src="js/PageMap.js"></script>
     </ons-page>
 </template>
+
 <template id="GetGroepLocatiesOpKaartDialog.html">
     <ons-dialog id="GetGroepLocatiesOpKaartDialog" cancelable modifier="material">
         <ons-page>
@@ -378,6 +379,7 @@
 
     </ons-dialog>
 </template>
+
 <template id="addLocationUserDialog.html">
     <ons-dialog id="addLocationUserDialog" cancelable modifier="material">
         <ons-page>
@@ -449,6 +451,7 @@
 
     </ons-dialog>
 </template>
+
 <template id="groups.html">
     <ons-page id="group">
         <ons-fab modifier="mini" id="addGroup">
@@ -475,11 +478,86 @@
                 </ons-fab>-->
         <div class="background"></div>
         <div class="content">
+            <div class="row mx-3 my-2">
+                <!--                <div class="col-xs-4">-->
+                <!--                    <ons-button modifier="large material" ripple><span class="fitsize">get groups</span></ons-button>-->
+                <!--                </div>-->
+                <div class="col-xs-6">
+                    <ons-button modifier="large material" ripple id="openaddUserToGroupDialog"><span class="fitsize">join group</span>
+                    </ons-button>
+                </div>
+                <div class="col-xs-6">
+                    <ons-button modifier="large material" ripple><span class="fitsize">add group</span></ons-button>
+                </div>
+            </div>
             <div id="GetGroepenCard" class="emptylistGroup"></div>
         </div>
         <script src="js/PageGroups.js"></script>
     </ons-page>
 </template>
+
+<template id="addUserToGroupDialog.html">
+    <ons-dialog id="addUserToGroupDialog" cancelable modifier="material">
+        <ons-page>
+            <div class="background"></div>
+
+            <div class="content modal-content">
+                <div class="modal-content-h">
+                    <h1 class="">Join a group </h1>
+                </div>
+                <div class="modal-form">
+                    <form class="form-addUserToGroup">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h3>
+                                    <label for="addUserToGroupGroepID">Choose the group you want to join: </label>
+                                </h3>
+                            </div>
+                            <div class="col-xs-12">
+                                <ons-select autofocus="true" required select-id="addUserToGroupGroepID"
+                                            size="1" modifier="material underbar">
+                                    <select name="addUserToGroupGroepID"
+                                            id="addUserToGroupGroepID-x">
+                                    </select>
+                                </ons-select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <h3>
+                                    <label for="addUserToGroupGroepYourLocation">Choose one of your saved location: </label>
+                                </h3>
+                            </div>
+                            <div class="col-12">
+                                <ons-select autofocus="true" required select-id="addUserToGroupGroepYourLocation"
+                                            size="1" modifier="material underbar">
+
+                                    <select name="addUserToGroupGroepYourLocation"
+                                            id="addUserToGroupGroepYourLocation-x">
+                                    </select>
+                                </ons-select>
+
+                            </div>
+                        </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div class="row mt-5">
+                    <ons-button modifier="large material" ripple id="AddUserToGroup">join group</ons-button>
+                </div>
+
+            </div>
+            <script src="js/PageAddUserToGroupDialog.js"></script>
+        </ons-page>
+
+
+    </ons-dialog>
+</template>
+
+
 <template id="settings.html">
     <ons-page>
         <ons-toolbar>

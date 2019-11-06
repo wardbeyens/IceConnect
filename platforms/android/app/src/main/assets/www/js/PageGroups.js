@@ -32,7 +32,7 @@ function getGroepenInCard(){
                 </ons-fab> 
                 <div class="title">
    
-                  <h2 style="font-weight: bold">` + this.groepnaam + `</h2>
+                  <h2 style="font-weight: bold"> <span class="groepIDvanCard">` + this.groepID + "</span>) " + this.groepnaam + `</h2>
                 <!--
                     <ons-fab modifier="mini" >
                      \` + this.locatieID + \`
@@ -65,5 +65,22 @@ function getGroepenInCard(){
     });
 };
 
-getGroepenInCard()
+getGroepenInCard();
+
+var showAddUserToGroupDialog= function () {
+    var dialog = document.getElementById('addUserToGroupDialog');
+
+    if (dialog) {
+        dialog.show();
+    } else {
+        ons.createElement('addUserToGroupDialog.html', {append: true}).then(function (dialog) {
+            dialog.show([animation = "slide"]);
+        });
+    }
+};
+
+$('#openaddUserToGroupDialog').click(function () {
+    console.log("i want to join a group!")
+    showAddUserToGroupDialog();
+});
 
