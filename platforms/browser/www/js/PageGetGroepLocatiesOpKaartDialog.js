@@ -45,7 +45,10 @@ $('#getGroepLocatiesOpKaart').click(function () {
     getGroepLocatiesOpKaartGroepID2 = $('#getGroepLocatiesOpKaartGroepID2').val();
 
     document.getElementById('GetGroepLocatiesOpKaartDialog').hide();
-    document.getElementById('content').load('home.html');
+    $('#GetGroepLocatiesOpKaartDialog').hide();
+
+    // document.getElementById('content').load('home.html');
+    // alert("U bent nu uit het Dialoog uit en terug op de kaartpagina");
 
     console.log(getGroepLocatiesOpKaartKleurMarkerKleur);
     getGroepLocatiesOpKaartKleurMarker = new L.Icon({
