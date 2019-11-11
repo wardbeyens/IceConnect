@@ -14,9 +14,9 @@
     height: 100%;
 }
 
-/*#group .page__background {
+#group .page__background {
     background-image: url(../img/BelgiumoldmapLicht.jpg) ;
-}*/
+}
 
 
 .form-row {
@@ -229,7 +229,8 @@ ons-button{
 
 .dialog {
     height: 80vh;
-    min-height: 320px;
+    min-height: 330px;
+    width: 80vw;
     min-width: 310px;
     margin: auto;
     text-align: center;

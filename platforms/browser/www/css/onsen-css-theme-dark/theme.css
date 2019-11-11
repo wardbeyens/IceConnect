@@ -65,7 +65,8 @@
   --fab-text-color: #ffffff;
   --fab-background-color: #990829;
   --fab-active-background-color: #990829;
-  --card-background-color: #C2E1DB;
+  /*--card-background-color: #C2E1DB;*/
+  --card-background-color: #686868;
   --card-text-color: #030303;
   --toast-background-color: #990829;
   --toast-text-color: #000;
