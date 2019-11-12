@@ -28,7 +28,7 @@ $('#registerSend').click(function () {
             wachtwoord: $('#registerInputPasswordConfirm').val()
         };
         console.log(pars);
-        $.post('http://wabyte.com/register.php', pars, function (respons) {
+        $.post('https://wabyte.com/register.php', pars, function (respons) {
             console.log(respons);
             alert("U bent geregistreerd!");
 
@@ -37,7 +37,7 @@ $('#registerSend').click(function () {
                 wachtwoord: $('#registerInputPasswordConfirm').val()
             };
             console.log(pars2);
-            $.post('http://wabyte.com/loginPost.php', pars2, function (respons) {
+            $.post('https://wabyte.com/loginPost.php', pars2, function (respons) {
                 console.log(respons);
                 var loginPersoonID = respons.persoonID;
                 $('.loginPersoonID').text(loginPersoonID);
@@ -83,7 +83,7 @@ $('#loginSend').click(function (message) {
             wachtwoord: $('#loginInputPassword').val()
         };
         console.log(pars);
-        $.post('http://wabyte.com/loginPost.php', pars, function (respons) {
+        $.post('https://wabyte.com/loginPost.php', pars, function (respons) {
             console.log(respons);
             //console.log(respons["persoonID"]);
             //console.log(respons.persoonID);

@@ -3,7 +3,7 @@ function LoadData(message) {
         persoonID: persoonID,
     };
     console.log("Load Data from user: ")
-    $.post('http://wabyte.com/getInformation.php', pars, function (respons) {
+    $.post('https://wabyte.com/getInformation.php', pars, function (respons) {
         console.log(respons);
 
         $.each(respons, function (i) {

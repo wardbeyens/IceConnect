@@ -16,7 +16,7 @@ $('#addLocation').click(function () {
     };
 
     console.log(pars);
-    $.post('http://wabyte.com/addlocationPOST.php', pars, function (respons) {
+    $.post('https://wabyte.com/addlocationPOST.php', pars, function (respons) {
         console.log(respons);
         alert(respons);
     });

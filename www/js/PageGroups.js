@@ -5,7 +5,7 @@ function getGroepenInCard(){
 
     console.log("U vraagt nu al alle groepen op");
 
-    $.post('http://wabyte.com/getgroepen.php', function (data) {
+    $.post('https://wabyte.com/getgroepen.php', function (data) {
         console.log(data);
         $('.emptylistGroup').empty();
         $.each(data, function (i) {

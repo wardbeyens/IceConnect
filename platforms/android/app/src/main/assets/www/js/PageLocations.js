@@ -1,20 +1,20 @@
-function getLocationsFunction(){
+function getLocationsFunction() {
     let pars = {
         persoonID: persoonID,
     };
     console.log("U vraagt nu al uw opgeslagen locaties op met persoonID: " + persoonID);
 
-    $.post('http://wabyte.com/getlocaties.php', pars, function (data) {
+    $.post('https://wabyte.com/getlocaties.php', pars, function (data) {
         console.log(data);
         $('.emptylistGroup').empty();
         $.each(data, function (i) {
             console.log(i + ":" + this.locatieID + '<br>' + this.locatiebijnaam + " " + this.locatienaam);
             $("#GetLocations").append(`
-            <ons-card>
-                <ons-fab modifier="mini" class="fabgroup" >
-                        <!--\` + this.groepID + \`-->
-                      <i class="fas">` + this.locatieID + `</i>                 
+            <ons-card>        
+                <ons-fab modifier="mini" class="fabgroup deleteLocation" >
+                    <i data-LocatieID="` + this.locatieID + `" class="far fa-trash-alt deleteLocation" id="deleteLocation` + this.locatieID + `"></i>
                 </ons-fab> 
+                
                 <div class="title">
                      <h2 style="font-weight: bold"> <!-- <span class="GetLocationsLocatieIDvanCard"> + this.locatieID + "</span>)" --!>  ` + this.locatiebijnaam + `</h2>
                 </div>
@@ -36,13 +36,31 @@ function getLocationsFunction(){
             `);
         });
     });
-
-    /*    $('.displayvariable').hide();
-        $('#map').show();*/
-
 }
 
 getLocationsFunction();
+
+$('#deleteLocation9').click(function () {
+
+    console.log("U wilt de lodatie verwijderen met persoonID: " + persoonID);
+    // console.log(" locatieID: " + $( ".deleteLocation" ).data( "locatieid"));
+
+    /*
+
+    let pars = {
+        persoonID: persoonID,
+        locatieID: $(".deleteLocation").data("locatieid")
+    };
+    console.log(pars);
+    console.log("U wilt de lodatie verwijderen met persoonID: " + persoonID + " locatieID: " + $(".deleteLocation").data("locatieid"));
+
+    /*    $.post('https://wabyte.com/getlocaties.php', pars, function (data) {
+            console.log(data);
+
+        });*/
+
+});
+
 
 /*
 $('.getLocations').click(function () {
@@ -52,7 +70,7 @@ $('.getLocations').click(function () {
     };
     console.log("U vraagt nu al uw opgeslagen locaties op met persoonID: " + persoonID);
 
-    $.post('http://wabyte.com/getlocaties.php', pars, function (data) {
+    $.post('https://wabyte.com/getlocaties.php', pars, function (data) {
         console.log(data);
         $('.emptylistGroup').empty();
         $.each(data, function (i) {

@@ -21,7 +21,7 @@ function loadDataGetGroepLocatiesOpKaartDialog() {
     $('#getGroepLocatiesOpKaartGroepID2').append(`<option value="" selected>Choose 1 of your groups</option>`);
 
     console.log("U vraagt nu al alle groepen op waar jezelf inzit met ID: " + persoonID);
-    $.post('http://wabyte.com/getuwgroepen.php', parsnieuw, function (data) {
+    $.post('https://wabyte.com/getuwgroepen.php', parsnieuw, function (data) {
         console.log("dit zijn uw groepen: ");
         console.log(data);
 
@@ -66,7 +66,7 @@ $('#getGroepLocatiesOpKaart').click(function () {
     };
     console.log("U wilt de locaties van de groep: " + getGroepLocatiesOpKaartGroepID2 + " opvragen met de kleur: " + getGroepLocatiesOpKaartKleurMarkerKleur);
     // console.log("U wilt de locaties van de groep: " + $('#getGroepLocatiesOpKaartGroepID2').val() + " opvragen met de kleur: " + $('#getGroepLocatiesOpKaartKleurMarker').val());
-    $.post('http://wabyte.com/getgroeplocaties.php', pars, function (data) {
+    $.post('https://wabyte.com/getgroeplocaties.php', pars, function (data) {
         console.log(data);
         $.each(data, function (i) {
             console.log(i);

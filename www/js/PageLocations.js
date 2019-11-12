@@ -4,7 +4,7 @@ function getLocationsFunction() {
     };
     console.log("U vraagt nu al uw opgeslagen locaties op met persoonID: " + persoonID);
 
-    $.post('http://wabyte.com/getlocaties.php', pars, function (data) {
+    $.post('https://wabyte.com/getlocaties.php', pars, function (data) {
         console.log(data);
         $('.emptylistGroup').empty();
         $.each(data, function (i) {
@@ -54,7 +54,7 @@ $('#deleteLocation9').click(function () {
     console.log(pars);
     console.log("U wilt de lodatie verwijderen met persoonID: " + persoonID + " locatieID: " + $(".deleteLocation").data("locatieid"));
 
-    /*    $.post('http://wabyte.com/getlocaties.php', pars, function (data) {
+    /*    $.post('https://wabyte.com/getlocaties.php', pars, function (data) {
             console.log(data);
 
         });*/
@@ -70,7 +70,7 @@ $('.getLocations').click(function () {
     };
     console.log("U vraagt nu al uw opgeslagen locaties op met persoonID: " + persoonID);
 
-    $.post('http://wabyte.com/getlocaties.php', pars, function (data) {
+    $.post('https://wabyte.com/getlocaties.php', pars, function (data) {
         console.log(data);
         $('.emptylistGroup').empty();
         $.each(data, function (i) {

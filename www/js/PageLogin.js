@@ -15,7 +15,7 @@ $('#loginSend').click(function (message) {
             wachtwoord: $('#loginInputPassword').val()
         };
         console.log(pars);
-        $.post('http://wabyte.com/loginPost.php', pars, function (respons) {
+        $.post('https://wabyte.com/loginPost.php', pars, function (respons) {
             console.log(respons);
             //console.log(respons["persoonID"]);
             //console.log(respons.persoonID);

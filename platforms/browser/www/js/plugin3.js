@@ -50,7 +50,7 @@ $('#addLocation').click(function () {
     };
 
     console.log(pars);
-    $.post('http://wabyte.com/addlocationPOST.php', pars, function (respons) {
+    $.post('https://wabyte.com/addlocationPOST.php', pars, function (respons) {
         console.log(respons);
         alert(respons);
     });
@@ -67,7 +67,7 @@ $('#getLocaties').click(function () {
     };
     console.log("U vraagt nu al uw opgeslagen locaties op met persoonID: " + persoonID);
 
-    $.post('http://wabyte.com/getlocaties.php', pars, function (data) {
+    $.post('https://wabyte.com/getlocaties.php', pars, function (data) {
         console.log(data);
         $('.emptylist').empty();
         $.each(data, function (i) {
@@ -103,7 +103,7 @@ $('#getLocatiesOpKaart').click(function () {
     };
     console.log("U vraagt nu al uw opgeslagen locaties op met persoonID: " + persoonID);
 
-    $.post('http://wabyte.com/getlocaties.php', pars, function (data) {
+    $.post('https://wabyte.com/getlocaties.php', pars, function (data) {
         console.log(data);
         $('.emptylist').empty();
 
@@ -128,7 +128,7 @@ $('#getGroepen').click(function () {
     alert("get groepen");
     console.log("U vraagt nu al alle groepen op");
 
-    $.post('http://wabyte.com/getgroepen.php', function (data) {
+    $.post('https://wabyte.com/getgroepen.php', function (data) {
         console.log(data);
         $('.emptylistGroup').empty();
         $.each(data, function (i) {
@@ -156,7 +156,7 @@ $('#getGroepenTable').click(function () {
 
     console.log("U vraagt nu al alle groepen op");
 
-    $.post('http://wabyte.com/getgroepen.php', function (data) {
+    $.post('https://wabyte.com/getgroepen.php', function (data) {
         console.log(data);
         $('.emptylistGroup').empty();
         $.each(data, function (i) {
@@ -218,7 +218,7 @@ $('#openAddUserToGroup').click(function () {
     $('#addUserToGroupGroepID').empty();
     $('#addUserToGroupGroepID').append(`<option value="" selected>Kies een groep</option>`);
 
-    $.post('http://wabyte.com/getgroepen.php', function (data) {
+    $.post('https://wabyte.com/getgroepen.php', function (data) {
         console.log(data);
         $.each(data, function (i) {
             optionText = this.groepnaam;
@@ -236,7 +236,7 @@ $('#openAddUserToGroup').click(function () {
     $('#addUserToGroupGroepYourLocation').empty();
     $('#addUserToGroupGroepYourLocation').append(`<option value="" selected>Kies een locatie</option>`);
 
-    $.post('http://wabyte.com/getlocaties.php', pars, function (data2) {
+    $.post('https://wabyte.com/getlocaties.php', pars, function (data2) {
         console.log(data2);
         $.each(data2, function (j) {
 
@@ -260,7 +260,7 @@ $('#AddUserToGroup').click(function () {
     console.log(pars);
 
     alert("U bent: " + persoonID + "\nU wilt in groep: " + $('#addUserToGroupGroepID').val() + "\nMet locatie: " + $('#addUserToGroupGroepYourLocation').val());
-    $.post('http://wabyte.com/addZitIN.php', pars, function (respons) {
+    $.post('https://wabyte.com/addZitIN.php', pars, function (respons) {
         console.log(respons);
         alert("U bent toegevoegd aan een groep!"
         );
@@ -274,7 +274,7 @@ $('#getAllGroepLocatiesOpKaart').click(function () {
     };
     console.log("U vraagt de locaties van elk groeplid met persoonID: " + persoonID);
 
-    $.post('http://wabyte.com/getallgroeplocaties.php', pars, function (data) {
+    $.post('https://wabyte.com/getallgroeplocaties.php', pars, function (data) {
         console.log(data);
         $.each(data, function (i) {
             console.log(i);
@@ -334,7 +334,7 @@ $('#openGetGroepLocatiesOpKaartModal').click(function () {
     $('#getGroepLocatiesOpKaartGroepID2').append(`<option value="" selected>Kies 1 van jouw groepen</option>`);
 
     console.log("U vraagt nu al alle groepen op waar jezelf inzit met ID: " + persoonID);
-    $.post('http://wabyte.com/getuwgroepen.php', parsnieuw, function (data) {
+    $.post('https://wabyte.com/getuwgroepen.php', parsnieuw, function (data) {
         console.log("dit zijn uw groepen: ")
         console.log(data);
 
@@ -366,7 +366,7 @@ $('#getGroepLocatiesOpKaart').click(function () {
         groepID: $('#getGroepLocatiesOpKaartGroepID2').val(),
     };
     console.log("U wilt de locaties van de groep: " + $('#getGroepLocatiesOpKaartGroepID2').val() + " opvragen met de kleur: " + $('#getGroepLocatiesOpKaartKleurMarker').val());
-    $.post('http://wabyte.com/getgroeplocaties.php', pars, function (data) {
+    $.post('https://wabyte.com/getgroeplocaties.php', pars, function (data) {
         console.log(data);
         $.each(data, function (i) {
             console.log(i);

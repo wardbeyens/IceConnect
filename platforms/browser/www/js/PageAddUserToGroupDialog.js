@@ -4,7 +4,7 @@ function loadDataAddUserToGroupDialog() {
     $('#addUserToGroupGroepID-x').empty();
     $('#addUserToGroupGroepID-x').append(`<option value="" selected>Choose group</option>`);
 
-    $.post('http://wabyte.com/getgroepen.php', function (data) {
+    $.post('https://wabyte.com/getgroepen.php', function (data) {
         console.log(data);
         $.each(data, function (i) {
             optionText = this.groepnaam;
@@ -23,7 +23,7 @@ function loadDataAddUserToGroupDialog() {
     $('#addUserToGroupGroepYourLocation-x').append(`<option value="" selected>Choose location</option>`);
 
     console.log("getlocaties van de gebruiker met: ", persoonID, " ==> ", parsPersoon);
-    $.post('http://wabyte.com/getlocaties.php', parsPersoon, function (data2) {
+    $.post('https://wabyte.com/getlocaties.php', parsPersoon, function (data2) {
         console.log(data2);
         $.each(data2, function (j) {
 
@@ -48,7 +48,7 @@ $('#AddUserToGroup').click(function () {
     console.log(pars);
 
     alert("U bent: " + persoonID + "\nU wilt in groep: " + $('#addUserToGroupGroepID-x').val() + "\nMet locatie: " + $('#addUserToGroupGroepYourLocation-x').val());
-    $.post('http://wabyte.com/addZitIN.php', pars, function (respons) {
+    $.post('https://wabyte.com/addZitIN.php', pars, function (respons) {
         console.log(respons);
         alert("U bent toegevoegd aan een groep!"
         );
