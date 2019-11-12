@@ -116,9 +116,10 @@ function getLocation() {
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
 };
 
-getLocation();
+
 
 function meOnMap() {
+    getLocation();
     //moet nog gebeuren marker weghalen en dan nieuwe marker plaatsen
     markerMyLocation = L.circleMarker([lat, lng], {radius: 3}).addTo(map).bindPopup('Your Location').openPopup();
     console.log("Een marker op mijn locatie: ", lat, lng);

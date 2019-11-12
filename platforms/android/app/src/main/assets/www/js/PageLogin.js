@@ -55,11 +55,12 @@ $('#loginSend').click(function (message) {
         });
 
 
+
         // document.getElementById('content').load('login.html');
 
 
     } else {
-        alert("Please fill in all fields")
+        alert("Please fill in all fields!")
     }
 });
 

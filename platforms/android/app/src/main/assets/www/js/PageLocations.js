@@ -40,7 +40,7 @@ function getLocationsFunction() {
 
 getLocationsFunction();
 
-$('#deleteLocation9').click(function () {
+$('ons-card').click(function () {
 
     console.log("U wilt de lodatie verwijderen met persoonID: " + persoonID);
     // console.log(" locatieID: " + $( ".deleteLocation" ).data( "locatieid"));

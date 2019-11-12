@@ -220,12 +220,6 @@ ons-button{
 }*/
 
 
-@media screen and (min-width: 1025px) {
-    #titellogin h1 {
-        font-size: 100px;
-    }
-}
-
 
 .dialog {
     height: 80vh;
@@ -317,4 +311,113 @@ ons-card ons-fab{
 .fitsize{
     text-align: center;
     font-size: 2.5vw;
+}
+
+@media screen and (min-width: 750px){
+    #login{
+        max-width: 700px;
+        margin: auto;
+    }
+
+
+    #loginDivCenter {
+        /*margin: 25vh auto 0 auto;*/
+        margin: 5px auto 0 auto;
+        /*max-width: 750px;*/
+        padding: 3vw;
+    }
+
+    #titellogin {
+        text-align: center;
+        /*margin-bottom: 30px;*/
+        margin-bottom: 3vh;
+    }
+
+    #titellogin h1 {
+        font-size: 5vw;
+    }
+
+    .loginDivInput {
+        margin-top: 1.25vh;
+        /*margin-top: 15px;*/
+    }
+
+    .loginDivInput label {
+        /*color: #990829;*/
+        font-size: 2.5vw;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    .loginDivInputChild {
+        margin-top: 0.25vh;
+        margin-bottom: 1vh;
+        margin-left: 0;
+    }
+
+    .loginDivInputChild i {
+        display: inline-block;
+        text-align: left;
+
+        vertical-align: middle;
+        font-size: 3.5vw;
+        height: 3.5vw;
+        width: 7%;
+    }
+
+    .loginDivInput input {
+        display: inline-block;
+        text-align: left;
+
+        width: 100%;
+        /*color: #990829;*/
+        font-size: 2.5vw;
+        /*border: 1px solid #000;*/
+        height: 3vw;
+    }
+
+    .loginDivCheckbox {
+        /*margin-top: 25px;*/
+        margin: 0.5vw 0 1vw 15px;
+        margin-left: 0px;
+        font-size: 2vw;
+
+    }
+
+    .loginDivSignIN ons-button {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        width: 100%;
+        height: 6vw;
+        font-size: 4vw;
+        padding-top: 1vw;
+        text-align: center;
+        text-transform: capitalize;
+        /*background: #990829 !important;*/
+        /*box-shadow: 5px 5px 3px grey, -5px 5px 3px grey, -5px -5px 3px grey, 5px -5px 3px grey;*/
+
+    }
+
+    .loginDivLinks {
+        margin: auto;
+        display: flex !important;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .loginDivLinks ons-button {
+        margin: 0;
+        /*color: rgba(153, 8, 41, 0.7) !important;*/
+        /*border: 1px solid #000;*/
+        text-transform: capitalize;
+    }
+
+}
+
+@media screen and (min-width: 1025px) {
+    #titellogin h1 {
+        font-size: 100px;
+    }
+
+
 }
