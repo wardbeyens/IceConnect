@@ -50,11 +50,38 @@ window.fn.deleteLocation = function (locatieID) {
     console.log(pars);
     console.log("U wilt de locatie verwijderen met persoonID: " + persoonID + " locatieID: " + locatieIDfromFunction);
 
-    $.post('https://wabyte.com/removeLocation.php', pars, function (data) {
-        console.log(data);
+    ons.notification.confirm({
+        title: 'Confirm Delete',
+        // message: 'Are you sure you want to delete this location?',
+        message: 'Are you sure you want to delete this location?',
+        cancelable: true,
+        modifier: 'material',
+        animation: 'fade',
+        buttonLabels: ["Cancel", "OK"],
+        callback: function (idx) {
+            switch (idx) {
+                case 0:
+/*                    ons.notification.alert({
+                        message: 'You pressed "Cancel".\n ' +
+                            'Location still exist',
+                    });*/
+                    ons.notification.toast('Location still exist!', {
+                        timeout: 2000
+                    });
+                    break;
+                case 1:
+                    $.post('https://wabyte.com/removeLocation.php', pars, function (data) {
+                        console.log(data);
+                    });
+                    document.getElementById('content').load('locations.html');
+
+                    ons.notification.toast('Location is no more!', {
+                        timeout: 2000
+                    });
+                    break;
+            }
+        }
     })
-
-    document.getElementById('content').load('locations.html');
-
-
 };
+
+

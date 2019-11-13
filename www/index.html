@@ -104,7 +104,6 @@
 
 </ons-splitter>
 
-
 <template id="login.html">
     <ons-page>
         <div class="page__background"></div>
@@ -217,6 +216,7 @@
         </div>
     </ons-page>
 </template>
+
 <template id="register.html">
 
     <ons-page>
@@ -265,6 +265,7 @@
 
     </ons-page>
 </template>
+
 <template id="home.html">
     <ons-page id="home">
 
@@ -317,7 +318,6 @@
         <script src="js/PageMap.js"></script>
     </ons-page>
 </template>
-
 <template id="GetGroepLocatiesOpKaartDialog.html">
     <ons-dialog id="GetGroepLocatiesOpKaartDialog" cancelable modifier="material">
         <ons-page>
@@ -382,7 +382,6 @@
 
     </ons-dialog>
 </template>
-
 <template id="addLocationUserDialog.html">
     <ons-dialog id="addLocationUserDialog" cancelable modifier="material">
         <ons-page>
@@ -499,40 +498,6 @@
     </ons-page>
 
 </template>
-<template id="locations.html">
-    <ons-page id="locations">
-        <!--        <ons-fab modifier="mini" id="addGroup">
-                    <i>
-                        <img src="img/users-medical.svg" alt="users add group" width="25" height="25">
-                    </i>
-                </ons-fab>-->
-        <ons-toolbar>
-            <div class="left">
-                <ons-toolbar-button onclick="fn.open()">
-                    <ons-icon icon="md-menu"></ons-icon>
-                </ons-toolbar-button>
-            </div>
-            <div class="center">
-                Locations
-            </div>
-        </ons-toolbar>
-<!--        <ons-fab position="bottom right">
-            <i class="getLocations fas fa-user"></i>
-        </ons-fab>-->
-        <div class="background"></div>
-        <div class="content">
-<!--            <div class="row mx-3 my-2">
-                <div class="col-xs-12">
-                    <ons-button modifier="large material" ripple class="getLocations"><span class="fitsize getLocations">get locations</span>
-                    </ons-button>
-                </div>
-            </div>-->
-            <div id="GetLocations" class="emptylistGroup"></div>
-        </div>
-        <script src="js/PageLocations.js"></script>
-    </ons-page>
-</template>
-
 <template id="addUserToGroupDialog.html">
     <ons-dialog id="addUserToGroupDialog" cancelable modifier="material">
         <ons-page>
@@ -596,6 +561,29 @@
     </ons-dialog>
 </template>
 
+<template id="locations.html">
+    <ons-page id="locations">
+<!--        nog toe te voegen modal waarbij je uw adres kunt ingeven-->
+<!--        <ons-fab modifier="mini" id="addGroup">
+            <i class="fas fa-user-plus" id="openaddLocationUserDialogV2"></i>
+        </ons-fab>-->
+        <ons-toolbar>
+            <div class="left">
+                <ons-toolbar-button onclick="fn.open()">
+                    <ons-icon icon="md-menu"></ons-icon>
+                </ons-toolbar-button>
+            </div>
+            <div class="center">
+                Locations
+            </div>
+        </ons-toolbar>
+        <div class="background"></div>
+        <div class="content">
+            <div id="GetLocations" class="emptylistGroup"></div>
+        </div>
+        <script src="js/PageLocations.js"></script>
+    </ons-page>
+</template>
 
 <template id="settings.html">
     <ons-page>
@@ -611,6 +599,7 @@
         </ons-toolbar>
     </ons-page>
 </template>
+
 <template id="about.html">
     <ons-page>
         <script src="js/PageInfo.js"></script>
