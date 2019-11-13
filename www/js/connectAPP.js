@@ -13,6 +13,8 @@ $(function () {
         var content = document.getElementById('content');
         var menu = document.getElementById('menu');
         content.load(page).then(menu.close.bind(menu));
+        navigator.vibrate(500);
+
     };
 
 
@@ -58,7 +60,7 @@ $(function () {
 
 function onDeviceReady() {
     console.log('Device is ready');
-    // console.log(navigator.vibrate);
+    console.log(navigator.vibrate);
     // navigator.vibrate(100);
     console.log("onDeviceReady -> checkboxState: '" + document.querySelector('ons-checkbox').checked + "'");
     console.log("getLocalStorageItemCheckbox: " + localStorage.getItem("checkbox"));

@@ -53,11 +53,7 @@ $('#loginSend').click(function (message) {
                 document.getElementById('content').load('home.html');
             }
         });
-
-
-
         // document.getElementById('content').load('login.html');
-
 
     } else {
         alert("Please fill in all fields!")
@@ -72,6 +68,7 @@ $('#passwordReset').click(function () {
     ons.notification.alert(messageHTML = "<p>Please contact me: <a href=\"mailto:wardbeyens99@gmail.com\">wardbeyens99@gmail.com</a> </p>");
     console.log(persoonID)
 });
+
 
 //hier alles om wachtwoord
 /*    var passwdremember = $('#passwordremember').valueOf();
