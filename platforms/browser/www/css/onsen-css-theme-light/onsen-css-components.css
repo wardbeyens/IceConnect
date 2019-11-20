@@ -3633,7 +3633,7 @@ h4, h5, h6 {
   line-height: 25px;
   text-transform: uppercase;
   position: relative;
-  background-color: #C2E1DB;
+  background-color: #ccc;
   background-size: 100% 1px;
   background-repeat: no-repeat;
   background-position: top;
@@ -6244,7 +6244,7 @@ ons-fab.fab--bottom__center, button.fab--bottom__center, .speed-dial.fab--bottom
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
   overflow: hidden;
-  background-color: #C2E1DB;
+  background-color: #ccc;
   position: absolute;
   left: 0;
   right: 0;
@@ -6782,7 +6782,7 @@ ons-fab.fab--bottom__center, button.fab--bottom__center, .speed-dial.fab--bottom
   font-weight: 400;
   box-shadow: 0 1px 2px rgba(0, 0, 0, .12);
   border-radius: 8px;
-  background-color: #C2E1DB;
+  background-color: #DDE3E6;
   box-sizing: border-box;
   display: block;
   margin: 8px;
@@ -6830,7 +6830,7 @@ ons-fab.fab--bottom__center, button.fab--bottom__center, .speed-dial.fab--bottom
     </div>
 */
 .card--material {
-  background-color: #C2E1DB;
+  background-color: #DDE3E6;
   border-radius: 2px;
   box-shadow:
       0 2px 2px 0 rgba(0, 0, 0, .14),
@@ -7460,3 +7460,7 @@ ons-fab.fab--bottom__center, button.fab--bottom__center, .speed-dial.fab--bottom
   }
 }
 /* non BEM */
+
+#group .page__background, #locations .page__background,#about .page__background, #settings .page__background {
+  background-image: url(../../img/BelgiumoldmapLicht.jpg) ;
+}

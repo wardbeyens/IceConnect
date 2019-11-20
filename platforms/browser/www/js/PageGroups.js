@@ -1,4 +1,4 @@
-function getGroepenInCard(){
+function getGroepenInCard() {
     let pars = {
         persoonID: persoonID,
     };
@@ -25,14 +25,17 @@ function getGroepenInCard(){
                         $("#GetGroepenTabellen").append('</tr>');*/
             $("#GetGroepenCard").append(`
             <ons-card>
-                <ons-fab modifier="mini" class="fabgroup" >
-                        <!--\` + this.groepID + \`-->
-<!--                      <i class="fas fa-plus addUserToGroup"></i>-->
+<!--                <ons-fab modifier="mini" class="fabgroup" >
                       <i class="fas fa-plus"></i>                 
-                </ons-fab> 
+                </ons-fab> -->
+                    <ons-fab modifier="mini" >
+                     ` + this.groepID + `
+                    </ons-fab>
                 <div class="title">
    
-                  <h2 style="font-weight: bold"> <span class="groepIDvanCard">` + this.groepID + "</span>) " + this.groepnaam + `</h2>
+                  <h2 style="font-weight: bold">` +
+                // "<span class=\"groepIDvanCard\"> " + this.groepID + ".</span> " +
+                this.groepnaam + `</h2>
                 <!--
                     <ons-fab modifier="mini" >
                      \` + this.locatieID + \`
@@ -42,8 +45,10 @@ function getGroepenInCard(){
 
                 <div class="content mt-4" id="GetGroepenCard` + i + `">
                     <ons-list>
-                        <ons-list-header>
+                        <ons-list-header> 
+                            <h3>
                             ` + this.locatiebijnaam + `
+                            </h3>
                         </ons-list-header>
                         <ons-list-item>
                              ` + this.straat + `&emsp;&emsp;` + this.huisnummer + `
@@ -67,7 +72,7 @@ function getGroepenInCard(){
 
 getGroepenInCard();
 
-var showAddUserToGroupDialog= function () {
+var showAddUserToGroupDialog = function () {
     var dialog = document.getElementById('addUserToGroupDialog');
 
     if (dialog) {

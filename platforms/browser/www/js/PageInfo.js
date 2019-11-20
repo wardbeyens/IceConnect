@@ -14,7 +14,7 @@ function LoadData(message) {
             $('.loginAchternaam').text(loginAchternaam);
             var loginEmail = this.email;
             $('.loginEmail').text(loginEmail);
-            var loginWachtwoord = this.wachtwoord;
+            var loginWachtwoord = this.wachtwoordEncrypted;
             $('.loginWachtwoord').text(loginWachtwoord);
             console.log(persoonID, loginVoornaam, loginAchternaam, loginEmail, loginWachtwoord);
             navigator.vibrate(500);

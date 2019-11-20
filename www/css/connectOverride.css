@@ -14,11 +14,6 @@
     height: 100%;
 }
 
-#group .page__background {
-    background-image: url(../img/BelgiumoldmapLicht.jpg) ;
-}
-
-
 .form-row {
     margin: 4px;
 }
@@ -217,6 +212,33 @@ ons-button{
     z-index: 500;
 }*/
 
+#icoon {
+    -moz-transition: transform 0.8s;
+    -webkit-transition: transform 0.8s;
+    transition: transform 0.8s;
+}
+
+.flip {
+    transform: rotate(180deg);
+}
+
+.bold{
+    font-weight: bold !important;
+}
+
+.toolbar__title h1{
+    font-size: 31px;
+    margin: 0 !important;
+    padding: 25px 0 0 0;
+    line-height: 0 !important;
+    margin-block-start: 0 !important;
+    margin-block-end: 0 !important;
+}
+
+#about a i{
+    color: #fff !important;
+}
+
 .dialog {
     height: 80vh;
     min-height: 330px;
@@ -294,7 +316,7 @@ ons-card ons-fab{
 .card{
     margin: 5vw;
     border-radius: 20px;
-    box-shadow: 10px 10px 10px darkgray;
+    box-shadow: 10px 10px 10px #222;
 }
 
 .floatleft {
@@ -307,6 +329,19 @@ ons-card ons-fab{
 .fitsize{
     text-align: center;
     font-size: 2.5vw;
+}
+
+.mycenter{
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
+#about ons-card{
+    margin: 2vw;
+    border-radius: 5px ;
+    box-shadow: 5px 5px 5px darkgray;
+    border: 2px solid #fff;
 }
 
 @media screen and (min-width: 750px){

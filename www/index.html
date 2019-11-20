@@ -15,7 +15,7 @@
           content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     <meta name="author" content="Ward Beyens">
     <meta name="description"
-          content="Bring people together! A simple App that connects people based on their passed location.">
+          content="Bring people together! A simple app that connects people based on their passed location.">
     <title>ICE Connect</title>
 
     <link rel="stylesheet" type="text/css" href="css/bootstrapGrid.css">
@@ -23,7 +23,7 @@
     <!-- Framework & Onsen UI -->
     <!--    <link rel="stylesheet" type="text/css" href="css/onsenui.css">-->
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
-    <link id="theme" class="themeColor" rel="stylesheet" href="css/onsen-css-theme-light/onsen-css-components.min.css">
+    <link id="theme" class="themeColor" rel="stylesheet" href="css/onsen-css-theme-light/onsen-css-components.css">
     <!--    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">-->
 
     <!-- Framework & fontawesome -->
@@ -34,7 +34,6 @@
     <!-- Custom styles for this template -->
     <link rel="stylesheet" type="text/css" href="css/connectOverride.css">
     <link rel="stylesheet" type="text/css" href="css/connectCube.css">
-
 
 </head>
 <body>
@@ -53,6 +52,8 @@
                 <ons-list-title>
                     <h1>ICE Connect</h1>
                     <p>Together but better!</p>
+                    <!--                    <input type="button" value="PLAY"  onclick="play()">-->
+                    <audio id="audio" src="img/ICEconnect.mp3"></audio>
                 </ons-list-title>
             </div>
             <ons-list>
@@ -74,8 +75,16 @@
                 </ons-list-item>
                 <ons-list-item onclick="fn.load('about.html')" tappable>
                     <i class="fas fa-info-circle"></i>
-                    <p>About/Info</p>
+                    <p>About</p>
                 </ons-list-item>
+                <!--                <ons-list-item onclick="fn.load('termsandconditions.html')" tappable>
+                                    <i class="fas fa-scroll"></i>
+                                    <p>Terms and Conditions</p>
+                                </ons-list-item>
+                                <ons-list-item onclick="fn.load('privacypolicy.html')" tappable>
+                                    <i class="fas fa-scroll"></i>
+                                    <p>Privacy Policy</p>
+                                </ons-list-item>-->
                 <!--                <ons-list-item onclick="fn.load('login.html')" tappable>-->
                 <!--                    login-->
                 <!--                </ons-list-item>-->
@@ -86,7 +95,7 @@
                     <i class="fas fa-sign-out-alt"></i>
                     <p>Log out</p>
                 </ons-list-item>
-                <ons-list-item>
+                <!--<ons-list-item>
                     <div class="center">
                         Darkmode
                     </div>
@@ -94,6 +103,14 @@
                         <ons-switch id="ChangeTheme"></ons-switch>
                     </div>
                 </ons-list-item>
+                <ons-list-item>
+                    <div class="center">
+                        Volume Zoom
+                    </div>
+                    <div class="right">
+                        <ons-switch id="VolumeZoom"></ons-switch>
+                    </div>
+                </ons-list-item>-->
             </ons-list>
         </ons-page>
 
@@ -184,7 +201,7 @@
                             Remember Me
                         </label>
                         </span>
-                        <span class="floatright">
+                        <!--<span class="floatright">
 
                         <label for="autologin-2">
                             auto login
@@ -195,7 +212,7 @@
 
                             </ons-checkbox>
                         </label>
-                        </span>
+                        </span>-->
                     </div>
 
                     <div class="loginDivSignIN">
@@ -207,6 +224,15 @@
                         </ons-button>
 
                         <ons-button id="passwordReset" modifier="quiet" class="forgot-password">Forgot password?
+                        </ons-button>
+                    </div>
+                    <div class="loginDivLinks">
+                        <ons-button id="termsandconditions" modifier="quiet"
+                                    onclick="fn.load('termsandconditions.html')">Terms And Conditions
+                        </ons-button>
+
+                        <ons-button id="privacypolicy" modifier="quiet" onclick="fn.load('privacypolicy.html')">Privacy
+                            Policy
                         </ons-button>
                     </div>
                 </div>
@@ -275,6 +301,7 @@
                 <!--                <ons-icon icon="md-menu"></ons-icon>-->
                 <i class="fas fa-bars"></i>
             </ons-toolbar-button>
+            <h1>Map</h1>
         </ons-fab>
 
 
@@ -283,7 +310,7 @@
         <ons-speed-dial position="bottom right" direction="up" id="fabBalkRechts">
             <ons-fab id="fabBalkRechtsMenu">
                 <div class="clear">
-                    <i class="fas fa-chevron-up"></i>
+                    <i class="fas fa-chevron-up toggleIcoon" id="icoon"></i>
                 </div>
             </ons-fab>
             <ons-speed-dial-item>
@@ -313,7 +340,7 @@
 
         </ons-speed-dial>
 
-<!--        <script src="js/plugin01.js"></script>-->
+        <!--        <script src="js/plugin01.js"></script>-->
 
         <script src="js/PageMap.js"></script>
     </ons-page>
@@ -456,11 +483,11 @@
 
 <template id="groups.html">
     <ons-page id="group">
-        <ons-fab modifier="mini" id="addGroup">
-            <i>
-                <img src="img/users-medical.svg" alt="users add group" width="25" height="25">
-            </i>
-        </ons-fab>
+        <!--        <ons-fab modifier="mini" id="addGroup">
+                    <i>
+                        <img src="img/users-medical.svg" alt="users add group" width="25" height="25">
+                    </i>
+                </ons-fab>-->
         <ons-toolbar>
             <div class="left">
                 <ons-toolbar-button onclick="fn.open()">
@@ -468,7 +495,7 @@
                 </ons-toolbar-button>
             </div>
             <div class="center">
-                Groups
+                <h1>Groups</h1>
             </div>
         </ons-toolbar>
         <!--        <ons-fab position="bottom right">
@@ -563,10 +590,10 @@
 
 <template id="locations.html">
     <ons-page id="locations">
-<!--        nog toe te voegen modal waarbij je uw adres kunt ingeven-->
-<!--        <ons-fab modifier="mini" id="addGroup">
-            <i class="fas fa-user-plus" id="openaddLocationUserDialogV2"></i>
-        </ons-fab>-->
+        <!--        nog toe te voegen modal waarbij je uw adres kunt ingeven-->
+        <!--        <ons-fab modifier="mini" id="addGroup">
+                    <i class="fas fa-user-plus" id="openaddLocationUserDialogV2"></i>
+                </ons-fab>-->
         <ons-toolbar>
             <div class="left">
                 <ons-toolbar-button onclick="fn.open()">
@@ -574,7 +601,7 @@
                 </ons-toolbar-button>
             </div>
             <div class="center">
-                Locations
+                <h1>Locations</h1>
             </div>
         </ons-toolbar>
         <div class="background"></div>
@@ -586,7 +613,9 @@
 </template>
 
 <template id="settings.html">
-    <ons-page>
+    <ons-page id="settings">
+        <script src="js/PageInfo.js"></script>
+
         <ons-toolbar>
             <div class="left">
                 <ons-toolbar-button onclick="fn.open()">
@@ -594,15 +623,297 @@
                 </ons-toolbar-button>
             </div>
             <div class="center">
-                Settings
+                <h1>Settings</h1>
             </div>
         </ons-toolbar>
+        <div class="background">
+        </div>
+        <div class="content">
+
+            <ons-card modifier="material">
+                <div class="title">
+                    <h2>Extra Features</h2>
+                </div>
+                <div class="content">
+                    <ons-list>
+                        <ons-list-item>
+                            <div class="center">
+                                Darkmode
+                            </div>
+                            <div class="right">
+                                <ons-switch id="ChangeTheme"></ons-switch>
+                            </div>
+                        </ons-list-item>
+                        <ons-list-item>
+                            <div class="center">
+                                Volume Zoom
+                            </div>
+                            <div class="right">
+                                <ons-switch id="VolumeZoom"></ons-switch>
+                            </div>
+                        </ons-list-item>
+                    </ons-list>
+                </div>
+            </ons-card>
+
+            <ons-card modifier="material">
+                <div class="title">
+                    <h2>User Information</h2>
+                </div>
+                <div class="content">
+                    <div class="row">
+                        <div class="col-xs-6">Uw voornaam:</div>
+                        <div class="col-xs-6"><span class="loginVoornaam"></span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">Uw achternaam:</div>
+                        <div class="col-xs-6"><span class="loginAchternaam"></span></div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-xs-6">Uw email:</div>
+                        <div class="col-xs-6"><span class="loginEmail"></span></div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-xs-6">Uw wachtwoord:</div>
+                        <div class="col-xs-6"><span class="loginWachtwoord"></span></div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-xs-6">Uw persoonID:</div>
+                        <div class="col-xs-6"><span class="loginPersoonID"></span></div>
+                    </div>
+                </div>
+            </ons-card>
+        </div>
+        <script src="js/PageSettings.js"></script>
+    </ons-page>
+</template>
+<template id="termsandconditions.html">
+    <ons-page>
+        <ons-toolbar>
+            <div class="left">
+                <ons-toolbar-button onclick="fn.load('login.html')">
+                    <i class="fas fa-arrow-left"></i>
+                </ons-toolbar-button>
+            </div>
+            <div class="center">
+                <p>Terms and Conditions</p>
+            </div>
+        </ons-toolbar>
+        <div>
+            <h1>Terms and Conditions for wabyte</h1>
+
+            <h2>Introduction</h2>
+
+            <p>These Website Standard Terms and Conditions written on this webpage shall manage your use of our website,
+                wabyte.com accessible at wabyte.com.</p>
+
+            <p>These Terms will be applied fully and affect to your use of this Website. By using this Website, you
+                agreed to accept all terms and conditions written in here. You must not use this Website if you disagree
+                with any of these Website Standard Terms and Conditions. These Terms and Conditions have been generated
+                with the help of the <a href="https://www.termsandcondiitionssample.com">Terms And Conditions
+                    Template</a> and the <a href="https://www.privacypolicygenerator.org">Privacy Policy Generator</a>.
+            </p>
+
+            <p>Minors or people below 18 years old are not allowed to use this Website.</p>
+
+            <h2>Intellectual Property Rights</h2>
+
+            <p>Other than the content you own, under these Terms, wabyte and/or its licensors own all the intellectual
+                property rights and materials contained in this Website.</p>
+
+            <p>You are granted limited license only for purposes of viewing the material contained on this Website.</p>
+
+            <h2>Restrictions</h2>
+
+            <p>You are specifically restricted from all of the following:</p>
+
+            <ul>
+                <li>publishing any Website material in any other media;</li>
+                <li>selling, sublicensing and/or otherwise commercializing any Website material;</li>
+                <li>publicly performing and/or showing any Website material;</li>
+                <li>using this Website in any way that is or may be damaging to this Website;</li>
+                <li>using this Website in any way that impacts user access to this Website;</li>
+                <li>using this Website contrary to applicable laws and regulations, or in any way may cause harm to the
+                    Website, or to any person or business entity;
+                </li>
+                <li>engaging in any data mining, data harvesting, data extracting or any other similar activity in
+                    relation to this Website;
+                </li>
+                <li>using this Website to engage in any advertising or marketing.</li>
+            </ul>
+
+            <p>Certain areas of this Website are restricted from being access by you and wabyte may further restrict
+                access by you to any areas of this Website, at any time, in absolute discretion. Any user ID and
+                password you may have for this Website are confidential and you must maintain confidentiality as
+                well.</p>
+
+            <h2>Your Content</h2>
+
+            <p>In these Website Standard Terms and Conditions, "Your Content" shall mean any audio, video text, images
+                or other material you choose to display on this Website. By displaying Your Content, you grant wabyte a
+                non-exclusive, worldwide irrevocable, sub licensable license to use, reproduce, adapt, publish,
+                translate and distribute it in any and all media.</p>
+
+            <p>Your Content must be your own and must not be invading any third-party’s rights. wabyte reserves the
+                right to remove any of Your Content from this Website at any time without notice.</p>
+
+            <h2>Your Privacy</h2>
+
+            <p>Please read Privacy Policy.</p>
+
+            <h2>No warranties</h2>
+
+            <p>This Website is provided "as is," with all faults, and wabyte express no representations or warranties,
+                of any kind related to this Website or the materials contained on this Website. Also, nothing contained
+                on this Website shall be interpreted as advising you.</p>
+
+            <h2>Limitation of liability</h2>
+
+            <p>In no event shall wabyte, nor any of its officers, directors and employees, shall be held liable for
+                anything arising out of or in any way connected with your use of this Website whether such liability is
+                under contract.  wabyte, including its officers, directors and employees shall not be held liable for
+                any indirect, consequential or special liability arising out of or in any way related to your use of
+                this Website.</p>
+
+            <h2>Indemnification</h2>
+
+            <p>You hereby indemnify to the fullest extent wabyte from and against any and/or all liabilities, costs,
+                demands, causes of action, damages and expenses arising in any way related to your breach of any of the
+                provisions of these Terms.</p>
+
+            <h2>Severability</h2>
+
+            <p>If any provision of these Terms is found to be invalid under any applicable law, such provisions shall be
+                deleted without affecting the remaining provisions herein.</p>
+
+            <h2>Variation of Terms</h2>
+
+            <p>wabyte is permitted to revise these Terms at any time as it sees fit, and by using this Website you are
+                expected to review these Terms on a regular basis.</p>
+
+            <h2>Assignment</h2>
+
+            <p>The wabyte is allowed to assign, transfer, and subcontract its rights and/or obligations under these
+                Terms without any notification. However, you are not allowed to assign, transfer, or subcontract any of
+                your rights and/or obligations under these Terms.</p>
+
+            <h2>Entire Agreement</h2>
+
+            <p>These Terms constitute the entire agreement between wabyte and you in relation to your use of this
+                Website, and supersede all prior agreements and understandings.</p>
+
+            <h2>Governing Law & Jurisdiction</h2>
+
+            <p>These Terms will be governed by and interpreted in accordance with the laws of Belgium, and you
+                submit to the non-exclusive jurisdiction of the state and federal courts located in Belgium for the
+                resolution of any disputes.</p>
+        </div>
+    </ons-page>
+</template>
+
+<template id="privacypolicy.html">
+    <ons-page>
+        <ons-toolbar>
+            <div class="left">
+                <ons-toolbar-button onclick="fn.load('login.html')">
+                    <i class="fas fa-arrow-left"></i>
+                </ons-toolbar-button>
+            </div>
+            <div class="center">
+                <p>Privacy Policy</p>
+            </div>
+        </ons-toolbar>
+        <div>
+            <h2>Privacy Policy of <span class="website_url">wabyte.com</span></h2>
+
+            <p>At <span class="website_name">wabyte.com</span>, we collect and manage user data according to the
+                following Privacy Policy.</p>
+
+            <h3>Data Collected</h3>
+
+            <p>We collect information you provide directly to us. For example, we collect information when you create an
+                account, subscribe, participate in any interactive features of our services, fill out a form, request
+                customer support or otherwise communicate with us. The types of information we may collect include your
+                name, email address, postal address, credit card information and other contact or identifying
+                information you choose to provide.</p>
+
+            <p>We collect anonymous data from every visitor of the Website to monitor traffic and fix bugs. For example,
+                we collect information like web requests, the data sent in response to such requests, the Internet
+                Protocol address, the browser type, the browser language, and a timestamp for the request.</p>
+
+            <p>We also use various technologies to collect information, and this may include sending cookies to your
+                computer. Cookies are small data files stored on your hard drive or in your device memory that helps us
+                to improve our services and your experience, see which areas and features of our services are popular
+                and count visits. We may also collect information using web beacons (also known as "tracking pixels").
+                Web beacons are electronic images that may be used in our services or emails and to track count visits
+                or understand usage and campaign effectiveness.</p>
+
+            <h3>Use of the Data</h3>
+
+            <p>We only use your personal information to provide you the <span class="website_name">wabyte.com</span>
+                services or to communicate with you about the Website or the services. Our Privacy Policy was created
+                with the help of the <a href="https://www.privacy-policy-template.com">Privacy Policy Template</a> and
+                the <a href="https://www.termsandcondiitionssample.com">Terms and Conditions Template</a>.</p>
+
+            <p>We employ industry standard techniques to protect against unauthorized access of data about you that we
+                store, including personal information.</p>
+
+            <p>We do not share personal information you have provided to us without your consent, unless:</p>
+
+            <ul>
+                <li>Doing so is appropriate to carry out your own request</li>
+                <li>We believe it's needed to enforce our legal agreements or that is legally required</li>
+                <li>We believe it's needed to detect, prevent or address fraud, security or technical issues</li>
+            </ul>
+
+            <h3>Sharing of Data</h3>
+
+            <p>We don't share your personal information with third parties. Aggregated, anonymized data is periodically
+                transmitted to external services to help us improve the Website and service.</p>
+
+            <p>We may allow third parties to provide analytics services. These third parties may use cookies, web
+                beacons and other technologies to collect information about your use of the services and other websites,
+                including your IP address, web browser, pages viewed, time spent on pages, links clicked and conversion
+                information.</p>
+
+            <p>We also use social buttons provided by services like Twitter, Google+, LinkedIn and Facebook. Your use of
+                these third party services is entirely optional. We are not responsible for the privacy policies and/or
+                practices of these third party services, and you are responsible for reading and understanding those
+                third party services' privacy policies.</p>
+
+            <h3>Opt-Out, Communication Preferences</h3>
+
+            <p>You may modify your communication preferences and/or opt-out from specific communications at any time.
+                Please specify and adjust your preferences.</p>
+
+            <h3>Security</h3>
+
+            <p>We take reasonable steps to protect personally identifiable information from loss, misuse, and
+                unauthorized access, disclosure, alteration, or destruction. But, you should keep in mind that no
+                Internet transmission is ever completely secure or error-free. In particular, email sent to or from the
+                Sites may not be secure.</p>
+
+            <h3>About Children</h3>
+
+            <p>The Website is not intended for children under the age of 13. We do not knowingly collect personally
+                identifiable information via the Website from visitors in this age group.</p>
+
+            <h3>Changes to the Privacy Policy</h3>
+
+            <p>We may amend this Privacy Policy from time to time. Use of information we collect now is subject to the
+                Privacy Policy in effect at the time such information is used.</p>
+
+            <p>If we make major changes in the way we collect or use information, we will notify you by posting an
+                announcement on the Website or sending you an email.</p>
+        </div>
     </ons-page>
 </template>
 
 <template id="about.html">
-    <ons-page>
-        <script src="js/PageInfo.js"></script>
+    <ons-page id="about">
         <ons-toolbar>
             <div class="left">
                 <ons-toolbar-button onclick="fn.open()">
@@ -610,34 +921,114 @@
                 </ons-toolbar-button>
             </div>
             <div class="center">
-                About
+                <h1>About</h1>
             </div>
         </ons-toolbar>
-        <div>
-            <button>
-                <a href="index2.html">naar index2</a>
-            </button>
+        <!--        <div>
+                    <button>
+                        <a href="index2.html">naar index2</a>
+                    </button>
+                </div>-->
+        <div class="background"></div>
+        <div class="content">
+
+            <ons-card modifier="material">
+                <!--                    <img src="https://monaca.io/img/logos/download_image_onsenui_01.png" alt="Onsen UI"
+                                         style="width: 100%">-->
+                <div class="title">
+                    <h2>ICE Connect</h2>
+                </div>
+                <div class="content row">
+                    <div class="col-xs-12">
+                        <h4 class="bold">Bring people together! A simple App that connects people based on their passed
+                            location.</h4>
+                    </div>
+                    <div class="col-xs-12">
+                        <p>This app is meant to get people in the same location in a better way.
+                            Each member of a group sends a location which then becomes visible to each member. This
+                            makes it easier for members who live close to each other to contact each other and try to
+                            carpool.
+                        </p>
+                    </div>
+                </div>
+            </ons-card>
+            <ons-card modifier="material">
+                <div class="title">
+                    <h2>Developed by</h2>
+                </div>
+                <div class="content row">
+                    <div class="col-xs-12">
+                        <h3 class="bold">Ward Beyens</h3>
+                    </div>
+                    <div class="col-xs-7">
+                        <!--                        <p>This is me:
+                                                    A highly motivated student something with passion and a lot of computer sciense like to code
+                                                    and idea came group ecological etc and something more about how to contact me!
+                                                </p>-->
+                        <p>
+                            I'm a highly motivated student with passion for computer sciences. Ccding and brainstorming
+                            are my key values
+                        </p>
+                    </div>
+                    <div class=col-xs-5">
+                        <img class="mycenter" src="img/mezelf.png" alt="Ward Beyens picture" width="120px">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">
+                        <ons-button ripple modifier="large">
+                            <a href="mailto:wardbeyens99@gmail.com">
+                                <i class="far fa-envelope"></i>
+                            </a>
+                        </ons-button>
+                    </div>
+                    <div class="col-xs-3">
+                        <ons-button ripple modifier="large">
+                            <a href="tel:0032496705040">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </ons-button>
+                    </div>
+                    <div class="col-xs-3">
+                        <ons-button ripple modifier="large">
+                            <a href="sms://+32496705040?body=I%27m%20interested%20in%20your%20product.%20Please%20contact%20me.">
+                                <i class="fas fa-sms"></i>
+                            </a>
+                        </ons-button>
+                    </div>
+                    <div class="col-xs-3">
+                        <ons-button ripple modifier="large">
+                            <a href="geo:51.38886025,5.01782547104821">
+                                <i class="fas fa-globe"></i>
+                            </a>
+                        </ons-button>
+                    </div>
+                </div>
+            </ons-card>
+            <!--<ons-card modifier="material">
+                <div class="title">
+                    <h2>Development</h2>
+                </div>
+                <div class="content">
+                    <div class="row">
+                        <div class="col-xs-6">Version:</div>
+                        <div class="col-xs-6">v1.0</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">Frameworks:</div>
+                        <div class="col-xs-6">Bootstrap</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6"></div>
+                        <div class="col-xs-6">Onsen UI</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6"></div>
+                        <div class="col-xs-6">jQuery</div>
+                    </div>
+                </div>
+            </ons-card>-->
         </div>
-
-        <div class="container-fluid">
-            <h1 class="mt-4">infopagina</h1>
-            <p>Version: v1.0 </p>
-            <p>Database: 84.196.7.4 | wabyte.com</p>
-            <p>Framework: Bootstrap</p>
-            <p>Javascript: jQuery</p>
-            <p>developer: Ward Beyens</p>
-            <p>wardbeyens99@gmail.com</p>
-            <p>&copy; Ward Beyens 2019</p>
-            <p>Uw voornaam: <span class="loginVoornaam"></span></p>
-            <p>Uw achternaam: <span class="loginAchternaam"></span></p>
-            <p>Uw email: <span class="loginEmail"></span></p>
-            <p>Uw wachtwoord: <span class="loginWachtwoord"></span></p>
-            <p>Uw persoonID: <span class="loginPersoonID"></span></p>
-            <p>Uw latitude: <span class="locationLatitude" id="latit"></span></p>
-            <p>Uw longitude: <span class="locationLongitude"></span></p>
-
-        </div>
-
     </ons-page>
 
 </template>
@@ -649,6 +1040,7 @@
 <!--<script src="js/plugin02.js"></script>-->
 <script src="leaflet/leaflet.js"></script>
 <script defer src="js/connectAPP.js"></script>
+<!--<script src="js/adds.js"></script>-->
 </body>
 
 </html>

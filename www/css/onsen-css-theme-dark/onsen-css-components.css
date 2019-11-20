@@ -1058,7 +1058,7 @@ h4, h5, h6 {
   box-shadow: 0 1px 5px rgba(0, 0, 0, .3);
   padding: 0;
   background-color: #e9f5f1;
-  background-color: rgba(233, 245, 241, .5);
+  background-color: black;
   background-size: 0;
 }
 /*~
@@ -3448,7 +3448,8 @@ h4, h5, h6 {
           align-items: center;
   padding: 0 0 0 14px;
   margin: 0 0 -1px 0;
-  color: #EFEFF4;
+  /*color: #EFEFF4;*/
+  color: #990829;
   transition: background-color 0.2s linear;
 }
 /*~
@@ -6873,7 +6874,7 @@ ons-fab.fab--bottom__center, button.fab--bottom__center, .speed-dial.fab--bottom
     </div>
 */
 .card--material {
-  background-color: #C2E1DB;
+  background-color: rgba(73, 73, 73, .64);
   border-radius: 2px;
   box-shadow:
       0 2px 2px 0 rgba(0, 0, 0, .14),
@@ -6886,7 +6887,7 @@ ons-fab.fab--bottom__center, button.fab--bottom__center, .speed-dial.fab--bottom
 .card--material__content {
   font-size: 14px;
   line-height: 1.4;
-  color: #292A25;
+  color: #ededed;
 }
 /*~
   name: Material Card with Title
@@ -7503,3 +7504,7 @@ ons-fab.fab--bottom__center, button.fab--bottom__center, .speed-dial.fab--bottom
   }
 }
 /* non BEM */
+
+#group .page__background, #locations .page__background,#about .page__background, #settings .page__background {
+  background-image: url(../../img/Belgiumoldmap.jpg) ;
+}

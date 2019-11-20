@@ -64,6 +64,10 @@ var blackIcon = new L.Icon({
 });
 var colorIcons = [blueIcon, redIcon, greenIcon, orangeIcon, yellowIcon, violetIcon, greyIcon, blackIcon];
 
+$( ".toggleIcoon" ).click( function() {
+    $("#icoon").toggleClass('flip');
+});
+
 var map = L.map('mymap', {
     center: [51.161358, 4.963583],
     zoom: 9,
@@ -117,14 +121,17 @@ function getLocation() {
 };
 
 
-
-function meOnMap() {
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+async function meOnMap() {
     getLocation();
+    await sleep(500);
     //moet nog gebeuren marker weghalen en dan nieuwe marker plaatsen
     markerMyLocation = L.circleMarker([lat, lng], {radius: 3}).addTo(map).bindPopup('Your Location').openPopup();
     console.log("Een marker op mijn locatie: ", lat, lng);
     var latlng = L.latLng(lat, lng);
-    map.setView(latlng,11);
+    map.setView(latlng, 11);
 };
 map.on('click', function (e) {
     var coord = e.latlng;
@@ -274,11 +281,11 @@ $('#openaddLocationUserDialog').click(function () {
     showaddLocationUserDialog();
 });
 
-document.addEventListener("volumedownbutton", onVolumeDownKeyDown, false);
+// document.addEventListener("volumedownbutton", onVolumeDownKeyDown, false);
 function onVolumeDownKeyDown() {
     map.zoomOut();
 };
-document.addEventListener("volumeupbutton", onVolumeUpKeyDown, false);
+// document.addEventListener("volumeupbutton", onVolumeUpKeyDown, false);
 function onVolumeUpKeyDown() {
     map.zoomIn();
 };

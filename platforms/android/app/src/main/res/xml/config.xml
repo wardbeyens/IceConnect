@@ -7,6 +7,9 @@
     <feature name="Geolocation">
         <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
     </feature>
+    <feature name="AdMob">
+        <param name="android-package" value="admob.plugin.AdMob" />
+    </feature>
     <name>IceConnect</name>
     <description>
         A simple App that connects people based on their passed location.

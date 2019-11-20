@@ -10,7 +10,7 @@ function getLocationsFunction() {
         $.each(data, function (i) {
             console.log(i + ":" + this.locatieID + '<br>' + this.locatiebijnaam + " " + this.locatienaam);
             $("#GetLocations").append(`
-            <ons-card>        
+            <ons-card modifier="material">
                 <ons-fab modifier="mini" ripple="true" class="fabgroup" onclick="fn.deleteLocation(` + this.locatieID + `)">
                     <i data-LocatieID="` + this.locatieID + `" class="far fa-trash-alt deleteLocation" id="deleteLocation` + this.locatieID + `"></i>
                 </ons-fab> 

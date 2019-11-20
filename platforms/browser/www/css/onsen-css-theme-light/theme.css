@@ -23,7 +23,7 @@
   --segment-active-text-color: #fff;
   --segment-active-background-color: color(var(--segment-color) tint(70%));
   --list-background-color: #fff;
-  --list-header-background-color: #C2E1DB;
+  --list-header-background-color: #ccc;
   --list-tap-active-background-color: #d9d9d9;
   --list-item-chevron-color: #990829;
   --progress-bar-color: var(--highlight-color);
@@ -42,7 +42,7 @@
   --range-track-background-color: #a4aab3;
   --range-track-background-color-active: var(--highlight-color);
   --range-thumb-background-color: #fff;
-  --modal-background-color: #C2E1DB;
+  --modal-background-color: #ccc;
   --modal-text-color: #990829;
   --alert-dialog-background-color: #f4f4f4;
   --alert-dialog-text-color: #1f1f21;
@@ -65,7 +65,7 @@
   --fab-text-color: #ffffff;
   --fab-background-color: #990829;
   --fab-active-background-color: #990829;
-  --card-background-color: #C2E1DB;
+  --card-background-color: #ccc;
   --card-text-color: #030303;
   --toast-background-color: #990829;
   --toast-text-color: white;
@@ -131,7 +131,7 @@
   --material-fab-text-color: #FFFFFF;
   --material-fab-background-color: #990829;
   --material-fab-active-background-color: #990829;
-  --material-card-background-color: #C2E1DB;
+  --material-card-background-color: #ccc;
   --material-card-text-color: #292A25;
   --material-toast-background-color: #990829;
   --material-toast-text-color: white;

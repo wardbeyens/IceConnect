@@ -293,6 +293,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: '*.jar')
     // SUB-PROJECT DEPENDENCIES START
     implementation(project(path: ":CordovaLib"))
+    implementation "com.google.android.gms:play-services-ads:17.2.0"
     // SUB-PROJECT DEPENDENCIES END
 }
 
