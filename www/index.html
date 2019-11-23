@@ -340,8 +340,6 @@
 
         </ons-speed-dial>
 
-        <!--        <script src="js/plugin01.js"></script>-->
-
         <script src="js/PageMap.js"></script>
     </ons-page>
 </template>
@@ -587,11 +585,73 @@
 
     </ons-dialog>
 </template>
+<template id="addGroup.html">
+    <ons-dialog id="addroupDialog" cancelable modifier="material">
+        <ons-page>
+            <div class="background"></div>
+
+            <div class="content modal-content">
+                <div class="">
+                    <div class="modal-content-h">
+                        <h1 class="">Add a group </h1>
+                    </div>
+                    <div class="modal-form">
+                        <form class="form-addUserToGroup">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <h3>
+                                        <label for="addUserToGroupGroepID">Choose the group you want to join: </label>
+                                    </h3>
+                                </div>
+                                <div class="col-xs-12">
+                                    <ons-select autofocus="true" required select-id="addUserToGroupGroepID"
+                                                size="1" modifier="material underbar">
+                                        <select name="addUserToGroupGroepID"
+                                                id="addUserToGroupGroepID-x">
+                                        </select>
+                                    </ons-select>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <h3>
+                                        <label for="addGroupLocation-x">Choose one of your saved
+                                            location: </label>
+                                    </h3>
+                                </div>
+                                <div class="col-12">
+                                    <ons-select autofocus="true" required select-id="addGroupLocation"
+                                                size="1" modifier="material underbar">
+
+                                        <select name="addGroupLocation"
+                                                id="addGroupLocation-x">
+                                        </select>
+                                    </ons-select>
+
+                                </div>
+                            </div>
+
+                            </fieldset>
+                        </form>
+                    </div>
+
+                    <div class="row mt-5">
+                        <ons-button modifier="large material" ripple id="AddGroup">add group</ons-button>
+                    </div>
+                </div>
+            </div>
+            <script src="js/PageAddUserToGroupDialog.js"></script>
+        </ons-page>
+
+
+    </ons-dialog>
+</template>
 
 <template id="locations.html">
     <ons-page id="locations">
         <!--        nog toe te voegen modal waarbij je uw adres kunt ingeven-->
-        <!--        <ons-fab modifier="mini" id="addGroup">
+        <!--        <ons-fab modifier="mini" id="">
                     <i class="fas fa-user-plus" id="openaddLocationUserDialogV2"></i>
                 </ons-fab>-->
         <ons-toolbar>
@@ -690,6 +750,7 @@
         <script src="js/PageSettings.js"></script>
     </ons-page>
 </template>
+
 <template id="termsandconditions.html">
     <ons-page>
         <ons-toolbar>
@@ -813,7 +874,6 @@
         </div>
     </ons-page>
 </template>
-
 <template id="privacypolicy.html">
     <ons-page>
         <ons-toolbar>
@@ -1037,10 +1097,10 @@
 <script src="js/onsenui.js"></script>
 <script src="cordova.js"></script>
 <!--<script src="js/bootstrap.js"></script>-->
-<!--<script src="js/plugin02.js"></script>-->
 <script src="leaflet/leaflet.js"></script>
 <script defer src="js/connectAPP.js"></script>
 <!--<script src="js/adds.js"></script>-->
+
 </body>
 
 </html>

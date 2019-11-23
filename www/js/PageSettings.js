@@ -5,10 +5,12 @@ $(function changetheme() {
             case 1:
                 document.querySelector('#theme').setAttribute('href', "css/onsen-css-theme-dark/onsen-css-components.css");
                 document.querySelector('#themeImg').setAttribute('src', "img/IceConnect990829.svg");
+                localStorage.setItem("ChangeTheme", "1");
                 break;
             case 2:
                 document.querySelector('#theme').setAttribute('href', "css/onsen-css-theme-light/onsen-css-components.css");
                 document.querySelector('#themeImg').setAttribute('src', "img/IceConnect990829.svg");
+                localStorage.setItem("ChangeTheme", "2");
                 break;
         }
         iteration++;
@@ -19,6 +21,7 @@ $(function changetheme() {
 
 $(function volumezoom() {
     $('#VolumeZoom').click(function () {
+
         var iteration = $(this).data('iteration') || 1
         switch (iteration) {
             case 1:
