@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.wabyte.IceConnect" version="1.0.0" xmlns="http://www.w3.org/ns/widgets"
+<widget id="com.wabyte.iceconnect" version="1.0.0" xmlns="http://www.w3.org/ns/widgets"
         xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>IceConnect</name>
     <description>
         A simple App that connects people based on their passed location.
     </description>
-    <author email="wardbeyens99@gmail.com" href="http://IceConnect.wabyte.com">
+    <author email="wardbeyens99@gmail.com" href="http://iceconnect.wabyte.com">
         Ward Beyens
     </author>
     <content src="index.html"/>

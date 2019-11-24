@@ -3,7 +3,7 @@
   "display": "standalone",
   "name": "IceConnect",
   "short_name": "IceConnect",
-  "version": "com.wabyte.IceConnect",
+  "version": "com.wabyte.iceconnect",
   "description": "A simple App that connects people based on their passed location.",
   "author": "Ward Beyens",
   "icons": [],

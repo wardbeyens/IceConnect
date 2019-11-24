@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.wabyte.IceConnect;
+package com.wabyte.iceconnect;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
