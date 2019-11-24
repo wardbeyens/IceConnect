@@ -18,6 +18,9 @@
     },
     "cordova-admob-plus": {
       "PACKAGE_NAME": "com.wabyte.IceConnect"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.wabyte.IceConnect"
     }
   },
   "dependent_plugins": {}

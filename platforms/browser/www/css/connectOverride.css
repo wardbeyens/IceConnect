@@ -113,12 +113,15 @@ fab i, .fa-bars {
     border: 1px solid #000;
 }*/
 
+#login i{
+    color: #990829;
+}
 
 #loginDivCenter {
     /*margin: 25vh auto 0 auto;*/
     margin: 5px auto 0 auto;
     /*max-width: 750px;*/
-    padding: 10vw;
+    padding: 5vw;
 }
 
 #titellogin {

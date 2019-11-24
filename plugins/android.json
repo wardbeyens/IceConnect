@@ -20,6 +20,9 @@
       "APP_ID_ANDROID": "ca-app-pub-3790828934465031~9792267331",
       "PLAY_SERVICES_VERSION": "17.2.0",
       "PACKAGE_NAME": "com.wabyte.IceConnect"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.wabyte.IceConnect"
     }
   },
   "dependent_plugins": {}

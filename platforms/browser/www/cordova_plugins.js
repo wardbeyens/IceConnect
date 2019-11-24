@@ -29,6 +29,20 @@ module.exports = [
         "id": "cordova-admob-plus.AdMobProxy",
         "pluginId": "cordova-admob-plus",
         "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+        "id": "cordova-plugin-splashscreen.SplashScreen",
+        "pluginId": "cordova-plugin-splashscreen",
+        "clobbers": [
+            "navigator.splashscreen"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-splashscreen/src/browser/SplashScreenProxy.js",
+        "id": "cordova-plugin-splashscreen.SplashScreenProxy",
+        "pluginId": "cordova-plugin-splashscreen",
+        "runs": true
     }
 ];
 module.exports.metadata = 
@@ -37,7 +51,8 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.3.4",
     "cordova-plugin-vibration": "3.1.1",
     "cordova-plugin-geolocation": "4.0.2",
-    "cordova-admob-plus": "0.0.0"
+    "cordova-admob-plus": "0.0.0",
+    "cordova-plugin-splashscreen": "5.0.3"
 }
 // BOTTOM OF METADATA
 });
