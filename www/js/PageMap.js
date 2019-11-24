@@ -172,9 +172,9 @@ map.on('click', function (e) {
     markerVariabelLat = coord.lat;
     markerVariabelLng = coord.lng;
     console.log("nominatim coordinaten: ", markerVariabelLat, markerVariabelLng);
-    console.log("http://nominatim.openstreetmap.org/reverse?format=json&lat=" + markerVariabelLat + '&lon=' + markerVariabelLng);
+    console.log("https://nominatim.openstreetmap.org/reverse?format=json&lat=" + markerVariabelLat + '&lon=' + markerVariabelLng);
 
-    $.getJSON('http://nominatim.openstreetmap.org/reverse?format=json&lat=' + markerVariabelLat + '&lon=' + markerVariabelLng, function (data) {
+    $.getJSON('https://nominatim.openstreetmap.org/reverse?format=json&lat=' + markerVariabelLat + '&lon=' + markerVariabelLng, function (data) {
         console.log(data);
         // let city = data.address.village || data.address.city_district || data.address.city || data.address.town || data.address.state;
         // markerVariabelcity = data.address.city;

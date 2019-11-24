@@ -18,21 +18,25 @@ $(function () {
 
 
     window.logout = function () {
-// hier moet het persoon ID nog null worden
+        persoonID = null;
         fn.load('login.html');
     };
 
-});
+    window.play=function(){
+        var audio = document.getElementById("audio");
+        audio.play();
+        console.log("audio");
+    }
 
-function play(){
-    var audio = document.getElementById("audio");
-    audio.play();
-    console.log("audio");
-}
+    window.v=function(getal){
+        navigator.vibrate(getal);
+    }
+
+});
 
 function onDeviceReady() {
     console.log('Device is ready');
-    // console.log(navigator.vibrate);
+    console.log(navigator.vibrate);
     // navigator.vibrate(100);
     console.log("onDeviceReady -> checkboxState: '" + document.querySelector('ons-checkbox').checked + "'");
     console.log("getLocalStorageItemCheckbox: " + localStorage.getItem("checkbox"));

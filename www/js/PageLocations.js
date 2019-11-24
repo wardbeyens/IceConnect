@@ -64,10 +64,10 @@ window.fn.deleteLocation = function (locatieID) {
 /*                    ons.notification.alert({
                         message: 'You pressed "Cancel".\n ' +
                             'Location still exist',
-                    });*/
+                    });
                     ons.notification.toast('Location still exist!', {
                         timeout: 2000
-                    });
+                    });*/
                     break;
                 case 1:
                     $.post('https://wabyte.com/removeLocation.php', pars, function (data) {

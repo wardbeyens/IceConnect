@@ -1,6 +1,7 @@
 {
     "name": "ICE Connect",
     "short_name": "ICE-Connect",
+    "description": "A simple App that connects people based on their passed location.",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -13,7 +14,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
+    "theme_color": "#990829",
     "background_color": "#ffffff",
     "display": "standalone"
 }
