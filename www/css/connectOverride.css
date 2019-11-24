@@ -257,12 +257,42 @@ ons-button{
 }
 
 .dialog {
-    height: 80vh;
-    min-height: 330px;
+    height: 50vh;
+    min-height: 400px;
     width: 80vw;
     min-width: 310px;
     margin: auto;
     text-align: center;
+}
+
+textarea {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: #990829;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    -webkit-appearance: textarea;
+    background-color: inherit;
+    -webkit-rtl-ordering: logical;
+    flex-direction: column;
+    resize: auto;
+    cursor: text;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(169, 169, 169);
+    border-image: initial;
+    border: none;
+    padding: 2px;
+    width: 100%;
 }
 
 ons-select {
@@ -289,6 +319,7 @@ ons-list-title {
 ons-list-item i {
     /*color: #990829;*/
     padding-right: 15px;
+    width: 30px;
 }
 
 ons-list-item {
@@ -365,6 +396,12 @@ ons-card ons-fab {
 
 ons-input{
     width: 100%;
+}
+
+.modalbijelkaar{
+    padding: 10px;
+    display: inline-block;
+    width: 90%;
 }
 
 @media screen and (min-width: 750px) {

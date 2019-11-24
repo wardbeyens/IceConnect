@@ -3448,8 +3448,12 @@ h4, h5, h6 {
           align-items: center;
   padding: 0 0 0 14px;
   margin: 0 0 -1px 0;
-  color: #292A25;
+  color: #990829;
   transition: background-color 0.2s linear;
+}
+
+.list-item i{
+  color: #000;
 }
 /*~
   name: Expandable List

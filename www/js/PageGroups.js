@@ -89,3 +89,20 @@ $('#openaddUserToGroupDialog').click(function () {
     showAddUserToGroupDialog();
 });
 
+var showAddGroupDialog = function () {
+    var dialog = document.getElementById('addGroupDialog');
+
+    if (dialog) {
+        dialog.show();
+    } else {
+        ons.createElement('addGroupDialog.html', {append: true}).then(function (dialog) {
+            dialog.show([animation = "slide"]);
+        });
+    }
+};
+
+$('#openaddGroupDialog').click(function () {
+    console.log("i want to add a group!")
+    showAddGroupDialog();
+});
+

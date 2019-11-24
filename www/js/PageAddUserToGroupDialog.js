@@ -1,4 +1,3 @@
-
 function loadDataAddUserToGroupDialog() {
     console.log("U vraagt nu al alle groepen op om in de join user to group dialog te flansen");
     $('#addUserToGroupGroepID-x').empty();
