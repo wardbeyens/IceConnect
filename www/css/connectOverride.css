@@ -15,7 +15,7 @@
 }
 
 .form-row {
-    margin: 4px;
+    margin: 15px;
 }
 
 .width-full {
@@ -222,20 +222,37 @@ ons-button{
     transform: rotate(180deg);
 }
 
-.bold{
+.bold {
     font-weight: bold !important;
 }
 
-.toolbar__title h1{
+.toolbar__title h1 {
     font-size: 31px;
     margin: 0 !important;
-    padding: 25px 0 0 0;
+    padding: 28px 0 0 0;
     line-height: 0 !important;
     margin-block-start: 0 !important;
     margin-block-end: 0 !important;
 }
 
-#about a i{
+.toolbar__title h2 {
+    font-size: 27px;
+    margin: 0 !important;
+    padding: 27px 0 0 0;
+    line-height: 0 !important;
+    margin-block-start: 0 !important;
+    margin-block-end: 0 !important;
+}
+.toolbar__title p {
+    font-size: 27px;
+    margin: 0 !important;
+    padding: 27px 0 0 0;
+    line-height: 0 !important;
+    margin-block-start: 0 !important;
+    margin-block-end: 0 !important;
+}
+
+#about a i {
     color: #fff !important;
 }
 
@@ -295,25 +312,26 @@ ons-list-item {
     width: 20%;
     padding-right: 15%;
 }
+
 .cardleft, .cardright {
     display: inline-block;
 }
 
-ons-card ons-fab{
+ons-card ons-fab {
     float: right;
 }
 
-.addUserToGroup{
+.addUserToGroup {
     /*color: #990829;*/
 }
 
-#addGroup{
+#addGroup {
     float: right;
     margin-top: 8px;
     margin-right: 8px;
 }
 
-.card{
+.card {
     margin: 5vw;
     border-radius: 20px;
     box-shadow: 10px 10px 10px #222;
@@ -322,30 +340,35 @@ ons-card ons-fab{
 .floatleft {
     float: left;
 }
+
 .floatright {
     float: right;
 }
 
-.fitsize{
+.fitsize {
     text-align: center;
     font-size: 2.5vw;
 }
 
-.mycenter{
+.mycenter {
     display: block;
     text-align: center;
     margin: auto;
 }
 
-#about ons-card{
+#about ons-card {
     margin: 2vw;
-    border-radius: 5px ;
+    border-radius: 5px;
     box-shadow: 5px 5px 5px darkgray;
     border: 2px solid #fff;
 }
 
-@media screen and (min-width: 750px){
-    #login{
+ons-input{
+    width: 100%;
+}
+
+@media screen and (min-width: 750px) {
+    #login {
         max-width: 700px;
         margin: auto;
     }
@@ -451,4 +474,12 @@ ons-card ons-fab{
     }
 
 
+}
+
+ons-toolbar-button .fa-bars {
+    color: #990829 !important;
+}
+
+#home .fa-bars {
+    color: #fff !important;
 }

@@ -21,6 +21,7 @@ $(function changetheme() {
 
 $(function volumezoom() {
     $('#VolumeZoom').click(function () {
+
         var iteration = $(this).data('iteration') || 1
         switch (iteration) {
             case 1:

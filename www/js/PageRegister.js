@@ -1,10 +1,12 @@
 $('#registerInputPassword, #registerInputPasswordConfirm').on('keyup', function () {
     if ($('#registerInputPassword').val() == $('#registerInputPasswordConfirm').val()) {
         $('#passwordCheck').html('Matching').css('color', 'green');
+        $('.login_btn').html('Sign Up').css('color', 'white');
         $('.login_btn').css('background-color', 'green');
     } else {
         $('#passwordCheck').html('Not Matching').css('color', 'red');
-        $('.login_btn').css('background-color', '#c0392b');
+        $('.login_btn').html('Passwords Not Matching').css('color', 'white');
+        $('.login_btn').css('background-color', '#990829');
     }
 });
 

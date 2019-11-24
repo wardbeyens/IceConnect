@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <!-- favicon-->
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
@@ -11,20 +12,26 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-    <meta name="viewport"
-          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+    <!-- meta-tags-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,
+    width=device-width">-->
     <meta name="author" content="Ward Beyens">
     <meta name="description"
           content="Bring people together! A simple app that connects people based on their passed location.">
+    <meta name="robots" content="index, follow">
+    <meta name="web_author" content="wabyte.com">
+    <meta name="reply-to" content="wardbeyens99@gmail.com">
+
     <title>ICE Connect</title>
 
-    <link rel="stylesheet" type="text/css" href="css/bootstrapGrid.css">
-
     <!-- Framework & Onsen UI -->
-    <!--    <link rel="stylesheet" type="text/css" href="css/onsenui.css">-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrapGrid.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/onsenui.css">-->
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
     <link id="theme" class="themeColor" rel="stylesheet" href="css/onsen-css-theme-light/onsen-css-components.css">
-    <!--    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">-->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css"> -->
 
     <!-- Framework & fontawesome -->
     <link href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" rel="stylesheet">
@@ -36,23 +43,21 @@
     <link rel="stylesheet" type="text/css" href="css/connectCube.css">
 
 </head>
-<body>
 
+<body>
 
 <ons-splitter>
     <ons-splitter-side id="menu" side="left" width="220px" collapse>
-
-        <!--        de sidenav-->
-        <ons-page>
+        <!-- de sidenav-->
+        <ons-page modifier="material">
             <div class="sidebar-titel">
                 <img id="themeImg" class="themeColor" src="img/IceConnect990829.svg" alt="Icon" height="100"
-                     width="100">
+                     width="100" onclick="play()">
                 <!--                <img id="themeImg" class="themeColor" src="img/IceConnect990829noBack.png" alt="Icon"
                                      height="100" width="100">-->
                 <ons-list-title>
                     <h1>ICE Connect</h1>
                     <p>Together but better!</p>
-                    <!--                    <input type="button" value="PLAY"  onclick="play()">-->
                     <audio id="audio" src="img/ICEconnect.mp3"></audio>
                 </ons-list-title>
             </div>
@@ -77,25 +82,32 @@
                     <i class="fas fa-info-circle"></i>
                     <p>About</p>
                 </ons-list-item>
-                <!--                <ons-list-item onclick="fn.load('termsandconditions.html')" tappable>
-                                    <i class="fas fa-scroll"></i>
-                                    <p>Terms and Conditions</p>
-                                </ons-list-item>
-                                <ons-list-item onclick="fn.load('privacypolicy.html')" tappable>
-                                    <i class="fas fa-scroll"></i>
-                                    <p>Privacy Policy</p>
-                                </ons-list-item>-->
-                <!--                <ons-list-item onclick="fn.load('login.html')" tappable>-->
-                <!--                    login-->
-                <!--                </ons-list-item>-->
-                <!--                <ons-list-item onclick="fn.load('register.html')" tappable>-->
-                <!--                    register-->
-                <!--                </ons-list-item>-->
+                <!--
+                <ons-list-item onclick="fn.load('termsandconditions.html')" tappable>
+                    <i class="fas fa-scroll"></i>
+                    <p>Terms and Conditions</p>
+                </ons-list-item>-->
+                <!--
+                <ons-list-item onclick="fn.load('privacypolicy.html')" tappable>
+                    <i class="fas fa-scroll"></i>
+                    <p>Privacy Policy</p>
+                </ons-list-item>-->
+                <!--
+                <ons-list-item onclick="fn.load('login.html')" tappable>
+                    login
+                </ons-list-item>
+                -->
+                <!--
+                <ons-list-item onclick="fn.load('register.html')" tappable>
+                    register
+                </ons-list-item>
+                -->
                 <ons-list-item onclick="logout()" tappable position="bottom">
                     <i class="fas fa-sign-out-alt"></i>
                     <p>Log out</p>
                 </ons-list-item>
-                <!--<ons-list-item>
+                <!--
+                <ons-list-item>
                     <div class="center">
                         Darkmode
                     </div>
@@ -110,10 +122,10 @@
                     <div class="right">
                         <ons-switch id="VolumeZoom"></ons-switch>
                     </div>
-                </ons-list-item>-->
+                </ons-list-item>
+                -->
             </ons-list>
         </ons-page>
-
     </ons-splitter-side>
 
     <ons-splitter-content id="content" page="login.html">
@@ -122,21 +134,17 @@
 </ons-splitter>
 
 <template id="login.html">
-    <ons-page>
-        <div class="page__background"></div>
-        <div class="page__content" id="loginAchtergrond">
+    <ons-page modifier="material">
+        <div class="background"></div>
+        <div class="content" id="loginAchtergrond">
             <div id="login">
                 <div class="CubeContainer">
                     <div id="cube">
-
                         <div class="frontCube" id="id1">
-                            <img src="img/IceConnect990829noBack.png" alt="IceConnect Logo" width="180"
-                                 height="180">
-                            <!--                            <i class="fas fa-route"></i>-->
+                            <img src="img/IceConnect990829noBack.png" alt="IceConnect Logo" width="180" height="180">
                         </div>
                         <div class="backCube">
                             <i class="fas fa-route"></i>
-                            <!--                            <i class="fas fa-search"></i>-->
                         </div>
                         <div class="rightCube">
                             <i class="fas fa-map-marker-alt"></i>
@@ -148,9 +156,7 @@
                             <i class="fas fa-location-arrow"></i>
                         </div>
                         <div class="bottomCube">
-                            <!--                            <i class="fas fa-crosshairs"></i>-->
                             <i class="fas fa-crosshairs"></i>
-
                         </div>
                     </div>
                 </div>
@@ -160,38 +166,32 @@
                     <!--                    <h1><span>ICE Connect</span></h1>-->
                     <!--                </div>-->
                     <div class="loginDivInput">
-                        <label for="loginInputEmail">E-mail</label>
-
+                        <label for="loginInputEmail-2"><i class="fas fa-user"></i> E-mail</label>
                         <div class="loginDivInputChild">
                             <!--                        <i class="fas fa-user"></i>-->
-                            <input class="text-input text-input--material" id="loginInputEmail"
-                                   name="loginInputEmail"
-                                   placeholder="yourname@gmail.com"
-                                   type="text" value="" required>
-                            <!--         value="test@demo.com" -->
+                            <ons-input id="loginInputEmail"
+                                       name="loginInputEmail" input-id="loginInputEmail-2"
+                                       placeholder="test@demo.com"
+                                       type="text" required>
+                            </ons-input>
+                            <!-- placeholder="yourname@gmail.com"-->
+                            <!-- value="test@demo.com" -->
                         </div>
-                    </div>
-                    <div class="loginDivInput">
-                        <label for="loginInputPassword">Password</label>
 
+                        <label for="loginInputPassword-2"> <i class="fas fa-key"></i> Password</label>
                         <div class="loginDivInputChild">
                             <!--                        <i class="fas fa-key"></i>-->
-                            <input class="text-input text-input--material" id="loginInputPassword"
-                                   name="loginInputPassword"
-                                   placeholder="********" type="password"
-                                   required value="">
+                            <ons-input id="loginInputPassword"
+                                       name="loginInputPassword" input-id="loginInputPassword-2"
+                                       placeholder="Wachtwoord123demo!" type="password"
+                                       required>
+                            </ons-input>
                             <!--  ●●●●●●●●●●●●
                             value="Wachtwoord123demo!"
                             -->
                         </div>
                     </div>
-
                     <div class="loginDivCheckbox">
-                        <!--                        <label class="checkbox">
-                                                    <input type="checkbox" class="checkbox__input" id="passwordremember">
-                                                    <div class="checkbox__checkmark"></div>
-                                                    Remember Me
-                                                </label>-->
                         <span class="floatleft">
                         <label>
                             <ons-checkbox modifier="material" value="passwordremember" input-id="passwordremember-2"
@@ -201,109 +201,102 @@
                             Remember Me
                         </label>
                         </span>
-                        <!--<span class="floatright">
-
+                        <span class="floatright">
                         <label for="autologin-2">
-                            auto login
+                            Auto Login
                         </label>
                         <label>
                             <ons-checkbox modifier="material" value="autologin" input-id="autologin-2"
                                           id="autologin">
-
                             </ons-checkbox>
                         </label>
-                        </span>-->
+                        </span>
                     </div>
-
                     <div class="loginDivSignIN">
                         <ons-button id="loginSend">Login</ons-button>
                     </div>
-
                     <div class="loginDivLinks">
-                        <ons-button id="gotoRegister" modifier="quiet" class="forgot-password">Register here
+                        <ons-button id="gotoRegister" modifier="quiet">Register here
                         </ons-button>
 
-                        <ons-button id="passwordReset" modifier="quiet" class="forgot-password">Forgot password?
+                        <ons-button id="passwordReset" modifier="quiet">Forgot password?
                         </ons-button>
                     </div>
                     <div class="loginDivLinks">
                         <ons-button id="termsandconditions" modifier="quiet"
                                     onclick="fn.load('termsandconditions.html')">Terms And Conditions
                         </ons-button>
-
                         <ons-button id="privacypolicy" modifier="quiet" onclick="fn.load('privacypolicy.html')">Privacy
                             Policy
                         </ons-button>
                     </div>
                 </div>
             </div>
-
             <script src="js/PageLogin.js"></script>
         </div>
     </ons-page>
 </template>
 
 <template id="register.html">
-
-    <ons-page>
-
-        <div class="page__background"></div>
-        <div id="register">
+    <ons-page modifier="material">
+        <ons-toolbar>
+            <div class="left">
+                <ons-toolbar-button onclick="fn.load('login.html')">
+                    <i class="fas fa-arrow-left"></i>
+                </ons-toolbar-button>
+            </div>
+            <div class="center">
+                <h2>Register</h2>
+            </div>
+        </ons-toolbar>
+        <div class="background"></div>
+        <div class="content" id="register">
             <div class="formarea">
                 <div class="form-row">
-                    <input type="text" class="text-input--underbar width-half" placeholder="First name" value=""
-                           name="registerInputFirstName" id="registerInputFirstName">
-                    <input type="text" class="text-input--underbar width-half" placeholder="Last name" value=""
-                           name="registerInputLastName" id="registerInputLastName"
-                           style="border-width-left: 1px">
-                </div>
-
-                <div class="form-row">
-                    <input type="text" class="text-input--underbar width-full" placeholder="Email address" value=""
-                           name="registerInputEmail" id="registerInputEmail">
-                </div>
-
-                <div class="form-row">
-                    <input type="password" class="text-input--underbar width-full" placeholder="Password" value=""
-                           name="registerInputPassword" id="registerInputPassword">
+                    <ons-input type="text" class="text-input--underbar width-half" placeholder="First name" value=""
+                               name="registerInputFirstName" id="registerInputFirstName"></ons-input>
+                    <ons-input type="text" class="text-input--underbar width-half" placeholder="Last name" value=""
+                               name="registerInputLastName" id="registerInputLastName"></ons-input>
                 </div>
                 <div class="form-row">
-                    <input type="password" class="text-input--underbar width-full" placeholder="Confirm Password"
-                           value="" id="registerInputPasswordConfirm" name="registerInputPasswordConfirm">
+                    <ons-input type="text" class="text-input--underbar width-full" placeholder="Email address" value=""
+                               name="registerInputEmail" id="registerInputEmail"></ons-input>
                 </div>
-
+                <div class="form-row">
+                    <ons-input type="password" class="text-input--underbar width-full" placeholder="Password" value=""
+                               name="registerInputPassword" id="registerInputPassword"></ons-input>
+                </div>
+                <div class="form-row">
+                    <ons-input type="password" class="text-input--underbar width-full" placeholder="Confirm Password"
+                               value="" id="registerInputPasswordConfirm"
+                               name="registerInputPasswordConfirm"></ons-input>
+                </div>
                 <div class="lucent">
                     <p class="note">Password - 6 characters or more</p>
                 </div>
-
+                <!--
                 <div>
                     <span id='passwordCheck'></span>
                 </div>
-
+                -->
                 <div class="vspc form-row ">
-                    <ons-button modifier="large--cta" class="login_btn" id="registerSend">Sign up / Register
+                    <ons-button modifier="large--cta" class="login_btn" id="registerSend">Sign up
                     </ons-button>
                 </div>
             </div>
         </div>
-
         <script src="js/PageRegister.js"></script>
-
     </ons-page>
 </template>
 
 <template id="home.html">
     <ons-page id="home">
-
         <ons-fab position="top left" id="menu-button">
             <ons-toolbar-button onclick="fn.open()">
-
-                <!--                <ons-icon icon="md-menu"></ons-icon>-->
                 <i class="fas fa-bars"></i>
             </ons-toolbar-button>
             <h1>Map</h1>
         </ons-fab>
-
 
         <div id="mymap"></div>
 
@@ -314,43 +307,32 @@
                 </div>
             </ons-fab>
             <ons-speed-dial-item>
-
                 <i class="fas fa-crosshairs" id="meOnMap"></i>
                 <div>Me On Map</div>
-
             </ons-speed-dial-item>
             <ons-speed-dial-item>
-
                 <i class="fas fa-user" id="getLocatiesOpKaart"></i>
                 <div>getLocatiesOpKaart</div>
-
             </ons-speed-dial-item>
             <ons-speed-dial-item>
-                <!--                <i class="fas fa-map-marker-alt" id="openLocationModal"></i>-->
                 <i class="fas fa-user-plus" id="openaddLocationUserDialog"></i>
-
-                <div>openLocationModal</div>
-
+                <div>openaddLocationUserDialog</div>
             </ons-speed-dial-item>
             <ons-speed-dial-item>
                 <i class="fas fa-users" id="openGetGroepLocatiesOpKaartDialog"></i>
                 <div>openGetGroepLocatiesOpKaartDialog</div>
             </ons-speed-dial-item>
-
-
         </ons-speed-dial>
-
         <script src="js/PageMap.js"></script>
     </ons-page>
 </template>
 <template id="GetGroepLocatiesOpKaartDialog.html">
     <ons-dialog id="GetGroepLocatiesOpKaartDialog" cancelable modifier="material">
-        <ons-page>
+        <ons-page modifier="material">
             <div class="background"></div>
-
             <div class="content modal-content">
                 <div class="modal-content-h">
-                    <h1 class=""> Get group locations: </h1>
+                    <h2> Get group locations: </h2>
                 </div>
                 <div class="modal-form">
                     <form class="form-getGroepLocatiesOpKaart">
@@ -367,10 +349,8 @@
                                             id="getGroepLocatiesOpKaartGroepID2">
                                     </select>
                                 </ons-select>
-
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="col-12">
                                 <h3>
@@ -380,102 +360,84 @@
                             <div class="col-12">
                                 <ons-select autofocus="true" required select-id="getGroepLocatiesOpKaartKleurMarker2"
                                             size="1" modifier="material underbar">
-
                                     <select name="getGroepLocatiesOpKaartKleurMarker2"
                                             id="getGroepLocatiesOpKaartKleurMarker2">
                                     </select>
                                 </ons-select>
-
                             </div>
                         </div>
-
-                        </fieldset>
                     </form>
                 </div>
-
                 <div class="row mt-5">
-                    <ons-button modifier="large material" ripple id="getGroepLocatiesOpKaart">groep
-                        locaties opvragen
+                    <ons-button modifier="large material" ripple id="getGroepLocatiesOpKaart">get group locations
                     </ons-button>
-
                 </div>
-
             </div>
             <script src="js/PageGetGroepLocatiesOpKaartDialog.js"></script>
         </ons-page>
-
-
     </ons-dialog>
 </template>
 <template id="addLocationUserDialog.html">
     <ons-dialog id="addLocationUserDialog" cancelable modifier="material">
-        <ons-page>
+        <ons-page modifier="material">
             <div class="background"></div>
-
             <div class="content modal-content">
                 <div class="modal-content-h">
-                    <h1 class=""> Locatie toevoegen: </h1>
+                    <h2>Add location: </h2>
                 </div>
                 <div class="modal-form">
-
                     <form class="form-addLocation">
                         <div class="row">
                             <div class="col-12">
                                 <h3>
-                                    <label for="addLocationLatitude">Latitude: </label>
+                                    <label for="addLocationLatitude-2">Latitude: </label>
                                 </h3>
                             </div>
                             <div class="col-12">
-                                <input id="addLocationLatitude" name="addLocationLatitude"
-                                       placeholder="latitude"
-                                       required value="">
+                                <ons-input id="addLocationLatitude" input-id="addLocationLatitude-2"
+                                           name="addLocationLatitude" placeholder="latitude" required
+                                           value=""></ons-input>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12">
                                 <h3>
-                                    <label for="addLocationLongitude">Longitude: </label>
+                                    <label for="addLocationLongitude-2">Longitude: </label>
                                 </h3>
                             </div>
                             <div class="col-12">
-                                <input id="addLocationLongitude" name="addLocationLongitude"
-                                       placeholder="longitude"
-                                       required value="">
+                                <ons-input id="addLocationLongitude" input-id="addLocationLongitude-2"
+                                           name="addLocationLongitude" placeholder="longitude" required
+                                           value=""></ons-input>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12">
                                 <h3>
-                                    <label for="addLocationLocatienaam">Naam: </label>
+                                    <label for="addLocationLocatienaam">Name: </label>
                                 </h3>
                             </div>
                             <div class="col-12">
-                                <input id="addLocationLocatienaam" name="addLocationLocatienaam"
-                                       placeholder="De naam van de locatie" readonly
-                                       value="">
+                                <ons-input id="addLocationLocatienaam" name="addLocationLocatienaam"
+                                           placeholder="The name of the location" readonly
+                                           value=""></ons-input>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <input id="addLocationLocatiebijnaam" name="addLocationLocatiebijnaam"
-                                       placeholder="De bijnaam van de locatie"
-                                       value="">
+                                <ons-input id="addLocationLocatiebijnaam" name="addLocationLocatiebijnaam"
+                                           placeholder="The nickname of the location"
+                                           value=""></ons-input>
                             </div>
                         </div>
                     </form>
                 </div>
-
                 <div class="row mt-5">
-                    <ons-button modifier="large material" ripple id="addLocation">add to my locations
-                    </ons-button>
-
+                    <ons-button modifier="large material" ripple id="addLocation">add to my locations</ons-button>
                 </div>
-
             </div>
             <script src="js/PageaddLocationUserDialog.js"></script>
         </ons-page>
-
-
     </ons-dialog>
 </template>
 
@@ -489,20 +451,13 @@
         <ons-toolbar>
             <div class="left">
                 <ons-toolbar-button onclick="fn.open()">
-                    <ons-icon icon="md-menu"></ons-icon>
+                    <i class="fas fa-bars"></i>
                 </ons-toolbar-button>
             </div>
             <div class="center">
                 <h1>Groups</h1>
             </div>
         </ons-toolbar>
-        <!--        <ons-fab position="bottom right">
-                    <i id="getGroepenTable" class="far fa-object-group p"></i>
-                </ons-fab>
-
-                <ons-fab position="bottom left">
-                    <i class="fas fa-users"></i>
-                </ons-fab>-->
         <div class="background"></div>
         <div class="content">
             <div class="row mx-3 my-2">
@@ -521,24 +476,22 @@
         </div>
         <script src="js/PageGroups.js"></script>
     </ons-page>
-
 </template>
 <template id="addUserToGroupDialog.html">
     <ons-dialog id="addUserToGroupDialog" cancelable modifier="material">
-        <ons-page>
+        <ons-page modifier="material">
             <div class="background"></div>
-
             <div class="content modal-content">
                 <div class="">
                     <div class="modal-content-h">
-                        <h1 class="">Join a group </h1>
+                        <h2>Join a group </h2>
                     </div>
                     <div class="modal-form">
                         <form class="form-addUserToGroup">
                             <div class="row">
                                 <div class="col-xs-12">
                                     <h3>
-                                        <label for="addUserToGroupGroepID">Choose the group you want to join: </label>
+                                        <label for="addUserToGroupGroepID-x">Choose the group you want to join: </label>
                                     </h3>
                                 </div>
                                 <div class="col-xs-12">
@@ -550,30 +503,24 @@
                                     </ons-select>
                                 </div>
                             </div>
-
                             <div class="row">
                                 <div class="col-12">
                                     <h3>
-                                        <label for="addUserToGroupGroepYourLocation">Choose one of your saved
+                                        <label for="addUserToGroupGroepYourLocation-x">Choose one of your saved
                                             location: </label>
                                     </h3>
                                 </div>
                                 <div class="col-12">
                                     <ons-select autofocus="true" required select-id="addUserToGroupGroepYourLocation"
                                                 size="1" modifier="material underbar">
-
                                         <select name="addUserToGroupGroepYourLocation"
                                                 id="addUserToGroupGroepYourLocation-x">
                                         </select>
                                     </ons-select>
-
                                 </div>
                             </div>
-
-                            </fieldset>
                         </form>
                     </div>
-
                     <div class="row mt-5">
                         <ons-button modifier="large material" ripple id="AddUserToGroup">join group</ons-button>
                     </div>
@@ -587,36 +534,34 @@
 </template>
 <template id="addGroup.html">
     <ons-dialog id="addroupDialog" cancelable modifier="material">
-        <ons-page>
+        <ons-page modifier="material">
             <div class="background"></div>
 
             <div class="content modal-content">
                 <div class="">
                     <div class="modal-content-h">
-                        <h1 class="">Add a group </h1>
+                        <h2>Add a group </h2>
                     </div>
                     <div class="modal-form">
                         <form class="form-addUserToGroup">
                             <div class="row">
                                 <div class="col-xs-12">
                                     <h3>
-                                        <label for="addUserToGroupGroepID">Choose the group you want to join: </label>
+                                        <label for="addGroepName">Create the groupname: </label>
                                     </h3>
                                 </div>
                                 <div class="col-xs-12">
-                                    <ons-select autofocus="true" required select-id="addUserToGroupGroepID"
-                                                size="1" modifier="material underbar">
-                                        <select name="addUserToGroupGroepID"
-                                                id="addUserToGroupGroepID-x">
-                                        </select>
-                                    </ons-select>
+                                    <ons-input id="addGroepName" name="addGroepName"
+                                               placeholder="Example: Trip to the Zoo" readonly
+                                               value=""></ons-input>
                                 </div>
+
                             </div>
 
                             <div class="row">
                                 <div class="col-12">
                                     <h3>
-                                        <label for="addGroupLocation-x">Choose one of your saved
+                                        <label for="addGroupLocation-x">Choose the group
                                             location: </label>
                                     </h3>
                                 </div>
@@ -631,8 +576,6 @@
 
                                 </div>
                             </div>
-
-                            </fieldset>
                         </form>
                     </div>
 
@@ -641,7 +584,7 @@
                     </div>
                 </div>
             </div>
-            <script src="js/PageAddUserToGroupDialog.js"></script>
+            <script src="js/PageAddGroupDialog.js"></script>
         </ons-page>
 
 
@@ -657,7 +600,7 @@
         <ons-toolbar>
             <div class="left">
                 <ons-toolbar-button onclick="fn.open()">
-                    <ons-icon icon="md-menu"></ons-icon>
+                    <i class="fas fa-bars"></i>
                 </ons-toolbar-button>
             </div>
             <div class="center">
@@ -679,7 +622,8 @@
         <ons-toolbar>
             <div class="left">
                 <ons-toolbar-button onclick="fn.open()">
-                    <ons-icon icon="md-menu"></ons-icon>
+                    <i class="fas fa-bars"></i>
+
                 </ons-toolbar-button>
             </div>
             <div class="center">
@@ -752,7 +696,7 @@
 </template>
 
 <template id="termsandconditions.html">
-    <ons-page>
+    <ons-page modifier="material">
         <ons-toolbar>
             <div class="left">
                 <ons-toolbar-button onclick="fn.load('login.html')">
@@ -875,7 +819,7 @@
     </ons-page>
 </template>
 <template id="privacypolicy.html">
-    <ons-page>
+    <ons-page modifier="material">
         <ons-toolbar>
             <div class="left">
                 <ons-toolbar-button onclick="fn.load('login.html')">
@@ -977,7 +921,8 @@
         <ons-toolbar>
             <div class="left">
                 <ons-toolbar-button onclick="fn.open()">
-                    <ons-icon icon="md-menu"></ons-icon>
+                    <i class="fas fa-bars"></i>
+
                 </ons-toolbar-button>
             </div>
             <div class="center">
@@ -1030,7 +975,7 @@
                             are my key values
                         </p>
                     </div>
-                    <div class=col-xs-5">
+                    <div class="col-xs-5">
                         <img class="mycenter" src="img/mezelf.png" alt="Ward Beyens picture" width="120px">
                     </div>
                 </div>
