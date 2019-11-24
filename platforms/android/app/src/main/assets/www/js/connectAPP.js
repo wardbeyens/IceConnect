@@ -22,13 +22,13 @@ $(function () {
         fn.load('login.html');
     };
 
-    window.play=function(){
+    window.play = function () {
         var audio = document.getElementById("audio");
         audio.play();
         console.log("audio");
     }
 
-    window.v=function(getal){
+    window.v = function (getal) {
         navigator.vibrate(getal);
     }
 

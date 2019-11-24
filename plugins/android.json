@@ -7,22 +7,22 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "be.wabyte.IceConnect"
-    },
-    "cordova-plugin-vibration": {
-      "PACKAGE_NAME": "com.wabyte.IceConnect"
-    },
-    "cordova-plugin-geolocation": {
-      "PACKAGE_NAME": "com.wabyte.IceConnect"
-    },
     "cordova-admob-plus": {
       "APP_ID_ANDROID": "ca-app-pub-3790828934465031~9792267331",
       "PLAY_SERVICES_VERSION": "17.2.0",
-      "PACKAGE_NAME": "com.wabyte.IceConnect"
+      "PACKAGE_NAME": "com.wabyte.iceconnect"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.wabyte.iceconnect"
     },
     "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "com.wabyte.IceConnect"
+      "PACKAGE_NAME": "com.wabyte.iceconnect"
+    },
+    "cordova-plugin-vibration": {
+      "PACKAGE_NAME": "com.wabyte.iceconnect"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.wabyte.iceconnect"
     }
   },
   "dependent_plugins": {}

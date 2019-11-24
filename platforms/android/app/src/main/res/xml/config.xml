@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.wabyte.iceconnect" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <feature name="Whitelist">
-        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
-        <param name="onload" value="true" />
+    <feature name="AdMob">
+        <param name="android-package" value="admob.plugin.AdMob" />
     </feature>
     <feature name="Geolocation">
         <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
     </feature>
-    <feature name="AdMob">
-        <param name="android-package" value="admob.plugin.AdMob" />
-    </feature>
     <feature name="SplashScreen">
         <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
     <name>IceConnect</name>
@@ -33,12 +33,12 @@
         <application android:usesCleartextTraffic="true" />
     </edit-config>
     <allow-intent href="market:*" />
-    <icon density="ldpi" src="res/icon/android/ldpi.png" />
-    <icon density="mdpi" src="res/icon/android/mdpi.png" />
-    <icon density="hdpi" src="res/icon/android/hdpi.png" />
-    <icon density="xhdpi" src="res/icon/android/xhdpi.png" />
-    <icon density="xxhdpi" src="res/icon/android/xxhdpi.png" />
-    <icon density="xxxhdpi" src="res/icon/android/xxxhdpi.png" />
+    <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
+    <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />
+    <icon density="hdpi" src="resources/android/icon/drawable-hdpi-icon.png" />
+    <icon density="xhdpi" src="resources/android/icon/drawable-xhdpi-icon.png" />
+    <icon density="xxhdpi" src="resources/android/icon/drawable-xxhdpi-icon.png" />
+    <icon density="xxxhdpi" src="resources/android/icon/drawable-xxxhdpi-icon.png" />
     <splash density="port-ldpi" src="res/screen/android/splash-port-ldpi.png" />
     <splash density="port-mdpi" src="res/screen/android/splash-port-mdpi.png" />
     <splash density="port-hdpi" src="res/screen/android/splash-port-hdpi.png" />

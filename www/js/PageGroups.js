@@ -10,19 +10,6 @@ function getGroepenInCard() {
         $('.emptylistGroup').empty();
         $.each(data, function (i) {
             console.log(i + ":" + this.groepnaam + '<br>' + this.locatieID + " " + this.locatiebijnaam);
-            /*            $("#GetGroepenTabellen").append('<table style="width: 100%" id=' + i + '>');
-                        $("#GetGroepenTabellen").append('<tr>');
-                        $("#GetGroepenTabellen").append('<th>' + this.groepnaam + '</th>');
-                        $("#GetGroepenTabellen").append('</tr>');
-                        $("#GetGroepenTabellen").append('<tr>');
-                        $("#GetGroepenTabellen").append('<td>' + 'GroepID: ' + this.groepID + '</td>');
-                        $("#GetGroepenTabellen").append('</tr>');
-                        $("#GetGroepenTabellen").append('<tr>');
-                        $("#GetGroepenTabellen").append('<td>' + 'samenkomen in: ' + this.locatiebijnaam + '</td>');
-                        $("#GetGroepenTabellen").append('</tr>');
-                        $("#GetGroepenTabellen").append('<tr>');
-                        $("#GetGroepenTabellen").append('<td>' + 'adres: ' + this.locatienaam + '</td>');
-                        $("#GetGroepenTabellen").append('</tr>');*/
             $("#GetGroepenCard").append(`
             <ons-card>
 <!--                <ons-fab modifier="mini" class="fabgroup" >

@@ -1,6 +1,14 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
   module.exports = [
     {
+      "id": "cordova-admob-plus.AdMob",
+      "file": "plugins/cordova-admob-plus/www/admob.js",
+      "pluginId": "cordova-admob-plus",
+      "clobbers": [
+        "admob"
+      ]
+    },
+    {
       "id": "cordova-plugin-geolocation.geolocation",
       "file": "plugins/cordova-plugin-geolocation/www/android/geolocation.js",
       "pluginId": "cordova-plugin-geolocation",
@@ -15,14 +23,6 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "runs": true
     },
     {
-      "id": "cordova-admob-plus.AdMob",
-      "file": "plugins/cordova-admob-plus/www/admob.js",
-      "pluginId": "cordova-admob-plus",
-      "clobbers": [
-        "admob"
-      ]
-    },
-    {
       "id": "cordova-plugin-splashscreen.SplashScreen",
       "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
       "pluginId": "cordova-plugin-splashscreen",
@@ -32,10 +32,10 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     }
   ];
   module.exports.metadata = {
-    "cordova-plugin-whitelist": "1.3.4",
-    "cordova-plugin-vibration": "3.1.1",
-    "cordova-plugin-geolocation": "4.0.2",
     "cordova-admob-plus": "0.0.0",
-    "cordova-plugin-splashscreen": "5.0.3"
+    "cordova-plugin-geolocation": "4.0.2",
+    "cordova-plugin-splashscreen": "5.0.3",
+    "cordova-plugin-vibration": "3.1.1",
+    "cordova-plugin-whitelist": "1.3.4"
   };
 });
